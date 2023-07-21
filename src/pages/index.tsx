@@ -6,14 +6,32 @@ import Layout from '@theme/Layout';
 import HomepageFeatures from '@site/src/components/HomepageFeatures';
 
 import styles from './index.module.css';
+import backgroundImage from '../../static/img/banner.png';
 
 function HomepageHeader() {
   const { siteConfig } = useDocusaurusContext();
   return (
-    <header className={clsx('hero hero--primary', styles.heroBanner)}>
-      <div className="container">
-        <h1 className="hero__title">{siteConfig.title}</h1>
-        <p className="hero__subtitle">{siteConfig.tagline}</p>
+    <header
+      className={clsx('hero hero--primary', styles.heroBanner)}
+      style={{
+        backgroundImage: `url(${backgroundImage})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
+        backgroundAttachment: 'fixed', // Optional - this will make the background image fixed while scrolling.
+        backgroundColor: 'rgba(255, 255, 255, 0.8)', // Set the background color with slight transparency (adjust the alpha value as needed).
+        height: '800px',
+      }}
+    >
+      <div className="container" style={{ textAlign: "center" }}>
+        <p className={styles.hero__subtitle}>
+          Build amazing ideas,
+        </p>
+        <p className={styles.hero__subtitle}>
+          piece by piece.
+        </p>
+        <br />
+        <br />
         <div className={styles.buttons}>
           <Link
             className="button button--secondary button--lg"

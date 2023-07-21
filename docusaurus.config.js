@@ -7,7 +7,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'Domino',
-  tagline: 'Domino is a groundbreaking open-source platform dedicated to visually creating and managing data and AI workflows.',
+  tagline: 'Build amazing ideas, piece by piece.',
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here

@@ -8,6 +8,17 @@
   text-align: center;
   position: relative;
   overflow: hidden;
+  color: black;
+}
+
+.hero__subtitle {
+  font-size: 6rem;
+  font-weight: 800;
+  margin-bottom: 2rem;
+  -webkit-text-fill-color: #172c33cc !important;
+  -webkit-text-stroke: 2px !important;
+  backdrop-filter: blur(1px) saturate(90%);
+  padding-top: 0;
 }
 
 @media screen and (max-width: 996px) {
