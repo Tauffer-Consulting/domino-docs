@@ -12,7 +12,7 @@ It is very easy to turn your Python code into a Domino Piece, in this session we
 2. define its data types inside the [models.py](./create_pieces#modelspy) file
 3. define extra metadata options inside the [metadata.json](./create_pieces#metadatajson) file
 4. write tests for your Piece inside the [test_mynewpiece.py](./create_pieces#test_mynewpiecepy) file
-5. define its [dependencies](./url)
+5. define its [dependencies](./pieces_repository#dependencies)
 6. publish it in a [git repository](./create_pieces#add-the-piece-to-a-repository) (public or private)
 
 
