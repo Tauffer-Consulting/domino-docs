@@ -69,63 +69,75 @@ class MyNewPiece(BasePiece):
         )
 ```
 
-.. collapse:: Save files in a shared storage
+<details>
+<summary>Save files in a shared storage</summary>
+  
 
-    Pieces can save files in a shared storage, to be used as input to downstream Pieces, by saving them under :code:`self.results_path`. The :code:`self.results_path` points to a shared storage path specific for that Piece, and it is automatically created when the Piece is executed. 
-
-    .. code-block:: python
-
-        msg = "This is a text to be saved in a shared storage, to be read by other Pieces!"
-        file_path = str(Path(self.results_path)/"msg.txt")
-        with open(file_path, "w") as f:
-            f.write(msg)
-    
-    Besides saving files under :code:`self.results_path`, to make those files available as input to other Pieces, you should also return the file path in the :code:`OutputModel`:
-
-    .. code-block:: python
-
-        return OutputModel(
-            out_argument_1="a string result",
-            out_file_path=file_path
-        )
+Pieces can save files in a shared storage, to be used as input to downstream Pieces, by saving them under `self.results_path`. The `self.results_path` points to a shared storage path specific for that Piece, and it is automatically created when the Piece is executed.
 
 
-.. collapse:: Display results in the Domino GUI
+```python
+msg = "This is a text to be saved in a shared storage, to be read by other Pieces!"
+file_path = str(Path(self.results_path)/"msg.txt")
+with open(file_path, "w") as f:
+    f.write(msg)
+```
 
-    Pieces can display results directly in the Domino GUI, by setting the attribute :code:`self.display_result` in one of two ways:
+Besides saving files under `self.results_path`, to make those files available as input to other Pieces, you should also return the file path in the `OutputModel`:
 
-    1. Saving the result in a file, and passing the file path to the :code:`self.display_result` attribute:
 
-    .. code-block:: python
+```python
+return OutputModel(
+    out_argument_1="a string result",
+    out_file_path=file_path
+)
+```
+  
+</details>
 
-        self.display_result = {
-            "file_type": "txt",
-            "file_path": file_path
-        }
 
-    2. Passing the result content directly to the :code:`self.display_result` attribute as a base64 encoded string:
+<details>
+<summary>Display results in the Domino GUI</summary>
 
-    .. code-block:: python
 
-        self.display_result = {
-            "file_type": "txt",
-            "base64_content": base64-encoded-string,
-        }
+Pieces can display results directly in the Domino GUI, by setting the attribute `self.display_result` in one of two ways:
 
-    In either way, the :code:`file_type` should always be provided. Currently, the supported file types are: 
-    
-        - :code:`txt` 
-        - :code:`json`
-        - :code:`png` 
-        - :code:`jpeg`
-        - :code:`bmp`
-        - :code:`tiff`
-        - :code:`gif`
-        - :code:`svg`
-        - :code:`md`
-        - :code:`pdf`
-        - :code:`html`
+1. Saving the result in a file, and passing the file path to the `self.display_result` attribute:
 
+
+```python
+self.display_result = {
+    "file_type": "txt",
+    "file_path": file_path
+}
+```
+
+
+2. Passing the result content directly to the `self.display_result` attribute as a base64 encoded string:
+
+
+```python
+self.display_result = {
+    "file_type": "txt",
+    "base64_content": base64-encoded-string,
+}
+```
+
+In either way, the `file_type` should always be provided. Currently, the supported file types are: 
+
+- `txt` 
+- `json`
+- `png` 
+- `jpeg`
+- `bmp`
+- `tiff`
+- `gif`
+- `svg`
+- `md`
+- `pdf`
+- `html`
+
+</details>
 
 
 ## models.py
@@ -219,7 +231,7 @@ Based on the `InputModel`, the Domino GUI will appropriately display input field
 
 .. collapse:: Enum
 
-    You must first create an :code:`Enum` class with its corresponding options in the :code:`models.py`, then use this class as a type.
+    You must first create an `Enum` class with its corresponding options in the `models.py`, then use this class as a type.
 
     .. code-block:: python
         
