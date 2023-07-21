@@ -180,73 +180,88 @@ Pydantic models are very powerful and rich in features. Using them properly will
 
 Based on the `InputModel`, the Domino GUI will appropriately display input fields in the forms, based on their respective data types:
 
-.. collapse:: Integer
 
-    .. code-block:: python
-        
-        integer_arg: int = Field(
-            default=2,
-            description="Example of integer input argument"
-        )
-    
-    .. image:: /_static/media/int_field.gif
-        :width: 350
+<details>
+<summary>Integer</summary>
 
+```python     
+integer_arg: int = Field(
+    default=2,
+    description="Example of integer input argument"
+)
+```
 
-.. collapse:: Float
+![Form integer field](/img/int_field.gif) 
 
-    .. code-block:: python
-        
-        float_arg: float = Field(
-            default=1.3,
-            description="Example of float input argument"
-        )
-    
-    .. image:: /_static/media/float_field.gif
+</details>
 
 
-.. collapse:: Text: single line
+<details>
+<summary>Float</summary>
 
-    .. code-block:: python
-        
-        string_arg: str = Field(
-            default="text value",
-            description="Example of string input argument"
-        )
-    
-    .. image:: /_static/media/text_field.gif
+```python   
+float_arg: float = Field(
+    default=1.3,
+    description="Example of float input argument"
+)
+```
 
+![Form float field](/img/float_field.gif) 
 
-.. collapse:: Boolean
-
-    .. code-block:: python
-        
-        boolean_arg: bool = Field(
-            default=True,
-            description="Example of boolean input argument"
-        )
-    
-    .. image:: /_static/media/boolean_field.gif
+</details>
 
 
-.. collapse:: Enum
+<details>
+<summary>Text</summary>
 
-    You must first create an `Enum` class with its corresponding options in the `models.py`, then use this class as a type.
+```python
+string_arg: str = Field(
+    default="text value",
+    description="Example of string input argument"
+)
+``` 
 
-    .. code-block:: python
-        
-        from enum import Enum
+![Form text field](/img/text_field.gif)
 
-        class EnumType(str, Enum):
-            option_1 = "option_1"
-            option_2 = "option_2"
-        
-        enum_arg: EnumType = Field(
-            default=EnumType.option_1,
-            description="Example of enum input argument"
-        )
-    
-    .. image:: /_static/media/enum_field.gif
+</details>
+
+
+<details>
+<summary>Boolean</summary>
+
+```python
+boolean_arg: bool = Field(
+    default=True,
+    description="Example of boolean input argument"
+)
+```
+
+![Form boolean field](/img/boolean_field.gif)
+
+</details>
+
+
+<details>
+<summary>Enum</summary>
+
+You must first create an `Enum` class with its corresponding options in the `models.py`, then use this class as a type.
+
+```python
+from enum import Enum
+
+class EnumType(str, Enum):
+    option_1 = "option_1"
+    option_2 = "option_2"
+
+enum_arg: EnumType = Field(
+    default=EnumType.option_1,
+    description="Example of enum input argument"
+)
+```
+
+![Form enum field](/img/enum_field.gif)
+
+</details>
 
 
 The `OutputModel` defines the output data types of the Piece and allows for connected downstream Pieces to use this output data correctly. 
