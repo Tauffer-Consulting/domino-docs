@@ -12,7 +12,7 @@ Suppose you created a Pieces repository and want to test the Pieces locally. It'
 Pre-requisites:
 
 - `domino-py` installed in your local environment. 
-- A local Pieces repository folder, following the standard organization (see [Pieces](./pieces)).
+- A local Pieces repository folder, following the standard organization (see [Pieces](./pieces_basics)).
 
 You simply need to create a script importing the `piece_dry_run` function and fill the arguments with the Piece inputs and secrets:
 
