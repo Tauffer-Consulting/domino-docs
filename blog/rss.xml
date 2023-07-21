@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+    <channel>
+        <title>Domino Blog</title>
+        <link>https://tauffer-consulting.github.io/domino-docs/blog</link>
+        <description>Domino Blog</description>
+        <lastBuildDate>Thu, 26 Aug 2021 00:00:00 GMT</lastBuildDate>
+        <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
+        <generator>https://github.com/jpmonette/feed</generator>
+        <language>en</language>
+        <item>
+            <title><![CDATA[Introducing Domino]]></title>
+            <link>https://tauffer-consulting.github.io/domino-docs/blog/domino</link>
+            <guid>https://tauffer-consulting.github.io/domino-docs/blog/domino</guid>
+            <pubDate>Thu, 26 Aug 2021 00:00:00 GMT</pubDate>
+            <description><![CDATA[TL-DR:]]></description>
+            <content:encoded><![CDATA[<p>TL-DR:</p><p>Domino is a groundbreaking open-source platform dedicated to visually creating and managing data and AI workflows. With its intuitive drag-and-drop graphical interface, you can effortlessly construct complex workflows by piecing together cutting-edge modular operations, no coding required! Additionally, Domino gives you the power to bundle your Python functions into self-containing, reusable, shareable modules, promoting a culture of collaboration, efficiency and reproducibility.</p><h2 class="anchor anchorWithStickyNavbar_LWe7" id="what-is-domino">What is Domino?<a href="#what-is-domino" class="hash-link" aria-label="Direct link to What is Domino?" title="Direct link to What is Domino?">​</a></h2><p>text</p>]]></content:encoded>
+            <category>domino</category>
+            <category>data</category>
+            <category>ai</category>
+            <category>workflows</category>
+            <category>airflow</category>
+        </item>
+    </channel>
+</rss>
