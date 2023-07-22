@@ -1,5 +1,9 @@
 ---
 sidebar_position: 1
+description: "Domino is an open source workflow management platform, with an intuitive Graphical User Interface that facilitates creating, editing and monitoring any type of Workflow, from data processing to machine learning."
+keywords: ["domino", "workflow", "airflow", "data", "machine learning", "ml", "data science", "data engineering", "dataops", "mlops", "devops", "kubernetes", "k8s", "helm", "python", "react", "typescript", "fastapi", "gitops", "docker", "github", "artifacthub", "pypi", "pip", "kind", "open source", "oss", "low code", "no code", "automation",
+"versio control", "collaboration", "monitoring", "orchestration", "data pipeline"]
+
 ---
 
 # What is Domino?
