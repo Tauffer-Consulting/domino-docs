@@ -102,16 +102,16 @@ const config = {
             title: 'Community',
             items: [
               {
-                label: 'Stack Overflow',
-                href: 'https://stackoverflow.com/questions/tagged/docusaurus',
+                label: 'Discussions',
+                href: 'https://github.com/Tauffer-Consulting/domino/discussions',
               },
               {
-                label: 'Discord',
-                href: 'https://discordapp.com/invite/docusaurus',
+                label: 'Stack Overflow',
+                href: 'https://stackoverflow.com/questions/tagged/domino-py',
               },
               {
                 label: 'Twitter',
-                href: 'https://twitter.com/docusaurus',
+                href: 'https://twitter.com/',
               },
             ],
           },
@@ -125,6 +125,10 @@ const config = {
               {
                 label: 'GitHub',
                 href: 'https://github.com/Tauffer-Consulting/domino',
+              },
+              {
+                label: 'Linkedin',
+                href: 'https://www.linkedin.com/company/tauffer-consulting',
               },
             ],
           },
