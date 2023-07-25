@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdomino_docs=self.webpackChunkdomino_docs||[]).push([[5393],{5960:o=>{o.exports=JSON.parse('{"label":"workflows","permalink":"/domino-docs/blog/tags/workflows","allTagsPath":"/domino-docs/blog/tags","count":1}')}}]);
