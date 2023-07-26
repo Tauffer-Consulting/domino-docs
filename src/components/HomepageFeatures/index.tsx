@@ -10,38 +10,37 @@ type FeatureItem = {
 
 const FeatureList: FeatureItem[] = [
   {
-    title: 'Easy to Use',
-    Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
+    title: 'Visual Workflows for Everyone',
+    Svg: require('@site/static/img/undraw_workflow_builder.svg').default,
     description: (
       <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
+        Domino brings an intuitive Graphical User Interface that facilitates creating,
+        editing and monitoring any type of Workflow, from data processing to machine learning.
       </>
     ),
   },
   {
-    title: 'Focus on What Matters',
-    Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
+    title: 'Reusability, Reproducibility and Collaboration',
+    Svg: require('@site/static/img/undraw_pieces_sharing.svg').default,
     description: (
       <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
+        Domino proposes a standard way of writing and publishing functional Pieces,
+        which follows good practices for distribution, documentation and data modeling.
       </>
     ),
   },
   {
-    title: 'Powered by React',
-    Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
+    title: 'Powered by Apache Airflow',
+    Svg: require('@site/static/img/apache-airflow-logo.svg').default,
     description: (
       <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
+        Domino is powered by Apache Airflow for top-tier workflows scheduling and monitoring.
       </>
     ),
   },
 ];
 
-function Feature({title, Svg, description}: FeatureItem) {
+function Feature({ title, Svg, description }: FeatureItem) {
   return (
     <div className={clsx('col col--4')}>
       <div className="text--center">
