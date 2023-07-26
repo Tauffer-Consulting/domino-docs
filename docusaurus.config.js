@@ -46,7 +46,10 @@ const config = {
           showReadingTime: true,
         },
         theme: {
-          customCss: require.resolve('./src/css/custom.css'),
+          customCss: [
+            require.resolve('./src/css/custom.css'),
+            // require.resolve('./src/css/aos.css'),
+          ],
         },
       }),
     ],
@@ -126,11 +129,17 @@ const config = {
           },
         ],
         copyright: `Copyright © ${new Date().getFullYear()} Luiz Tauffer. Built with Docusaurus.`,
+        // Other footer elements...
       },
       prism: {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
       },
+      // scripts: [
+      //   // Other scripts...
+      //   "https://unpkg.com/aos@next/dist/aos.js",
+      //   "<script>AOS.init();</script>",
+      // ],
     }),
 };
 
