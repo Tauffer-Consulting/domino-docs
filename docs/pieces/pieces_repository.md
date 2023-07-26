@@ -45,7 +45,7 @@ pieces/
     └── piece.py
 ```
 
-For detailed information on how to create a Piece, see [Pieces](./pieces_basics).
+For detailed information on how to create a Piece, see [Create Pieces](./create_pieces).
 
 
 ## Dependencies
