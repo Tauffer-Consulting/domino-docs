@@ -6,7 +6,6 @@ import Layout from '@theme/Layout';
 import HomepageFeatures from '@site/src/components/HomepageFeatures';
 
 import styles from './index.module.css';
-import backgroundImage from '../../static/img/banner.png';
 
 import AOS from 'aos';
 import 'aos/dist/aos.css'; // You can also use <link> for styles
