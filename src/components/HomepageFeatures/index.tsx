@@ -20,7 +20,7 @@ const FeatureList: FeatureItem[] = [
     ),
   },
   {
-    title: 'Reusability, Reproducibility and Collaboration',
+    title: 'Focus on Reusability and Reproducibility',
     Svg: require('@site/static/img/undraw_pieces_sharing.svg').default,
     description: (
       <>
@@ -30,11 +30,38 @@ const FeatureList: FeatureItem[] = [
     ),
   },
   {
+    title: 'Rich real-time monitoring',
+    Svg: require('@site/static/img/undraw_workflow_visualizer.svg').default,
+    description: (
+      <>
+        Experience a clean and user-friendly interface for monitoring Workflows results, including logs and richer reports with images and tables.
+      </>
+    ),
+  },
+  {
+    title: 'Open source',
+    Svg: require('@site/static/img/undraw_open_source.svg').default,
+    description: (
+      <>
+        Domino is an Open Source project, which means that anyone can contribute to its development and use it for free.
+      </>
+    ),
+  },
+  {
     title: 'Powered by Apache Airflow',
     Svg: require('@site/static/img/apache-airflow-logo.svg').default,
     description: (
       <>
         Domino is powered by Apache Airflow for top-tier workflows scheduling and monitoring.
+      </>
+    ),
+  },
+  {
+    title: 'Kubernetes native',
+    Svg: require('@site/static/img/undraw_server_cluster.svg').default,
+    description: (
+      <>
+        Domino is designed to be Kubernetes native, with every task running in a separate pod. This guarantees the scalability and resilience of your workflows.
       </>
     ),
   },
