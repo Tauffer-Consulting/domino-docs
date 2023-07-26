@@ -69,19 +69,48 @@ function HomepageHeader() {
         >
           Build amazing ideas,
         </div>
-        <div
-          className={styles.hero__subtitle}
-          data-aos="fade-up"
-          data-aos-offset="0"
-          data-aos-delay="1500"
-          data-aos-duration="1500"
-          data-aos-easing="ease-in-out"
-          data-aos-mirror="true"
-          data-aos-once="false"
-          data-aos-anchor-placement="top-center"
-        >
-          piece by piece.
+        <div style={{ display: "flex", flexDirection: "row", justifyContent: "center" }}>
+          <div
+            className={styles.hero__subtitle}
+            data-aos="fade-up"
+            data-aos-offset="0"
+            data-aos-delay="1500"
+            data-aos-duration="1500"
+            data-aos-easing="ease-in-out"
+            data-aos-mirror="true"
+            data-aos-once="false"
+            data-aos-anchor-placement="top-center"
+          >
+            Piece&nbsp;
+          </div>
+          <div
+            className={styles.hero__subtitle}
+            data-aos="fade-up"
+            data-aos-offset="0"
+            data-aos-delay="2200"
+            data-aos-duration="1500"
+            data-aos-easing="ease-in-out"
+            data-aos-mirror="true"
+            data-aos-once="false"
+            data-aos-anchor-placement="top-center"
+          >
+            by&nbsp;
+          </div>
+          <div
+            className={styles.hero__subtitle}
+            data-aos="fade-up"
+            data-aos-offset="0"
+            data-aos-delay="2900"
+            data-aos-duration="1500"
+            data-aos-easing="ease-in-out"
+            data-aos-mirror="true"
+            data-aos-once="false"
+            data-aos-anchor-placement="top-center"
+          >
+            Piece
+          </div>
         </div>
+
         <br />
         <br />
         <div className={styles.buttons}>
