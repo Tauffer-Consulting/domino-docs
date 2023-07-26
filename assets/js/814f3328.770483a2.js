@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdomino_docs=self.webpackChunkdomino_docs||[]).push([[535],{5641:o=>{o.exports=JSON.parse('{"title":"Recent posts","items":[{"title":"Introducing Domino","permalink":"/domino-docs/blog/domino"}]}')}}]);
