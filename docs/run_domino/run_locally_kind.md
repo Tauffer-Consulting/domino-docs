@@ -103,7 +103,7 @@ This is a convenience command that will:
 - Download and install the necessary Helm charts
 - Expose the chosen services
 
-If everything worked as expected, you should see a success message in your terminal. You can then navigate to :code:`localhost` to access the Domino frontend service.
+If everything worked as expected, you should see a success message in your terminal. You can then navigate to `localhost` to access the Domino frontend service.
 
 ![Domino platform create success](/img/domino-create-success.png)
 
@@ -164,7 +164,7 @@ DOMINO_DB_NAME = "postgres"
 ## Local deployment for development
 
 For development, you can configure hot reloading for the **Domino package** and for **local Pieces Repositories**.
-In order to do that you can run `domino platform prepare` and you will be asked for the same configuration as described in [Prepare the platform with Domino CLI]](./run_locally_kind#prepare-the-platform-with-domino-cli),
+In order to do that you can run `domino platform prepare` and you will be asked for the same configuration as described in [Prepare the platform with Domino CLI](./run_locally_kind#prepare-the-platform-with-domino-cli),
 but now you must set `deploy_mode=local-k8s-dev` and provide the local paths for the Domino package and for the local Pieces Repositories for hot reloading purposes.
 
 - **Deploy Mode**: The platform deploy mode. It should be set to **local-k8s-dev** **(required)**.
@@ -172,7 +172,7 @@ but now you must set `deploy_mode=local-k8s-dev` and provide the local paths for
   `["path/to/pieces/repository1", "path/to/pieces/repository2"]`. It will allow you to change the code in the local pieces repositories and the changes will be reflected in the Domino platform without the need to rebuild the docker images.
 - **Local domino path**: Local path for domino package **(optional)**. Only used for hot reloading of domino package code, example: `/path/to/local/domino`
 
-It can be also configured directly in the `config-domino-local.yaml` file in `dev` section.
+These options can be also configured directly in the `config-domino-local.yaml` file in `dev` section.
 The final configuration file should look like this:
 
 ```toml
@@ -199,5 +199,30 @@ DOMINO_DB_NAME = "postgres"
 
 [dev]
 DOMINO_LOCAL_DOMINO_PACKAGE = "/path/tolocal/domino"
+DOMINO_AIRFLOW_IMAGE = ""
+DOMINO_REST_IMAGE = ""
+DOMINO_FRONTEND_IMAGE = ""
 some_local_pieces_repository_name = "/path/to/local/pieces/repository"
+```
+
+* `DOMINO_LOCAL_DOMINO_PACKAGE` **[Optional]** - The path to a local version of the Domino package. Only used for hot reloading of domino package code.
+* `DOMINO_AIRFLOW_IMAGE` **[Optional]** - The name of a local version of the Domino Airflow image.
+* `DOMINO_REST_IMAGE` **[Optional]** - The name of a local version of the Domino REST image.
+* `DOMINO_FRONTEND_IMAGE` **[Optional]** - The name of a local version of the Domino Frontend image.
+
+To build the images, you can run the following commands from the root of the Domino repository:
+
+```bash
+docker build -f ./frontend/Dockerfile.prod -t domino-frontend ./frontend
+docker build -f ./rest/Dockerfile -t domino-rest ./rest
+docker build -f Dockerfile-airflow-domino-base-dev -t domino-airflow .
+```
+
+and then set the image names in the `config-domino-local.yaml` file.
+
+```toml
+[dev]
+DOMINO_AIRFLOW_IMAGE = "domino-airflow"
+DOMINO_REST_IMAGE = "domino-rest"
+DOMINO_FRONTEND_IMAGE = "domino-frontend"
 ```
