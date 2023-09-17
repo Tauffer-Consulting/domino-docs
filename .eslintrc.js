@@ -7,7 +7,6 @@ module.exports = {
     "standard-with-typescript",
     "plugin:react/recommended",
     "plugin:prettier/recommended",
-    // "prettier",
   ],
   overrides: [
     {
@@ -27,9 +26,13 @@ module.exports = {
   plugins: ["react", "prettier"],
   rules: {
     "prettier/prettier": "error",
+
     "@typescript-eslint/prefer-nullish-coalescing": "off",
     "@typescript-eslint/strict-boolean-expressions": "off",
     "@typescript-eslint/explicit-function-return-type": "off",
     "@typescript-eslint/no-var-requires": "off",
+    "@typescript-eslint/ban-ts-comment": "off",
+
+    "react/self-closing-comp": "error",
   },
 };

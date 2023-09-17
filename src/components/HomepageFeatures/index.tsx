@@ -8,8 +8,6 @@ interface FeatureItem {
   description: JSX.Element;
 }
 
-const a = 1;
-
 const FeatureList: FeatureItem[] = [
   {
     title: "Visual Workflows for Everyone",

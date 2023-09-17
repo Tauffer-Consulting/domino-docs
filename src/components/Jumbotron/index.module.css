@@ -1,0 +1,41 @@
+.pieceOne {
+  animation: pieceOne 1600ms ease-in-out forwards;
+  animation-delay: 2000ms;
+  transform: translateY(-300px);
+}
+
+@keyframes pieceOne {
+  from {
+    transform: translateY(-300px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+.domino1 {
+  animation: domino 800ms ease-in-out forwards;
+  opacity: 0;
+}
+
+.domino2 {
+  animation: domino 800ms ease-in-out forwards;
+  animation-delay: 800ms;
+  opacity: 0;
+}
+
+.domino3 {
+  animation: domino 800ms ease-in-out forwards;
+  animation-delay: 1600ms;
+  opacity: 0;
+}
+
+@keyframes domino {
+  from {
+    transform: translateX(100px);
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
