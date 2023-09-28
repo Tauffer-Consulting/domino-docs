@@ -146,8 +146,7 @@ const config = {
         // Other footer elements...
       },
       prism: {
-        theme: lightCodeTheme,
-        darkTheme: darkCodeTheme,
+        theme: darkCodeTheme,
       },
       // scripts: [
       //   // Other scripts...
