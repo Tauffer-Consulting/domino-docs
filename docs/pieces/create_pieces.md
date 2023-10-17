@@ -73,7 +73,9 @@ class MyNewPiece(BasePiece):
 <summary>Save files in a shared storage</summary>
   
 
-Pieces can save files in a shared storage, to be used as input to downstream Pieces, by saving them under `self.results_path`. The `self.results_path` points to a shared storage path specific for that Piece, and it is automatically created when the Piece is executed.
+Pieces can save files in a shared storage, to be used as input to downstream Pieces, by saving them under `self.results_path`. The `self.results_path` points to a shared storage path specific for that Piece, and it is automatically created when the Piece is executed.  
+  
+**Important: To use this feature your workflow should be configured to use a shared storage.**
 
 
 ```python
@@ -136,6 +138,19 @@ In either way, the `file_type` should always be provided. Currently, the support
 - `md`
 - `pdf`
 - `html`
+
+</details>
+
+
+<details>
+<summary>Display Logs</summary>
+
+Domino `BasePiece` class has a built in logger property.
+You can use it to log messages to the Domino GUI using the following:
+
+```python
+self.logger.info("This is an info message")
+```
 
 </details>
 
