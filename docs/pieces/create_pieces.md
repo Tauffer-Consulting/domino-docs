@@ -212,7 +212,7 @@ integer_arg: int = Field(
 )
 ```
 
-![Form integer field](/img/int_field.gif) 
+![Form integer field](/img/pieces/create_pieces/input_int.gif) 
 
 </details>
 
@@ -227,7 +227,7 @@ float_arg: float = Field(
 )
 ```
 
-![Form float field](/img/float_field.gif) 
+![Form float field](/img/pieces/create_pieces/input_float.gif) 
 
 </details>
 
@@ -242,7 +242,7 @@ string_arg: str = Field(
 )
 ``` 
 
-![Form text field](/img/text_field.gif)
+![Form text field](/img/pieces/create_pieces/input_text.gif)
 
 </details>
 
@@ -257,7 +257,7 @@ boolean_arg: bool = Field(
 )
 ```
 
-![Form boolean field](/img/boolean_field.gif)
+![Form boolean field](/img/pieces/create_pieces/input_boolean.gif)
 
 </details>
 
@@ -273,6 +273,7 @@ from enum import Enum
 class EnumType(str, Enum):
     option_1 = "option_1"
     option_2 = "option_2"
+    option_3 = "option_3"
 
 enum_arg: EnumType = Field(
     default=EnumType.option_1,
@@ -280,7 +281,60 @@ enum_arg: EnumType = Field(
 )
 ```
 
-![Form enum field](/img/enum_field.gif)
+![Form enum field](/img/pieces/create_pieces/input_enum.gif)
+
+</details>
+
+
+<details>
+<summary>Simple Array</summary>
+
+```python
+input_array: List[str] = Field(
+    default=["default_1", "default_2", "default_3"],
+    description='Input array to be logged.'
+)
+```
+
+![Form array field](/img/pieces/create_pieces/input_array.gif)
+
+</details>
+
+<details>
+<summary>Object Array</summary>
+
+For Object Arrays you need define the basic model first, and use this model in a array as usual. Each element of this object can be configured as from_upstream `never` | `always` | `allowed`
+
+```python
+from pydantic import BaseModel, Field
+from typing import List
+
+class InputModel(BaseModel):
+    item_1: str = Field(
+        default=None,
+        description='Argument name.',
+        from_upstream="never"
+    )
+    item_2: str = Field(
+        default=None,
+        description='Argument value.',
+        from_upstream="always"
+    )
+```
+
+```python
+
+input_args: List[InputModel] = Field(
+        default=[
+            InputModel(item_1="", item_2="default_1"),
+            InputModel(item_1="", item_2="default_2"),
+        ],
+        description='Input arguments.',
+        from_upstream="never"
+    )
+```
+
+![Form object array field](/img/pieces/create_pieces/input_object_array.gif)
 
 </details>
 

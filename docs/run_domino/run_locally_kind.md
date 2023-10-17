@@ -213,7 +213,7 @@ some_local_pieces_repository_name = "/path/to/local/pieces/repository"
 To build the images, you can run the following commands from the root of the Domino repository:
 
 ```bash
-docker build -f ./frontend/Dockerfile.dev.k8s -t domino-frontend ./frontend
+docker build -f ./frontend/Dockerfile.prod -t domino-frontend ./frontend
 docker build -f ./rest/Dockerfile -t domino-rest ./rest
 docker build -f Dockerfile-airflow-domino-base-dev -t domino-airflow .
 ```
