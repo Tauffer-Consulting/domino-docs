@@ -30,6 +30,10 @@ Let's create a new Piece, named `MyNewPiece`. The Piece's folder should have the
 
 The `piece.py` file should contain your custom code inside the `piece_function` method. The class for the Piece we're writing is defined here, and it should inherit from Domino `BasePiece`. Example:
 
+:::warning
+The class name should match the Piece's folder name, in this case `MyNewPiece`.
+:::
+
 ```python
 from domino.base_piece import BasePiece
 from .models import InputModel, SecretsModel, OutputModel
@@ -75,7 +79,9 @@ class MyNewPiece(BasePiece):
 
 Pieces can save files in a shared storage, to be used as input to downstream Pieces, by saving them under `self.results_path`. The `self.results_path` points to a shared storage path specific for that Piece, and it is automatically created when the Piece is executed.  
   
-**Important: To use this feature your workflow should be configured to use a shared storage.**
+:::note
+Important: To use this feature your workflow should be configured to use a shared storage.
+:::
 
 
 ```python
