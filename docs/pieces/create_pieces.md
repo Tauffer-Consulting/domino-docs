@@ -30,6 +30,10 @@ Let's create a new Piece, named `MyNewPiece`. The Piece's folder should have the
 
 The `piece.py` file should contain your custom code inside the `piece_function` method. The class for the Piece we're writing is defined here, and it should inherit from Domino `BasePiece`. Example:
 
+:::caution
+The class name should match the Piece's folder name, in this case `MyNewPiece`.
+:::
+
 ```python
 from domino.base_piece import BasePiece
 from .models import InputModel, SecretsModel, OutputModel
@@ -73,7 +77,11 @@ class MyNewPiece(BasePiece):
 <summary>Save files in a shared storage</summary>
   
 
-Pieces can save files in a shared storage, to be used as input to downstream Pieces, by saving them under `self.results_path`. The `self.results_path` points to a shared storage path specific for that Piece, and it is automatically created when the Piece is executed.
+Pieces can save files in a shared storage, to be used as input to downstream Pieces, by saving them under `self.results_path`. The `self.results_path` points to a shared storage path specific for that Piece, and it is automatically created when the Piece is executed.  
+  
+:::note
+Important: To use this feature your workflow should be configured to use a shared storage.
+:::
 
 
 ```python
@@ -140,6 +148,19 @@ In either way, the `file_type` should always be provided. Currently, the support
 </details>
 
 
+<details>
+<summary>Display Logs</summary>
+
+Domino `BasePiece` class has a built in logger property.
+You can use it to log messages to the Domino GUI using the following:
+
+```python
+self.logger.info("This is an info message")
+```
+
+</details>
+
+
 ## models.py
 
 The `models.py` file contains the data models for the Input, Output and Secrets arguments of the Piece. Those should be defined as Pydantic models. Example:
@@ -191,7 +212,7 @@ integer_arg: int = Field(
 )
 ```
 
-![Form integer field](/img/int_field.gif) 
+![Form integer field](/img/pieces/create_pieces/input_int.gif) 
 
 </details>
 
@@ -206,7 +227,7 @@ float_arg: float = Field(
 )
 ```
 
-![Form float field](/img/float_field.gif) 
+![Form float field](/img/pieces/create_pieces/input_float.gif) 
 
 </details>
 
@@ -221,7 +242,7 @@ string_arg: str = Field(
 )
 ``` 
 
-![Form text field](/img/text_field.gif)
+![Form text field](/img/pieces/create_pieces/input_text.gif)
 
 </details>
 
@@ -236,7 +257,7 @@ boolean_arg: bool = Field(
 )
 ```
 
-![Form boolean field](/img/boolean_field.gif)
+![Form boolean field](/img/pieces/create_pieces/input_boolean.gif)
 
 </details>
 
@@ -252,6 +273,7 @@ from enum import Enum
 class EnumType(str, Enum):
     option_1 = "option_1"
     option_2 = "option_2"
+    option_3 = "option_3"
 
 enum_arg: EnumType = Field(
     default=EnumType.option_1,
@@ -259,7 +281,60 @@ enum_arg: EnumType = Field(
 )
 ```
 
-![Form enum field](/img/enum_field.gif)
+![Form enum field](/img/pieces/create_pieces/input_enum.gif)
+
+</details>
+
+
+<details>
+<summary>Simple Array</summary>
+
+```python
+input_array: List[str] = Field(
+    default=["default_1", "default_2", "default_3"],
+    description='Input array to be logged.'
+)
+```
+
+![Form array field](/img/pieces/create_pieces/input_array.gif)
+
+</details>
+
+<details>
+<summary>Object Array</summary>
+
+For Object Arrays you need define the basic model first, and use this model in a array as usual. Each element of this object can be configured as from_upstream `never` | `always` | `allowed`
+
+```python
+from pydantic import BaseModel, Field
+from typing import List
+
+class InputModel(BaseModel):
+    item_1: str = Field(
+        default=None,
+        description='Argument name.',
+        from_upstream="never"
+    )
+    item_2: str = Field(
+        default=None,
+        description='Argument value.',
+        from_upstream="always"
+    )
+```
+
+```python
+
+input_args: List[InputModel] = Field(
+        default=[
+            InputModel(item_1="", item_2="default_1"),
+            InputModel(item_1="", item_2="default_2"),
+        ],
+        description='Input arguments.',
+        from_upstream="never"
+    )
+```
+
+![Form object array field](/img/pieces/create_pieces/input_object_array.gif)
 
 </details>
 

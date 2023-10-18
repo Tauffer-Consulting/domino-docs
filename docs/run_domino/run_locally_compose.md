@@ -27,10 +27,10 @@ In order to run Domino locally, you need to have these dependencies installed:
 - **Domino** Python package.
 
 
-The Domino Python package can be installed via pip. We reccommend you install Domino in a separate Python environment.
+The Domino CLI can be installed via pip. We reccommend you install Domino in a separate Python environment.
 
 ```bash
-pip install domino-py
+pip install domino-py[cli]
 ```
 
 

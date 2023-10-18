@@ -25,10 +25,10 @@ In order to run Domino locally, you need to have these dependencies installed:
 - **Kind with GPU (optional)** Kind doesn't have official support for GPU, but there is a Fork made by Jacob Tomlinson that you can use to run Kind with GPU support. You can find the fork [here](https://github.com/jacobtomlinson/kind/pull/1/) and his blog post about it [here](https://jacobtomlinson.dev/posts/2022/quick-hack-adding-gpu-support-to-kind/).
 
 
-The Domino Python package can be installed via pip. We reccommend you install Domino in a separate Python environment.
+The Domino CLI can be installed via pip. We reccommend you install Domino in a separate Python environment.
 
 ```bash
-pip install domino-py
+pip install domino-py[cli]
 ```
 
 ## Workflows repository and Github tokens
@@ -213,7 +213,7 @@ some_local_pieces_repository_name = "/path/to/local/pieces/repository"
 To build the images, you can run the following commands from the root of the Domino repository:
 
 ```bash
-docker build -f ./frontend/Dockerfile.dev.k8s -t domino-frontend ./frontend
+docker build -f ./frontend/Dockerfile.prod -t domino-frontend ./frontend
 docker build -f ./rest/Dockerfile -t domino-rest ./rest
 docker build -f Dockerfile-airflow-domino-base-dev -t domino-airflow .
 ```
