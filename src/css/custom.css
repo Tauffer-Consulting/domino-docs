@@ -16,3 +16,10 @@
   height: 4rem;
   margin-right: 0.5rem;
 }
+
+.footer__link-item,
+.navbar__link {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
