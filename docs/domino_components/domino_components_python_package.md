@@ -4,14 +4,24 @@ sidebar_position: 4
 
 # Domino Python package
 
+The Domino python package brings a collection of convenience classes and functions to work with Domino.
 
-Pip installable Python package for the Domino API.
+Domino provides 3 different installation options:
+```bash
+pip install domino-py[cli] # Domino installation with minimum dependencies (recommended).
+pip install domino-py[airflow] # Domino installation with only Airflow dependencies.
+pip install domino-py[full] # Domino installation with all dependencies.
+```
 
+:::tip
+The recommended instalation for most users is
 ```bash
 pip install domino-py[cli]
 ```
+:::
 
-The Domino python package brings a collection of convenience classes and functions to work with Domino.
+
+
 
 
 ### BasePiece (Domino class)
