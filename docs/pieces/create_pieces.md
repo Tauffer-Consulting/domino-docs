@@ -30,7 +30,7 @@ Let's create a new Piece, named `MyNewPiece`. The Piece's folder should have the
 
 The `piece.py` file should contain your custom code inside the `piece_function` method. The class for the Piece we're writing is defined here, and it should inherit from Domino `BasePiece`. Example:
 
-:::warning
+:::caution
 The class name should match the Piece's folder name, in this case `MyNewPiece`.
 :::
 
