@@ -1,0 +1,38 @@
+/* Gallery.css */
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.card {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 16px;
+    margin: 8px;
+    /* Adjusted margin to reduce horizontal spacing */
+    width: 300px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+}
+
+.card h2 {
+    font-size: 24px;
+    margin: 8px 0;
+}
+
+.card p {
+    font-size: 16px;
+    color: #555;
+}
+
+.card a {
+    display: flex;
+    align-items: center;
+    color: #007BFF;
+    text-decoration: none;
+    margin-top: 12px;
+}
+
+.card a i {
+    margin-right: 8px;
+}

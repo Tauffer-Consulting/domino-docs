@@ -74,6 +74,7 @@ const config = {
             label: 'Documentation',
           },
           { to: '/blog', label: 'Blog', position: 'right' },
+          { to: '/gallery', label: 'Gallery', position: 'right' },
           {
             href: 'https://github.com/Tauffer-Consulting/domino',
             label: 'GitHub',

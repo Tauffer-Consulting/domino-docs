@@ -16,7 +16,12 @@
   },
   "dependencies": {
     "@docusaurus/core": "2.4.1",
+    "@docusaurus/plugin-content-pages": "^2.4.3",
     "@docusaurus/preset-classic": "2.4.1",
+    "@fortawesome/fontawesome-free": "^6.4.2",
+    "@fortawesome/fontawesome-svg-core": "^6.4.2",
+    "@fortawesome/free-solid-svg-icons": "^6.4.2",
+    "@fortawesome/react-fontawesome": "^0.2.0",
     "@iconify/react": "^4.1.1",
     "@mdx-js/react": "^1.6.22",
     "aos": "^3.0.0-beta.6",
