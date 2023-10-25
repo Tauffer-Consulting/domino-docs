@@ -25,10 +25,14 @@
     color: #555;
 }
 
+.card-description {
+    min-height: 90px;
+}
+
 .card a {
     display: flex;
     align-items: center;
-    color: #007BFF;
+    color: --ifm-color-primary;
     text-decoration: none;
     margin-top: 12px;
 }

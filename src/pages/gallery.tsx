@@ -1,46 +1,70 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Layout from '@theme/Layout';
 import '@fortawesome/fontawesome-free/css/all.min.css';
-import './gallery.css';
-
-// @todo replace this mock with a real API call
-// @todo improve styling with docusaurus guide
-// @todo add search bar ?
-// @todo add copy to clipboard button to copy url ?
+import { galleryPiecesMock } from './galleryPiecesMock';
+import PieceCard from '../components/Gallery/PieceCard';
 
 
-const galleryMock = {
-    "default_domino_pieces": {
-        "name": "Default Domino Pieces",
-        "url": "https://github.com/Tauffer-Consulting/default_domino_pieces",
-        "description": "Default Domino Pieces"
-    },
-    "openai_domino_pieces": {
-        "name": "OpenAI Domino Pieces",
-        "url": "https://github.com/Tauffer-Consulting/openai_domino_pieces",
-        "description": "OpenAI Domino Pieces"
-    },
-}
+// todo fetch from github
 
 function Gallery() {
+
+    const [galleryPieces, setGalleryPieces] = useState({});
+    const galleryJsonURL = 'https://raw.githubusercontent.com/Tauffer-Consulting/domino_pieces_gallery/main/gallery.json'
+
+    useEffect(() => {
+        // Check if data exists in localStorage and if it's less than 24 hours old]
+        // If it does not exist it will be fetched from github
+        const storedData = localStorage.getItem('galleryPieces');
+        const storedTimestamp = localStorage.getItem('galleryPiecesStoredTimestamp');
+
+        if (storedData && storedTimestamp) {
+            const currentTimestamp = Date.now();
+            if (currentTimestamp - parseInt(storedTimestamp, 10) < 24 * 60 * 60 * 1000) {
+                setGalleryPieces(JSON.parse(storedData));
+                return;
+            }
+        }
+        const fetchData = async () => {
+            try {
+                const response = await fetch(galleryJsonURL);
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                const data = await response.json();
+                setGalleryPieces(data);
+                // Store data in local storage along with a timestamp
+                localStorage.setItem('galleryPieces', JSON.stringify(data));
+                localStorage.setItem('galleryPiecesStoredTimestamp', Date.now().toString());
+            } catch (error) {
+                console.error('Error fetching data:', error);
+            }
+        };
+        fetchData();
+    }, []);
+
+
     return (
         <Layout title="Gallery" description="">
             <div className='container'>
-                <h1 style={{marginTop: '20px'}}>Gallery</h1>
+                <h1 style={{ marginTop: '20px' }}>Gallery</h1>
                 <p>This section lists all the open source pieces repositories audited by Domino.</p>
                 <div className="card-container">
-                    {Object.keys(galleryMock).map((key) => {
-                        const piece = galleryMock[key];
-                        return (
-                            <div className="card" key={key}>
-                                <h2>{piece.name}</h2>
-                                <p>{piece.description}</p>
-                                <a href={piece.url} target="_blank" rel="noopener noreferrer">
-                                    <i className="fab fa-github"></i> View on GitHub
-                                    <i className="fas fa-external-link-alt"></i>
-                                </a>
-                            </div>
-                        );
+                    {Object.keys(galleryPieces).map((repositoryKey) => {
+                        const repository = galleryPieces[repositoryKey];
+                        const pieces = repository.pieces;
+
+                        return Object.keys(pieces).map((pieceKey) => {
+                            const piece = pieces[pieceKey];
+                            return (
+                                <PieceCard
+                                    key={pieceKey}
+                                    repositoryVersion={repository.version}
+                                    repositoryName={repositoryKey}
+                                    piece={piece}
+                                />
+                            );
+                        });
                     })}
                 </div>
             </div>
