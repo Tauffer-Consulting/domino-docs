@@ -1,63 +1,75 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Layout from '@theme/Layout';
-import { Link, useLocation } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
+import { useGallery } from '@site/src/utils/useGallery';
 
-// pieceDocumentation/{repositoryName}/{pieceName}
-const DocumentationPage = () => {
+const PieceDocumentationPage = () => {
+    const location = useLocation();
+    const galleryPieces = useGallery();
 
-    const location = useLocation()
-    console.log(location)
+    let params = new URLSearchParams(location.search);
+    const repository = params.get('repository');
+    const pieceName = params.get('piece');
+    const pieceData = galleryPieces[repository]['pieces'][pieceName];
 
+    // Extracting input properties from JSON
 
-    //const { input_schema, output_schema, secrets_schema } = piece;
+    // Define a CSS class for styling the table
+    const tableStyle: React.CSSProperties = {
+        margin: 'auto', 
+        borderCollapse: 'collapse',
+    };
+
+    const thStyle: React.CSSProperties = {
+        backgroundColor: '#f2f2f2',
+        padding: '8px',
+        textAlign: 'left',
+    };
+
+    const tdStyle: React.CSSProperties = {
+        border: '1px solid #dddddd',
+        padding: '8px',
+        textAlign: 'left',
+    };
+
+    const inputProperties = pieceData.input_schema.properties;
 
     return (
         <Layout title="Piece Documentation" description="">
-            <div>
-                hello
+            <div >
+                <div style={{ display: 'flex', justifyContent: 'center', textAlign: 'center' }}>
+                    <h1>{pieceData.style?.node_label ? pieceData.style?.node_label : pieceData.name}</h1>
+                </div>
+                <div style={{ display: 'flex', justifyContent: 'center', textAlign: 'center' }}>
+                    <h4>Input Arguments</h4>
+                </div>
+                <div style={{ display: 'flex', justifyContent: 'center', textAlign: 'center' }}>
+                    <table style={tableStyle}>
+                        <thead>
+                            <tr>
+                                <th style={thStyle}>Input Name</th>
+                                <th style={thStyle}>Input Arg</th>
+                                <th style={thStyle}>Data Type</th>
+                                <th style={thStyle}>Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {Object.keys(inputProperties).map((inputArg) => (
+                                <tr key={inputArg}>
+                                    <td style={tdStyle}>{inputProperties[inputArg].title}</td>
+                                    <td style={tdStyle}>{inputArg}</td>
+                                    <td style={tdStyle}>{
+                                        inputProperties[inputArg].type
+                                    }</td>
+                                    <td style={tdStyle}>{inputProperties[inputArg].description}</td>
+                                </tr>
+                            ))}
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </Layout>
-    )
-    // return (
-    //     <div>
-    //         <h1>Documentation for {piece.name}</h1>
-    //         <section>
-    //             <h2>Input Schemas</h2>
-    //             {input_schema && (
-    //                 <div>
-    //                     <h3>Fields</h3>
-    //                     <pre>{JSON.stringify(input_schema.properties, null, 2)}</pre>
-    //                     <h3>Data Types</h3>
-    //                     <pre>{JSON.stringify(input_schema.definitions, null, 2)}</pre>
-    //                 </div>
-    //             )}
-    //         </section>
-
-    //         <section>
-    //             <h2>Output Schemas</h2>
-    //             {output_schema && (
-    //                 <div>
-    //                     <h3>Fields</h3>
-    //                     <pre>{JSON.stringify(output_schema.properties, null, 2)}</pre>
-    //                     <h3>Data Types</h3>
-    //                     <pre>{JSON.stringify(output_schema.definitions, null, 2)}</pre>
-    //                 </div>
-    //             )}
-    //         </section>
-
-    //         <section>
-    //             <h2>Secrets Schemas</h2>
-    //             {secrets_schema && (
-    //                 <div>
-    //                     <h3>Fields</h3>
-    //                     <pre>{JSON.stringify(secrets_schema.properties, null, 2)}</pre>
-    //                     <h3>Data Types</h3>
-    //                     <pre>{JSON.stringify(secrets_schema.definitions, null, 2)}</pre>
-    //                 </div>
-    //             )}
-    //         </section>
-    //     </div>
-    // );
+    );
 };
 
-export default DocumentationPage;
+export default PieceDocumentationPage;
