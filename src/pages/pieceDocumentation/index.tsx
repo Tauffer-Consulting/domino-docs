@@ -1,10 +1,12 @@
 import React from 'react';
 import { PieceDocumentationTable } from './pieceDocumentationTable';
+import { PieceDocumentationSection } from './pieceDocumentationSection';
 import Layout from '@theme/Layout';
 import { useLocation } from 'react-router-dom';
 import { useGallery } from '@site/src/utils/useGallery';
 import { Link } from 'react-router-dom';
 import { Tooltip } from 'react-tooltip'
+import { Icon } from '@iconify/react';
 import 'react-tooltip/dist/react-tooltip.css'
 import './index.css'
 
@@ -33,13 +35,23 @@ const PieceDocumentationPage = () => {
     var secretsProperties = pieceData?.secrets_schema?.properties || {};
     secretsProperties = Object.keys(secretsProperties).length === 0 ? null : secretsProperties; 
     const secretsDefinitions = pieceData?.secrets_schema?.definitions || null;
-    
+
     return (
         <Layout title="Piece Documentation" description="">
             <div className='container'>
                 <div className='piece-documentation-container'>
                     <div style={{ display: 'flex', textAlign: 'center', justifyContent: 'space-between'}}>
-                        <h1>{pieceData.style?.node_label ? pieceData.style?.node_label : pieceData.name}</h1>
+                        <div style={{display: 'flex', alignItems: 'center'}}>
+                            <h1>
+                                {pieceData.style?.node_label ? pieceData.style?.node_label : pieceData.name} 
+                            </h1>
+                            <div style={{marginLeft: '15px'}}>
+                                {<Icon icon={
+                                    pieceData.style?.icon_class_name ? pieceData.style?.icon_class_name  :
+                                    "arcticons:dominos"
+                                } style={{ fontSize: '25px' }} />}
+                            </div>
+                        </div>
                         <div style={{display: 'flex', alignItems: 'center'}} className='back-link-div'>
                             <Tooltip id="back-link-tooltip" />
                             <Link to="/domino-docs/gallery">
@@ -57,34 +69,34 @@ const PieceDocumentationPage = () => {
                             <i className="fas fa-external-link-alt" style={{ marginLeft: '5px' }}></i>
                         </a>
                     </div>
-                    <div style={{ display: 'flex', justifyContent: 'left', textAlign: 'center', marginTop: '20px' }}>
+                    <div style={{ display: 'flex', justifyContent: 'left', textAlign: 'center', marginTop: '30px', paddingBottom: '10px', borderBottom: '1px solid var(--ifm-color-emphasis-400)' }}>
                         <h3>Input Arguments</h3>
                     </div>
                     {
                         inputProperties ? (
-                            <PieceDocumentationTable properties={inputProperties} definitions={inputDefinitions} />
+                            <PieceDocumentationSection properties={inputProperties} definitions={inputDefinitions} />
                         ) : (
-                            <p>This piece has no inputs.</p>
+                            <p style={{ marginTop: '30px' }}>This piece has no inputs.</p>
                         )
                     }
-                    <div style={{ display: 'flex', justifyContent: 'left', textAlign: 'center', marginTop: '20px' }}>
+                    <div style={{ display: 'flex', justifyContent: 'left', textAlign: 'center', marginTop: '30px', paddingBottom: '10px', borderBottom: '1px solid var(--ifm-color-emphasis-400)' }}>
                         <h3>Output Arguments</h3>
                     </div>
                     {
                         outputProperties ? (
-                            <PieceDocumentationTable properties={outputProperties} definitions={outputDefinitions} />
+                            <PieceDocumentationSection properties={outputProperties} definitions={outputDefinitions} />
                         ) : (
-                            <p>This piece has no outputs.</p>
+                            <p style={{ marginTop: '30px' }}>This piece has no outputs.</p>
                         )
                     }
-                    <div style={{ display: 'flex', justifyContent: 'left', textAlign: 'center', marginTop: '20px' }}>
+                    <div style={{ display: 'flex', justifyContent: 'left', textAlign: 'center', marginTop: '30px', paddingBottom: '10px', borderBottom: '1px solid var(--ifm-color-emphasis-400)' }}>
                         <h3>Secrets Arguments</h3>
                     </div>
                     {
                         secretsProperties ? (
-                            <PieceDocumentationTable properties={secretsProperties} definitions={secretsDefinitions} />
+                            <PieceDocumentationSection properties={secretsProperties} definitions={secretsDefinitions} />
                         ) : (
-                            <p>This piece has no secrets.</p>
+                            <p style={{marginTop: '30px'}}>This piece has no secrets.</p>
                         )
                     }
                 </div>

@@ -1,8 +1,7 @@
 import React, { useCallback } from "react";
-import './index.css'
 
 
-export const PieceDocumentationTable = ({properties, definitions}) => {
+export const PieceDocumentationSection = ({ properties, definitions }) => {
 
     const getTableBodyRow = useCallback((inputArg, properties, definitions) => {
         const itemSchema = properties[inputArg]
@@ -25,34 +24,27 @@ export const PieceDocumentationTable = ({properties, definitions}) => {
         }
 
         return (
-            <tr key={inputArg}>
-                <td>{name}</td>
-                <td>{inputArg}</td>
-                <td>{
-                    type
-                }</td>
-                <td>{properties[inputArg].description}</td>
-            </tr>
+            <div style={{ marginTop: '20px', borderBottom: '1px solid var(--ifm-color-emphasis-400)', paddingBottom: '20px' }} className='item'>
+                <div style={{marginTop: '10px'}}>
+                    <span style={{ fontWeight: "bold" }}>
+                        {inputArg}
+                    </span>
+                    {" "}(<i>{type}</i>):
+                </div>
+                <div style={{ marginLeft: '20px', marginTop: '10px' }}>
+                    {properties[inputArg].description}
+                </div>
+            </div>
         )
     }, [properties, definitions])
 
     return (
-        <div style={{ display: 'flex', justifyContent: 'center', textAlign: 'center' }}>
-            <table className='args-table'>
-                <thead>
-                    <tr>
-                        <th>Name</th>
-                        <th>Argument</th>
-                        <th>Data Type</th>
-                        <th>Description</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {Object.keys(properties).map((arg) => (
-                        getTableBodyRow(arg, properties, definitions)
-                    ))}
-                </tbody>
-            </table>
+        <div style={{ display: 'flex', justifyContent: 'left', textAlign: 'left' }}>
+            <div style={{width: '100%'}}>
+                {Object.keys(properties).map((arg) => (
+                    getTableBodyRow(arg, properties, definitions)
+                ))}   
+            </div>
         </div>
     )
 };
