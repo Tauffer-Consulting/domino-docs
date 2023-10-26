@@ -3,6 +3,8 @@ import Layout from '@theme/Layout';
 import { useLocation } from 'react-router-dom';
 import { useGallery } from '@site/src/utils/useGallery';
 import { Link } from 'react-router-dom';
+import { Tooltip } from 'react-tooltip'
+import 'react-tooltip/dist/react-tooltip.css'
 import './index.css'
 
 
@@ -65,6 +67,15 @@ const PieceDocumentationPage = () => {
                 <div className='piece-documentation-container'>
                     <div style={{ display: 'flex', textAlign: 'center', justifyContent: 'space-between'}}>
                         <h1>{pieceData.style?.node_label ? pieceData.style?.node_label : pieceData.name}</h1>
+                        <div style={{display: 'flex', alignItems: 'center'}} className='back-link-div'>
+                            <Tooltip id="back-link-tooltip" />
+                            <Link to="/domino-docs/gallery">
+                                <button data-tooltip-id='back-link-tooltip' data-tooltip-content='Return to Gallery' data-tooltip-place="bottom">
+                                    <i className="fas fa-chevron-left"></i>
+                                </button>
+                            </Link>
+
+                        </div>
                     </div>
                     <div style={{ display: 'flex', justifyContent: 'left', textAlign: 'center', marginTop: '20px' }}>
                         <h3>Input Arguments</h3>
