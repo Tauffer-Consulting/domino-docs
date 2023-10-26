@@ -7,12 +7,18 @@ import { Link } from 'react-router-dom';
 
 const PieceCard = ({ piece, repositoryVersion, repositoryName }) => {
 
+    var icon = null;
+    if (!piece.style?.icon_class_name) {
+        icon = <Icon icon={"arcticons:dominos"} style={{ fontSize: '25px' }} />
+    }else{
+        icon = <Icon icon={piece.style?.icon_class_name} />
+    }
 
     return (
         <div className="card">
             <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '10px'}}>
                 <h3 style={{margin: '0'}}>{piece.style?.node_label || piece.name}</h3>
-                <Icon icon={piece.style?.icon_class_name || "arcticons:dominos"} />
+                {icon}
             </div>
             <p className='card-description'>{piece.description}</p>
             <div className="card-details">
