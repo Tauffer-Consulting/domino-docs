@@ -1,5 +1,4 @@
 import React from 'react';
-import { PieceDocumentationTable } from './pieceDocumentationTable';
 import { PieceDocumentationSection } from './pieceDocumentationSection';
 import Layout from '@theme/Layout';
 import { useLocation } from 'react-router-dom';

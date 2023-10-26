@@ -27,6 +27,7 @@ function Gallery() {
                                     key={pieceKey}
                                     repositoryVersion={repository.version}
                                     repositoryName={repositoryKey}
+                                    repositoryUrl={repository.url}
                                     piece={piece}
                                 />
                             );

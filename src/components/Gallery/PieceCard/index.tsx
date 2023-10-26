@@ -1,11 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './index.css'
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import { Icon } from '@iconify/react';
 import { Link } from 'react-router-dom';
+import { Tooltip } from 'react-tooltip'
+import 'react-tooltip/dist/react-tooltip.css'
 
 
-const PieceCard = ({ piece, repositoryVersion, repositoryName }) => {
+const PieceCard = ({ piece, repositoryVersion, repositoryName, repositoryUrl }) => {
 
     var icon = null;
     if (!piece.style?.icon_class_name) {
@@ -20,11 +22,29 @@ const PieceCard = ({ piece, repositoryVersion, repositoryName }) => {
                 <h3 style={{margin: '0'}}>{piece.style?.node_label || piece.name}</h3>
                 {icon}
             </div>
-            <p className='card-description'>{piece.description}</p>
+            <p 
+                className='card-description'>{piece.description}
+            </p>
             <div className="card-details">
                 <p>
-                    <span style={{fontWeight: 'bold'}}>Repository: </span> 
-                        {repositoryName}
+                    <Tooltip id="copy-piece-repo-tooltip" />
+                    <span 
+                        style={{ fontWeight: 'bold' }} 
+                    >
+                        Repository:  
+                        <span style={{ fontWeight: 'normal' }}>
+                            {` ${repositoryName}`}
+                            <Icon 
+                                icon="bi:copy" 
+                                style={{ fontSize: '15px', marginLeft: '10px', cursor: 'pointer' }}
+                                data-tooltip-id='copy-piece-repo-tooltip' 
+                                data-tooltip-content='Copy Repository URL to Clipboard' 
+                                data-tooltip-place="top"
+                                onClick={() => navigator.clipboard.writeText(repositoryUrl)}
+                            />
+                        </span>
+                    </span>
+        
                     <br/>
                     <span style={{ fontWeight: 'bold' }}>Version: </span> {repositoryVersion}
                 </p>

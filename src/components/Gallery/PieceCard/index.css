@@ -3,8 +3,7 @@
     border-radius: 8px;
     padding: 16px;
     margin: 8px;
-    /* Adjusted margin to reduce horizontal spacing */
-    width: 300px;
+    width: 400px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
@@ -19,6 +18,8 @@
 
 .card-description {
     min-height: 90px;
+    max-height: 90px;
+    overflow: hidden;
 }
 
 .card a {
