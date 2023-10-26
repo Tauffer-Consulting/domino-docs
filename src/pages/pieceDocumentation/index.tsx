@@ -11,23 +11,6 @@ import './index.css'
 const PieceDocumentationPage = () => {
     const location = useLocation();
     const galleryPieces = useGallery();
-
-    let params = new URLSearchParams(location.search);
-    const repository = params.get('repository');
-    const pieceName = params.get('piece');
-    
-    const pieceData = galleryPieces[repository]['pieces'][pieceName];
-    var inputProperties = pieceData?.input_schema?.properties || {};
-    inputProperties = Object.keys(inputProperties).length === 0 ? null : inputProperties;
-    const inputDefinitions = pieceData?.input_schema?.definitions || null;
-
-    var outputProperties = pieceData?.output_schema?.properties || {};
-    outputProperties = Object.keys(outputProperties).length === 0 ? null : outputProperties; 
-    const outputDefinitions = pieceData?.output_schema?.definitions || null;
-
-    var secretsProperties = pieceData?.secrets_schema?.properties || {};
-    secretsProperties = Object.keys(secretsProperties).length === 0 ? null : secretsProperties; 
-    const secretsDefinitions = pieceData?.secrets_schema?.definitions || null;
     
     const getTableBodyRow = useCallback((inputArg, properties, definitions) => {
         const itemSchema = properties[inputArg]
@@ -60,6 +43,31 @@ const PieceDocumentationPage = () => {
             </tr>
         )
     }, [])
+
+    
+    if (Object.keys(galleryPieces).length === 0) {
+        return null
+    }
+    
+
+
+    let params = new URLSearchParams(location.search);
+    const repository = params.get('repository');
+    const pieceName = params.get('piece');
+    
+    const pieceData = galleryPieces[repository]['pieces'][pieceName];
+    var inputProperties = pieceData?.input_schema?.properties || {};
+    inputProperties = Object.keys(inputProperties).length === 0 ? null : inputProperties;
+    const inputDefinitions = pieceData?.input_schema?.definitions || null;
+
+    var outputProperties = pieceData?.output_schema?.properties || {};
+    outputProperties = Object.keys(outputProperties).length === 0 ? null : outputProperties; 
+    const outputDefinitions = pieceData?.output_schema?.definitions || null;
+
+    var secretsProperties = pieceData?.secrets_schema?.properties || {};
+    secretsProperties = Object.keys(secretsProperties).length === 0 ? null : secretsProperties; 
+    const secretsDefinitions = pieceData?.secrets_schema?.definitions || null;
+    
 
     return (
         <Layout title="Piece Documentation" description="">

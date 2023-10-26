@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { galleryPiecesMock } from './galleryPiecesMock';
 
 
-const USE_MOCK = true;
+const USE_MOCK = false;
 const galleryJsonURL = 'https://raw.githubusercontent.com/Tauffer-Consulting/domino_pieces_gallery/main/gallery.json'
 
 export const useGallery = () => {
@@ -11,7 +11,6 @@ export const useGallery = () => {
         defaultPieces = galleryPiecesMock;
     } 
     const [galleryPieces, setGalleryPieces] = useState(defaultPieces);
-
     useEffect(() => {
         if (USE_MOCK) {
             return
@@ -35,18 +34,17 @@ export const useGallery = () => {
                     throw new Error('Network response was not ok');
                 }
                 const data = await response.json();
-                setGalleryPieces(data);
                 // Store data in local storage along with a timestamp
+                setGalleryPieces(data)
                 localStorage.setItem('galleryPieces', JSON.stringify(data));
                 localStorage.setItem('galleryPiecesStoredTimestamp', Date.now().toString());
+                return data
             } catch (error) {
                 console.error('Error fetching data:', error);
             }
         };
         fetchData();
     }, []);
-
-    
 
     return galleryPieces;
 }
