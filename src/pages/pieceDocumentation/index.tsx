@@ -1,4 +1,5 @@
-import React, { useCallback } from 'react';
+import React from 'react';
+import { PieceDocumentationTable } from './pieceDocumentationTable';
 import Layout from '@theme/Layout';
 import { useLocation } from 'react-router-dom';
 import { useGallery } from '@site/src/utils/useGallery';
@@ -12,44 +13,9 @@ const PieceDocumentationPage = () => {
     const location = useLocation();
     const galleryPieces = useGallery();
     
-    const getTableBodyRow = useCallback((inputArg, properties, definitions) => {
-        const itemSchema = properties[inputArg]
-        var type = itemSchema.format ? itemSchema.format : itemSchema.type;
-        var name = itemSchema.title
-        if ("allOf" in itemSchema || "oneOf" in itemSchema || "anyOf" in itemSchema) {
-            const ofKey = "allOf" in itemSchema ? "allOf" : "oneOf" in itemSchema ? "oneOf" : "anyOf";
-            const definitionName = itemSchema[ofKey][0].$ref.split("/").pop() as string;
-            const definition = definitions[definitionName];
-            type = `enum[${definition.type}]`;
-            name = definition.title;
-        }
-        type = type === "number" ? "float" : (type as string);
-
-        if (type === "array" && itemSchema?.items?.type) {
-            const itemsType = itemSchema.items.type;
-            type = `array[${itemsType}]`;
-        }else if (type === 'array' && itemSchema?.items?.$ref) {
-            type = `array[object]`
-        }
-
-        return (
-            <tr key={inputArg}>
-                <td>{name}</td>
-                <td>{inputArg}</td>
-                <td>{
-                    type
-                }</td>
-                <td>{properties[inputArg].description}</td>
-            </tr>
-        )
-    }, [])
-
-    
     if (Object.keys(galleryPieces).length === 0) {
         return null
     }
-    
-
 
     let params = new URLSearchParams(location.search);
     const repository = params.get('repository');
@@ -68,7 +34,6 @@ const PieceDocumentationPage = () => {
     secretsProperties = Object.keys(secretsProperties).length === 0 ? null : secretsProperties; 
     const secretsDefinitions = pieceData?.secrets_schema?.definitions || null;
     
-
     return (
         <Layout title="Piece Documentation" description="">
             <div className='container'>
@@ -85,30 +50,19 @@ const PieceDocumentationPage = () => {
 
                         </div>
                     </div>
+                    <div style={{ display: 'flex', textAlign: 'left', justifyContent: 'left', flexDirection: 'column' }}>
+                        <p>{pieceData?.description ? pieceData?.description : ''} </p>
+                        <a href={pieceData.source_url} target="_blank" rel="noopener noreferrer">
+                            <i className="fab fa-github"></i> View piece code on GitHub
+                            <i className="fas fa-external-link-alt" style={{ marginLeft: '5px' }}></i>
+                        </a>
+                    </div>
                     <div style={{ display: 'flex', justifyContent: 'left', textAlign: 'center', marginTop: '20px' }}>
                         <h3>Input Arguments</h3>
                     </div>
                     {
                         inputProperties ? (
-                            <>
-                                <div style={{ display: 'flex', justifyContent: 'center', textAlign: 'center' }}>
-                                    <table className='args-table'>
-                                        <thead>
-                                            <tr>
-                                                <th>Name</th>
-                                                <th>Argument</th>
-                                                <th>Data Type</th>
-                                                <th>Description</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            {Object.keys(inputProperties).map((inputArg) => (
-                                                getTableBodyRow(inputArg, inputProperties, inputDefinitions)
-                                            ))}
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </>
+                            <PieceDocumentationTable properties={inputProperties} definitions={inputDefinitions} />
                         ) : (
                             <p>This piece has no inputs.</p>
                         )
@@ -118,25 +72,7 @@ const PieceDocumentationPage = () => {
                     </div>
                     {
                         outputProperties ? (
-                            <>
-                            <div style={{ display: 'flex', justifyContent: 'center', textAlign: 'center' }}>
-                                <table className='args-table'>
-                                    <thead>
-                                        <tr>
-                                            <th>Name</th>
-                                            <th>Argument</th>
-                                            <th>Data Type</th>
-                                            <th>Description</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        {Object.keys(outputProperties).map((outputArg) => (
-                                            getTableBodyRow(outputArg, outputProperties, outputDefinitions)
-                                        ))}
-                                    </tbody>
-                                </table>
-                            </div>
-                            </>
+                            <PieceDocumentationTable properties={outputProperties} definitions={outputDefinitions} />
                         ) : (
                             <p>This piece has no outputs.</p>
                         )
@@ -146,25 +82,7 @@ const PieceDocumentationPage = () => {
                     </div>
                     {
                         secretsProperties ? (
-                            <>
-                                <div style={{ display: 'flex', justifyContent: 'center', textAlign: 'center' }}>
-                                    <table className='args-table'>
-                                        <thead>
-                                            <tr>
-                                                <th>Name</th>
-                                                <th>Argument</th>
-                                                <th>Data Type</th>
-                                                <th>Description</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            {Object.keys(secretsProperties).map((secretsArg) => (
-                                                getTableBodyRow(secretsArg, secretsProperties, secretsDefinitions)
-                                            ))}
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </>
+                            <PieceDocumentationTable properties={secretsProperties} definitions={secretsDefinitions} />
                         ) : (
                             <p>This piece has no secrets.</p>
                         )
