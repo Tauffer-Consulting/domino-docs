@@ -1,0 +1,22 @@
+.piece-documentation-container {
+    margin-top: 20px;
+}
+
+.args-table {
+    margin: 'auto';
+    border-collapse: collapse;
+    width: 100%;
+    display: inline-table;
+}
+
+.args-table thead th {
+    background-color: var(--ifm-table-head-background);
+    padding: 8px;
+    text-align: center;
+}
+
+.args-table tbody td {
+    background-color: var(--ifm-table-cell-color);
+    padding: 8px;
+    text-align: center;
+}
