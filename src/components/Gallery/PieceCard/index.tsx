@@ -1,18 +1,19 @@
 import React from 'react';
 import './index.css'
 import '@fortawesome/fontawesome-free/css/all.min.css';
-import { Link, useLocation } from 'react-router-dom';
-
-// TODO add documentation page
+import { Icon } from '@iconify/react';
+import { Link } from 'react-router-dom';
 
 
 const PieceCard = ({ piece, repositoryVersion, repositoryName }) => {
 
-    const location = useLocation();
 
     return (
         <div className="card">
-            <h2>{piece.style?.node_label || piece.name}</h2>
+            <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '10px'}}>
+                <h3 style={{margin: '0'}}>{piece.style?.node_label || piece.name}</h3>
+                <Icon icon={piece.style?.icon_class_name || "arcticons:dominos"} />
+            </div>
             <p className='card-description'>{piece.description}</p>
             <div className="card-details">
                 <p>
