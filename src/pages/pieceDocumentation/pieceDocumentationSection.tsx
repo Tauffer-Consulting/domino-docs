@@ -3,7 +3,7 @@ import React, { useCallback } from "react";
 
 export const PieceDocumentationSection = ({ properties, definitions }) => {
 
-    const getTableBodyRow = useCallback((inputArg, properties, definitions) => {
+    const getTableBodyRow = useCallback((inputArg, properties, definitions, index) => {
         const itemSchema = properties[inputArg]
         var type = itemSchema?.format ? itemSchema.format : itemSchema.type;
         var name = itemSchema.title
@@ -24,7 +24,7 @@ export const PieceDocumentationSection = ({ properties, definitions }) => {
         }
 
         return (
-            <div style={{ marginTop: '20px', borderBottom: '1px solid var(--ifm-color-emphasis-400)', paddingBottom: '20px' }} className='item'>
+            <div key={index} style={{ marginTop: '20px', borderBottom: '1px solid var(--ifm-color-emphasis-400)', paddingBottom: '20px' }} className='item'>
                 <div style={{marginTop: '10px'}}>
                     <span style={{ fontWeight: "bold" }}>
                         {inputArg}
@@ -41,8 +41,8 @@ export const PieceDocumentationSection = ({ properties, definitions }) => {
     return (
         <div style={{ display: 'flex', justifyContent: 'left', textAlign: 'left' }}>
             <div style={{width: '100%'}}>
-                {Object.keys(properties).map((arg) => (
-                    getTableBodyRow(arg, properties, definitions)
+                {Object.keys(properties).map((arg, index) => (
+                    getTableBodyRow(arg, properties, definitions, index)
                 ))}   
             </div>
         </div>
