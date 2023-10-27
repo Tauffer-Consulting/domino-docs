@@ -46,13 +46,12 @@ function Gallery() {
     }, [allGalleryPieces])
 
     return (
-        <Layout title="Gallery" description="">
+        <Layout title="Pieces Gallery" description="">
             <div className='container'>
-                <h1 style={{ marginTop: '20px' }}>Gallery</h1>
-                <p>This section lists all the open source pieces repositories audited by Domino.</p>
+                <h1 style={{ marginTop: '20px' }}>Pieces Gallery</h1>
                 <div className='search-bar-div'>
-                    <input 
-                        placeholder='Search for pieces' 
+                    <input
+                        placeholder='Search for pieces'
                         className='search-bar-input'
                         onChange={handleSearch}
                     />
