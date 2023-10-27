@@ -21,8 +21,9 @@ const PieceDocumentationPage = () => {
     let params = new URLSearchParams(location.search);
     const repository = params.get('repository');
     const pieceName = params.get('piece');
-    
-    const pieceData = galleryPieces[repository]['pieces'][pieceName];
+
+    const repositoryData = galleryPieces[repository];
+    const pieceData = repositoryData['pieces'][pieceName];
     var inputProperties = pieceData?.input_schema?.properties || {};
     inputProperties = Object.keys(inputProperties).length === 0 ? null : inputProperties;
     const inputDefinitions = pieceData?.input_schema?.definitions || null;
@@ -61,6 +62,9 @@ const PieceDocumentationPage = () => {
 
                         </div>
                     </div>
+                    <div style={{marginBottom: '10px'}}>
+                        Version: <span style={{ fontWeight: 'bold' }}>{repositoryData.version}</span>
+                    </div>
                     <div style={{ display: 'flex', textAlign: 'left', justifyContent: 'left', flexDirection: 'column' }}>
                         <p>{pieceData?.description ? pieceData?.description : ''} </p>
                         <a href={pieceData.source_url} target="_blank" rel="noopener noreferrer">
@@ -69,7 +73,7 @@ const PieceDocumentationPage = () => {
                         </a>
                     </div>
                     <div style={{ display: 'flex', justifyContent: 'left', textAlign: 'center', marginTop: '30px', paddingBottom: '10px', borderBottom: '1px solid var(--ifm-color-emphasis-400)' }}>
-                        <h3>Input Arguments</h3>
+                        <h2>Input Arguments</h2>
                     </div>
                     {
                         inputProperties ? (
@@ -79,7 +83,7 @@ const PieceDocumentationPage = () => {
                         )
                     }
                     <div style={{ display: 'flex', justifyContent: 'left', textAlign: 'center', marginTop: '30px', paddingBottom: '10px', borderBottom: '1px solid var(--ifm-color-emphasis-400)' }}>
-                        <h3>Output Arguments</h3>
+                        <h2>Output Arguments</h2>
                     </div>
                     {
                         outputProperties ? (
@@ -89,7 +93,7 @@ const PieceDocumentationPage = () => {
                         )
                     }
                     <div style={{ display: 'flex', justifyContent: 'left', textAlign: 'center', marginTop: '30px', paddingBottom: '10px', borderBottom: '1px solid var(--ifm-color-emphasis-400)' }}>
-                        <h3>Secrets Arguments</h3>
+                        <h2>Secrets Arguments</h2>
                     </div>
                     {
                         secretsProperties ? (

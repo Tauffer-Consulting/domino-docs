@@ -17,7 +17,7 @@ function Gallery() {
     }, [allGalleryPieces])
 
     const handleSearch = useCallback((event: React.ChangeEvent<HTMLInputElement>) => {
-        // Search over galleryPieces and return exactly the same structure but with the filtered pieces
+        // Search over galleryPieces and return exactly the same structure of allGalleryPieces but with the filtered pieces
         const searchValue = event.target.value.trim().toLowerCase();
 
         if (searchValue.length === 0) {
