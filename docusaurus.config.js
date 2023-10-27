@@ -64,7 +64,7 @@ const config = {
         title: '',
         logo: {
           alt: 'Domino Logo',
-          src: 'img/logo.svg',
+          src: 'img/logo.png',
         },
         items: [
           {
