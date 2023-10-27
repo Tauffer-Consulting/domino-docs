@@ -1,5 +1,5 @@
 import React from 'react';
-import { PieceDocumentationSection } from './pieceDocumentationSection';
+import PieceDocumentationSection from '../../components/Gallery/PieceDocumentation/pieceDocumentationSection';
 import Layout from '@theme/Layout';
 import { useLocation } from 'react-router-dom';
 import { useGallery } from '@site/src/utils/useGallery';

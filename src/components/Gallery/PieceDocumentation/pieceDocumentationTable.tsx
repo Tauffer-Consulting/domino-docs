@@ -2,7 +2,7 @@ import React, { useCallback } from "react";
 import './index.css'
 
 
-export const PieceDocumentationTable = ({properties, definitions}) => {
+const PieceDocumentationTable = ({properties, definitions}) => {
 
     const getTableBodyRow = useCallback((inputArg, properties, definitions) => {
         const itemSchema = properties[inputArg]
@@ -56,3 +56,5 @@ export const PieceDocumentationTable = ({properties, definitions}) => {
         </div>
     )
 };
+
+export default PieceDocumentationTable;

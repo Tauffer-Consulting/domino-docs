@@ -1,7 +1,7 @@
 import React, { useCallback } from "react";
 
 
-export const PieceDocumentationSection = ({ properties, definitions }) => {
+const PieceDocumentationSection = ({ properties, definitions }) => {
 
     const getTableBodyRow = useCallback((inputArg, properties, definitions, index) => {
         const itemSchema = properties[inputArg]
@@ -48,3 +48,5 @@ export const PieceDocumentationSection = ({ properties, definitions }) => {
         </div>
     )
 };
+
+export default PieceDocumentationSection;
