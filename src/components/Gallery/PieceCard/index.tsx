@@ -12,40 +12,40 @@ const PieceCard = ({ piece, repositoryVersion, repositoryName, repositoryUrl }) 
     var icon = null;
     if (!piece.style?.icon_class_name) {
         icon = <Icon icon={"arcticons:dominos"} style={{ fontSize: '25px' }} />
-    }else{
+    } else {
         icon = <Icon icon={piece.style?.icon_class_name} />
     }
 
     return (
         <div className="card">
-            <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '10px'}}>
-                <h3 style={{margin: '0'}}>{piece.style?.node_label || piece.name}</h3>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '10px' }}>
+                <h3 style={{ margin: '0' }}>{piece.style?.node_label || piece.name}</h3>
                 {icon}
             </div>
-            <p 
+            <p
                 className='card-description'>{piece.description}
             </p>
             <div className="card-details">
                 <p>
                     <Tooltip id="copy-piece-repo-tooltip" />
-                    <span 
-                        style={{ fontWeight: 'bold' }} 
+                    <span
+                        style={{ fontWeight: 'bold' }}
                     >
-                        Repository:  
+                        Repository:
                         <span style={{ fontWeight: 'normal' }}>
                             {` ${repositoryName}`}
-                            <Icon 
-                                icon="bi:copy" 
+                            <Icon
+                                icon="bi:copy"
                                 style={{ fontSize: '15px', marginLeft: '10px', cursor: 'pointer' }}
-                                data-tooltip-id='copy-piece-repo-tooltip' 
-                                data-tooltip-content='Copy Repository URL to Clipboard' 
+                                data-tooltip-id='copy-piece-repo-tooltip'
+                                data-tooltip-content='Copy Repository URL to Clipboard'
                                 data-tooltip-place="top"
                                 onClick={() => navigator.clipboard.writeText(repositoryUrl)}
                             />
                         </span>
                     </span>
-        
-                    <br/>
+
+                    <br />
                     <span style={{ fontWeight: 'bold' }}>Version: </span> {repositoryVersion}
                 </p>
             </div>
