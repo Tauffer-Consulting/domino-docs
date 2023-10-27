@@ -49,6 +49,7 @@ function Gallery() {
         <Layout title="Pieces Gallery" description="">
             <div className='container'>
                 <h1 style={{ marginTop: '20px' }}>Pieces Gallery</h1>
+                <p>Search for <span style={{fontWeight: 'bold'}}>Open Source Pieces</span> to use in your <span style={{fontWeight: 'bold'}}> Domino</span> projects.</p>
                 <div className='search-bar-div'>
                     <input
                         placeholder='Search for pieces'
