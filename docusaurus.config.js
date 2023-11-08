@@ -36,9 +36,8 @@ const config = {
 
   presets: [
     [
-      'classic',
-      /** @type {import('@docusaurus/preset-classic').Options} */
-      ({
+      '@docusaurus/preset-classic',
+      {
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
         },
@@ -55,7 +54,7 @@ const config = {
           trackingID: 'G-1V1CKBCDCW',
           anonymizeIP: true,
         },
-      }),
+      },
     ],
   ],
 
