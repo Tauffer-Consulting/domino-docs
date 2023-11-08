@@ -51,6 +51,10 @@ const config = {
             // require.resolve('./src/css/aos.css'),
           ],
         },
+        gtag: {
+          trackingID: 'G-1V1CKBCDCW',
+          anonymizeIP: true,
+        },
       }),
     ],
   ],
