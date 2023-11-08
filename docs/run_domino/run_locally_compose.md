@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# Run locally with docker compose
+# Run locally with Docker Compose
 
 :::caution
 
@@ -10,7 +10,7 @@ You should never use this mode in production. It is intended for development and
 
 :::
 
-This method is the simplest way to test Domino locally, it uses docker compose to run all the necessary services:
+This method is the simplest way to test Domino locally, it uses Docker Compose to run all the necessary services:
 
 1. Install the necessary dependencies
 2. Use Domino command line interface to run the platform locally
@@ -21,10 +21,10 @@ This method is the simplest way to test Domino locally, it uses docker compose t
 
 In order to run Domino locally, you need to have these dependencies installed:
 
-- **Python** 3.8 or greater.
-- **Docker engine**. You can install it by following the instructions [here](https://docs.docker.com/engine/install/).
-- **Docker compose**. You can install it by following the instructions [here](https://docs.docker.com/compose/install/).
-- **Domino** Python package.
+- **Python** 3.9 or greater.
+- **Docker engine** 20.0 or greater. You can install it by following the instructions [here](https://docs.docker.com/engine/install/).
+- **Docker Compose** V2. You can install it by following the instructions [here](https://docs.docker.com/compose/install/).
+- **Domino CLI**.
 
 
 The Domino CLI can be installed via pip. We reccommend you install Domino in a separate Python environment.

@@ -8,20 +8,17 @@ The Domino python package brings a collection of convenience classes and functio
 
 Domino provides 3 different installation options:
 ```bash
-pip install domino-py[cli] # Domino installation with minimum dependencies (recommended).
+pip install domino-py[cli]     # Domino installation with minimum dependencies (recommended).
 pip install domino-py[airflow] # Domino installation with only Airflow dependencies.
-pip install domino-py[full] # Domino installation with all dependencies.
+pip install domino-py[full]    # Domino installation with all dependencies.
 ```
 
 :::tip
-The recommended instalation for most users is
+The recommended installation for most users is
 ```bash
 pip install domino-py[cli]
 ```
 :::
-
-
-
 
 
 ### BasePiece (Domino class)
