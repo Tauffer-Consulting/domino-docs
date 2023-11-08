@@ -26,15 +26,15 @@ const PieceDocumentationPage = () => {
     const pieceData = repositoryData['pieces'][pieceName];
     var inputProperties = pieceData?.input_schema?.properties || {};
     inputProperties = Object.keys(inputProperties).length === 0 ? null : inputProperties;
-    const inputDefinitions = pieceData?.input_schema?.definitions || null;
+    const inputDefinitions = pieceData?.input_schema?.$defs || null;
 
     var outputProperties = pieceData?.output_schema?.properties || {};
     outputProperties = Object.keys(outputProperties).length === 0 ? null : outputProperties; 
-    const outputDefinitions = pieceData?.output_schema?.definitions || null;
+    const outputDefinitions = pieceData?.output_schema?.$defs || null;
 
     var secretsProperties = pieceData?.secrets_schema?.properties || {};
     secretsProperties = Object.keys(secretsProperties).length === 0 ? null : secretsProperties; 
-    const secretsDefinitions = pieceData?.secrets_schema?.definitions || null;
+    const secretsDefinitions = pieceData?.secrets_schema?.$defs || null;
 
     return (
         <Layout title="Piece Documentation" description="">
