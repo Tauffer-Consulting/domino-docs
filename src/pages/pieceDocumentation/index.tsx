@@ -13,7 +13,7 @@ import './index.css'
 const PieceDocumentationPage = () => {
     const location = useLocation();
     const galleryPieces = useGallery();
-    
+
     if (Object.keys(galleryPieces).length === 0) {
         return null
     }
@@ -29,32 +29,32 @@ const PieceDocumentationPage = () => {
     const inputDefinitions = pieceData?.input_schema?.$defs || null;
 
     var outputProperties = pieceData?.output_schema?.properties || {};
-    outputProperties = Object.keys(outputProperties).length === 0 ? null : outputProperties; 
+    outputProperties = Object.keys(outputProperties).length === 0 ? null : outputProperties;
     const outputDefinitions = pieceData?.output_schema?.$defs || null;
 
     var secretsProperties = pieceData?.secrets_schema?.properties || {};
-    secretsProperties = Object.keys(secretsProperties).length === 0 ? null : secretsProperties; 
+    secretsProperties = Object.keys(secretsProperties).length === 0 ? null : secretsProperties;
     const secretsDefinitions = pieceData?.secrets_schema?.$defs || null;
 
     return (
         <Layout title="Piece Documentation" description="">
             <div className='container'>
                 <div className='piece-documentation-container'>
-                    <div style={{ display: 'flex', textAlign: 'center', justifyContent: 'space-between'}}>
-                        <div style={{display: 'flex', alignItems: 'center'}}>
+                    <div style={{ display: 'flex', textAlign: 'center', justifyContent: 'space-between' }}>
+                        <div style={{ display: 'flex', alignItems: 'center' }}>
                             <h1>
-                                {pieceData.style?.node_label ? pieceData.style?.node_label : pieceData.name} 
+                                {pieceData.style?.node_label ? pieceData.style?.node_label : pieceData.name}
                             </h1>
-                            <div style={{marginLeft: '15px'}}>
+                            <div style={{ marginLeft: '15px' }}>
                                 {<Icon icon={
-                                    pieceData.style?.icon_class_name ? pieceData.style?.icon_class_name  :
-                                    "arcticons:dominos"
+                                    pieceData.style?.icon_class_name ? pieceData.style?.icon_class_name :
+                                        "arcticons:dominos"
                                 } style={{ fontSize: '25px' }} />}
                             </div>
                         </div>
-                        <div style={{display: 'flex', alignItems: 'center'}} className='back-link-div'>
+                        <div style={{ display: 'flex', alignItems: 'center' }} className='back-link-div'>
                             <Tooltip id="back-link-tooltip" />
-                            <Link to="/domino-docs/gallery">
+                            <Link to="/gallery">
                                 <button data-tooltip-id='back-link-tooltip' data-tooltip-content='Return to Gallery' data-tooltip-place="bottom">
                                     <i className="fas fa-chevron-left"></i>
                                 </button>
@@ -62,7 +62,7 @@ const PieceDocumentationPage = () => {
 
                         </div>
                     </div>
-                    <div style={{marginBottom: '10px'}}>
+                    <div style={{ marginBottom: '10px' }}>
                         Version: <span style={{ fontWeight: 'bold' }}>{repositoryData.version}</span>
                     </div>
                     <div style={{ display: 'flex', textAlign: 'left', justifyContent: 'left', flexDirection: 'column' }}>
@@ -99,7 +99,7 @@ const PieceDocumentationPage = () => {
                         secretsProperties ? (
                             <PieceDocumentationSection properties={secretsProperties} definitions={secretsDefinitions} />
                         ) : (
-                            <p style={{marginTop: '30px'}}>This piece has no secrets.</p>
+                            <p style={{ marginTop: '30px' }}>This piece has no secrets.</p>
                         )
                     }
                 </div>

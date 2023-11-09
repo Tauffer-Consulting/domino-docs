@@ -54,7 +54,7 @@ const PieceCard = ({ piece, repositoryVersion, repositoryName, repositoryUrl }) 
                     <i className="fab fa-github"></i> View on GitHub
                     <i className="fas fa-external-link-alt" style={{ marginLeft: '5px' }}></i>
                 </a>
-                <Link to={`/domino-docs/pieceDocumentation?repository=${repositoryName}&piece=${piece.name}`}>
+                <Link to={`/pieceDocumentation?repository=${repositoryName}&piece=${piece.name}`}>
                     <i className="fas fa-book"></i> View Documentation
                 </Link>
             </div>
