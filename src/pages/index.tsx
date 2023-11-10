@@ -119,6 +119,16 @@ function HomepageHeader() {
             Get Started with Domino
           </Link>
         </div>
+
+        {/* <br />
+        <br />
+        <div style={{ textAlign: 'center' }}>
+          <img
+            src="img/intro/create-workflow.gif"
+            alt="Domino - Build amazing ideas, Piece by Piece"
+            style={{ maxWidth: '100%', height: 'auto' }}
+          />
+        </div> */}
       </div>
     </header>
   );
@@ -129,7 +139,7 @@ export default function Home(): JSX.Element {
   return (
     <Layout
       title={`${siteConfig.title}`}
-      description="Description will go into a meta tag in <head />">
+      description="Domino - Build amazing ideas, Piece by Piece ">
       <HomepageHeader />
       <main>
         <HomepageFeatures />
