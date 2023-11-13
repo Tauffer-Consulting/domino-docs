@@ -16,7 +16,13 @@
   },
   "dependencies": {
     "@docusaurus/core": "^2.4.3",
+    "@docusaurus/plugin-content-pages": "^2.4.3",
+    "@docusaurus/plugin-google-gtag": "^2.4.3",
     "@docusaurus/preset-classic": "^2.4.3",
+    "@fortawesome/fontawesome-free": "^6.4.2",
+    "@fortawesome/fontawesome-svg-core": "^6.4.2",
+    "@fortawesome/free-solid-svg-icons": "^6.4.2",
+    "@fortawesome/react-fontawesome": "^0.2.0",
     "@iconify/react": "^4.1.1",
     "@mdx-js/react": "^1.6.22",
     "aos": "^3.0.0-beta.6",
@@ -27,7 +33,8 @@
     "raw-loader": "^4.0.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "reactflow": "^11.9.2"
+    "reactflow": "^11.9.2",
+    "react-tooltip": "^5.21.6"
   },
   "devDependencies": {
     "@docusaurus/module-type-aliases": "^2.4.3",

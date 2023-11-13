@@ -1,11 +1,12 @@
 ---
-sidebar_position: 3
+sidebar_position: 2
 ---
 
 # Pieces repository
 
 :::tip 
-The easiest way to start your Pieces repository is to use our [Template for Pieces repository](https://github.com/Tauffer-Consulting/domino_pieces_repository_template)
+The easiest way to start your Pieces repository is to use our [Template for Pieces repository](https://github.com/Tauffer-Consulting/domino_pieces_repository_template).  
+You can either clone it using git or use our CLI command `domino pieces create`.
 :::
 
 A Pieces repository is a git repository that contains multiple Pieces available to be used in Domino Workflows. A Domino Pieces repository should contain:

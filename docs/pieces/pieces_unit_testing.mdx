@@ -15,8 +15,9 @@ Pre-requisites:
 
 You simply need to create a script importing the `piece_dry_run` function and fill the arguments with the Piece inputs and secrets:
 
-```python title="testing_piece.py"
+```python title="test_examplepiece.py"
 from domino.testing.dry_run import piece_dry_run
+import os
 
 piece_dry_run(
     repository_folder_path="path/to/pieces_repository",
@@ -27,14 +28,34 @@ piece_dry_run(
         "in_argument_3": value
     }
     secrets_data={ 
-        "EXAMPLE_VAR_1": value,
-        "EXAMPLE_VAR_2": value
+        "EXAMPLE_SECRET_1": os.environ.get("EXAMPLE_SECRET_1"),
+        "EXAMPLE_SECRET_2": os.environ.get("EXAMPLE_SECRET_2")
     }
 )
 ```
+The `repository_folder_path` should be the path to the root of the piece repository. Default value is `'.'`.
 
 The `piece_name` must be the same defined at the Piece's Folder.
 
 The `input_data` is a dict with the key-value arguments as defined in the Piece's InputModel.
 
-The `secret_input` is a dict with the key-value arguments as defined in the Piece's SecretModel.
+The `secrets_data` is a dict with the key-value arguments as defined in the Piece's SecretsModel.
+
+
+### Unit tests on Github Actions
+
+Our [Template for Pieces repository](https://github.com/Tauffer-Consulting/domino_pieces_repository_template) provides out-of-the box Github actions that will automatically run the unit tests for all Pieces.
+The unit tests should run successfully before the action publish the Pieces images.
+
+`pytest` will recognize all files named `test_*.py` in the Pieces folders and run them as tests.
+
+For Pieces that require secrets, the best practice is to store the secrets in the repository settings: `Setings > Secrets and variables > Actions > Repository secrets`. Then you should explicitly import the secrets as environment variables inside `/.github/workflows/validate-and-organize.yml`. Example:
+    
+```yaml title="validate-and-organize.yml"
+- name: Run tests over built images
+  env:
+    EXAMPLE_SECRET_1: ${{ secrets.EXAMPLE_SECRET_1 }}
+    EXAMPLE_SECRET_2: ${{ secrets.EXAMPLE_SECRET_2 }}
+  run: |
+    pytest
+```

@@ -7,9 +7,9 @@ sidebar_position: 2
 This session will guide you through the steps necessary to run the Domino platform locally:
 
 1. Install the necessary dependencies.
-2. Create a Github repository to store your Workflows and create github access tokens.
+2. Create a Github repository to store your Workflows and create Github access tokens.
 3. Use `domino platform prepare` to prepare the configuration of the platform.
-4. Configure Workflows Repository GitSync.
+4. Configure the Workflows Repository for GitSync.
 5. Run the platform locally using `domino platform create`.
 
 
@@ -17,25 +17,25 @@ This session will guide you through the steps necessary to run the Domino platfo
 
 In order to run Domino locally, you need to have these dependencies installed:
 
-- **Python** 3.8 or greater.
-- **Docker Engine**. You can install it by following the instructions [here](https://docs.docker.com/engine/install/).
+- **Python** 3.9 or greater.
+- **Docker Engine** 20.0 or greater. You can install it by following the instructions [here](https://docs.docker.com/engine/install/).
 - **kubectl**, the command line tool for interacting with Kubernetes. You can install it by following the instructions [here](https://kubernetes.io/docs/tasks/tools/install-kubectl/).
 - **Helm**, a package manager for Kubernetes. You can install it by following the instructions [here](https://helm.sh/docs/intro/install/).  
-- **Kind**, a local Kubernetes cluster. You can install it by following the instructions [here](https://kind.sigs.k8s.io/).
+- **Kind** 0.20.0 or greater, a local Kubernetes cluster. You can install it by following the instructions [here](https://kind.sigs.k8s.io/).
 - **Kind with GPU (optional)** Kind doesn't have official support for GPU, but there is a Fork made by Jacob Tomlinson that you can use to run Kind with GPU support. You can find the fork [here](https://github.com/jacobtomlinson/kind/pull/1/) and his blog post about it [here](https://jacobtomlinson.dev/posts/2022/quick-hack-adding-gpu-support-to-kind/).
+- **Domino CLI**.
 
-
-The Domino Python package can be installed via pip. We reccommend you install Domino in a separate Python environment.
+The Domino CLI can be installed via pip. We reccommend you install Domino in a separate Python environment.
 
 ```bash
-pip install domino-py
+pip install domino-py[cli]
 ```
 
 ## Workflows repository and Github tokens
 
-Create a Github repository (either private or public) to be used as a remote storage for the Workflows files.
+Domino Workflows are in essence Airflow DAG files, and the recommended way to store Airflow DAG files in production is to use a Git repository. Create a Github repository (either private or public) to be used as a remote storage for the Workflows files.
 
-Next, you should create two [github access tokens](https://docs.github.com/en/enterprise-server@3.4/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token):
+Next, you should create two [Github access tokens](https://docs.github.com/en/enterprise-server@3.4/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token):
 
 - `DOMINO_GITHUB_ACCESS_TOKEN_WORKFLOWS`, with **read and write** access to the Workflows repository
 - `DOMINO_DEFAULT_PIECES_REPOSITORY_TOKEN`, with **read-only** access to public Pieces repositories
@@ -66,7 +66,7 @@ The `domino platform prepare` command will ask you for the following information
 
 - **Local cluster name**: The name of the Kind cluster that will be created **(optional)**.
 - **Workflows repository**: The Github repository you just created where the workflows will be stored **(required)**.
-- **Github ssh private for Workflows repository**: The private ssh deploy key of the github workflows repository you just created **(optional)**. If not provided, it will generate a ssh key pair to be used as described in [Configure Workflows Repository GitSync](./run_locally_kind#configure-workflows-repository-gitsync).
+- **Github ssh private for Workflows repository**: The private ssh deploy key of the Github workflows repository you just created **(optional)**. If not provided, it will generate a ssh key pair to be used as described in [Configure Workflows Repository GitSync](./run_locally_kind#configure-workflows-repository-gitsync).
 - **Github token for Pieces repository**: The Github access token with read access to public Pieces repositories **(required)**.
 - **Github token for Workflows repository**: The Github access token with read and write access to the workflows repository **(required)**.
 - **Deploy Mode**: The platform deploy mode. It should be set to **local-k8s** **(optional)**.
@@ -80,15 +80,13 @@ You can edit it according to your needs. A full description of all these variabl
 Now you must configure the Workflows Repository GitSync.
 
 
-## Configure Workflows Repository GitSync
+## Configure the Workflows Repository for GitSync
 
-To configure the Workflows Repository GitSync you should open the :code:`config-domino-local.yaml` and copy the `DOMINO_GITHUB_WORKFLOWS_SSH_PUBLIC_KEY` value.  
-Then, you should add this value as a **deploy key** to your Github workflows repository. 
-The deploy key section can be found in your workflows repository settings as shown in the image below:
+To configure the Workflows Repository for GitSync access, you should open the `config-domino-local.yaml` and copy the `DOMINO_GITHUB_WORKFLOWS_SSH_PUBLIC_KEY` value. Then, you should add this value as a **deploy key** to your Github workflows repository. The deploy key section can be found in your workflows repository settings as shown in the image below:
 
 ![Workflows repository deploy key](/img/deploy-keys.png)
 
-With the workflows repository access configured, you can now create a local Domino platform running.
+With the workflows repository access configured, you can now create a local Domino platform using the CLI.
 
 ## Create the platform with Domino CLI
 
@@ -213,7 +211,7 @@ some_local_pieces_repository_name = "/path/to/local/pieces/repository"
 To build the images, you can run the following commands from the root of the Domino repository:
 
 ```bash
-docker build -f ./frontend/Dockerfile.dev.k8s -t domino-frontend ./frontend
+docker build -f ./frontend/Dockerfile.prod -t domino-frontend ./frontend
 docker build -f ./rest/Dockerfile -t domino-rest ./rest
 docker build -f Dockerfile-airflow-domino-base-dev -t domino-airflow .
 ```

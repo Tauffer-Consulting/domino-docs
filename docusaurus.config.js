@@ -14,7 +14,7 @@ const config = {
   url: "https://tauffer-consulting.github.io",
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: "/domino-docs/",
+  baseUrl: '/',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
@@ -50,9 +50,8 @@ const config = {
 
   presets: [
     [
-      "classic",
-      /** @type {import('@docusaurus/preset-classic').Options} */
-      ({
+      '@docusaurus/preset-classic',
+      {
         docs: {
           sidebarPath: require.resolve("./sidebars.js"),
         },
@@ -65,7 +64,11 @@ const config = {
             // require.resolve('./src/css/aos.css'),
           ],
         },
-      }),
+        gtag: {
+          trackingID: 'G-1V1CKBCDCW',
+          anonymizeIP: true,
+        },
+      },
     ],
   ],
 
@@ -87,7 +90,8 @@ const config = {
             position: "right",
             label: "Documentation",
           },
-          { to: "/blog", label: "Blog", position: "right" },
+          { to: '/blog', label: 'Blog', position: 'right' },
+          { to: '/gallery', label: 'Gallery', position: 'right' },
           {
             href: "https://github.com/Tauffer-Consulting/domino",
             label: "GitHub",
