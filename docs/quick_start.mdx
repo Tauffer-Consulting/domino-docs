@@ -1,0 +1,76 @@
+---
+sidebar_position: 2
+description: "Domino is an open source workflow management platform, with an intuitive Graphical User Interface that facilitates creating, editing and monitoring any type of Workflow, from data processing to machine learning."
+keywords: ["domino", "workflow", "airflow", "data", "machine learning", "ml", "data science", "data engineering", "dataops", "mlops", "devops", "kubernetes", "k8s", "helm", "python", "react", "typescript", "fastapi", "gitops", "docker", "github", "artifacthub", "pypi", "pip", "kind", "open source", "oss", "low code", "no code", "automation",
+"versio control", "collaboration", "monitoring", "orchestration", "data pipeline"]
+
+---
+
+import { Icon } from '@iconify/react'
+
+# Quick start
+
+Fast track for first time users.
+
+
+## Setup
+
+### Install
+
+<details>
+<summary>System dependencies</summary>
+
+In order to run Domino locally, you need to have these dependencies installed:
+
+- **Python** 3.9 or greater.
+- **Docker engine** 20.0 or greater. You can install it by following the instructions [here](https://docs.docker.com/engine/install/).
+- **Docker Compose** V2. You can install it by following the instructions [here](https://docs.docker.com/compose/install/).
+
+</details>
+
+In a clean Python environment, install `domino-py`:
+
+```bash
+pip install domino-py[cli]
+```
+
+### Run Domino
+
+In a new, empty directory, run:
+
+```bash
+domino platform run-compose
+```
+
+This command will create the necessary files and directories to run Domino platform using Docker Compose. For more information about this and other modes of running, see [Run Domino](/docs/category/run-domino).
+
+It might take a few minutes to run, specially the first time, since it will download and run a couple of necessary Docker images. Once the platform is up and running, success messages will be printed to your terminal and you will be able to access the Domino GUI at `localhost:3000`.
+
+
+## Using the Domino GUI
+
+### Sign up as a new user
+
+Sign up with an email and password of your choice. You will be automatically logged to the Domino GUI.
+
+![Sign-up](/img/domino_components/gui/signup.gif)
+
+
+### Select a workspace
+
+You are now at the Workspaces page. As a new user you get a default workspace from the start, click on the Default card to select it.
+
+You can create more workspaces, configure them and invite other users to collaborate with you later on. To return to this page in the future, click on the **Workflows** button, the first on the left side navigation bar.
+
+![Select workspace](/img/quickstart/select-workspace.png)
+
+
+### Create a workflow
+
+Time to create your first Domino workflow! Click on the **Workflow Editor** button, the third on the left side navigation bar, to open the Workflow Editor page.
+
+This is the space where you will put your ideas into reality. You can drag and drop Pieces from the right side bar to the canvas, connect them and configure them to create any workflow. For a start, click the **Import** button and then **from examples gallery**. Here you will find a few examples of workflows that you can use to learn Domino.
+
+[ADD A GIF HERE]
+
+Let's start with a simple one: click on the **Hello World** card and then **OK** to import it. The workflow template will be imported to the canvas, and you can explore its Pieces by double clicking on them.
