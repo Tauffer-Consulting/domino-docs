@@ -41,6 +41,10 @@ You can use Domino command line interface to easily run the Domino platform loca
 Go to a new, empty directory and run the following command:
 
 ```bash
+domino platform run-compose --github-token <your_github_token>
+```
+Or run without a github token (some features will not be available).
+```bash
 domino platform run-compose
 ```
 
@@ -53,14 +57,26 @@ This is a convenience command that will:
 This command might take up to a few minutes to execute, since it will download and run all the necessary docker images.
 If everything worked as expected, after all processes started successfully you should be able to navigate to `localhost:3000` to access the Domino frontend service.
 
+:::caution
+The platform will not be fully functional if you do not provide a github token.
+To run the platform with all features, you need to pass a platform level github token.
+You can do this by passing the `--github-token` flag to the command, like this:
+
+```bash
+domino platform run-compose --github-token <your_github_token>
+```
+:::
+You can generate a github token by following the instructions [here](./github_token.md).
+
+
 :::tip
-If using default configuration, Domino automatically creates an admin user with the following credentials:
+Domino automatically creates an admin user with the following credentials you can use to login:
 
 - **Email**: admin@email.com
 - **Password**: admin
 :::
 
-If you want to run Domini with a different configuration you can use some CLI arguments to customize the behavior of the `run-compose` command.
+If you want to run Domino with a different configuration you can use some CLI arguments to customize the behavior of the `run-compose` command.
 To see all the available options you can run:
 
 ```bash
@@ -87,8 +103,8 @@ Please ensure that the config-domino-local.toml file is located in the same dire
 domino platform run-compose --use-config-file
 ```
 
-:::note
-When running with --use-config-file, all defined flags in CLI will be ignored and the values from the config file will be used instead.
+:::info
+When running with `--use-config-file``, all defined flags in CLI will be ignored and the values from the config file will be used instead.
 :::
 
 
