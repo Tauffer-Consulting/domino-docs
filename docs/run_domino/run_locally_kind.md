@@ -20,7 +20,7 @@ In order to run Domino locally, you need to have these dependencies installed:
 - **Python** 3.9 or greater.
 - **Docker Engine** 20.0 or greater. You can install it by following the instructions [here](https://docs.docker.com/engine/install/).
 - **kubectl**, the command line tool for interacting with Kubernetes. You can install it by following the instructions [here](https://kubernetes.io/docs/tasks/tools/install-kubectl/).
-- **Helm**, a package manager for Kubernetes. You can install it by following the instructions [here](https://helm.sh/docs/intro/install/).  
+- **Helm**, a package manager for Kubernetes. You can install it by following the instructions [here](https://helm.sh/docs/intro/install/).
 - **Kind** 0.20.0 or greater, a local Kubernetes cluster. You can install it by following the instructions [here](https://kind.sigs.k8s.io/).
 - **Kind with GPU (optional)** Kind doesn't have official support for GPU, but there is a Fork made by Jacob Tomlinson that you can use to run Kind with GPU support. You can find the fork [here](https://github.com/jacobtomlinson/kind/pull/1/) and his blog post about it [here](https://jacobtomlinson.dev/posts/2022/quick-hack-adding-gpu-support-to-kind/).
 - **Domino CLI**.
@@ -44,7 +44,7 @@ Next, you should create two [Github access tokens](https://docs.github.com/en/en
 
 - Contents (read and write)
 - Metadata (read)
-  
+
 then you can store them as environment variables or just save them to use later with `domino platform prepare` command.
 
 ```bash
@@ -74,8 +74,8 @@ The `domino platform prepare` command will ask you for the following information
 - **Local domino path**: Local path for domino package **(optional)**. Only used for local development , see [Local deployment for development](./run_locally_kind#local-deployment-for-development).
 
 After that, it will create a configuration file `config-domino-local.yaml` with values based on existing environment variables or the user input in the CLI steps.
-This file contains the variables necessary to run the Domino platform locally. 
-You can edit it according to your needs. A full description of all these variables can be found at [Local configuration file](./run_locally_kind#local-configuration-file).  
+This file contains the variables necessary to run the Domino platform locally.
+You can edit it according to your needs. A full description of all these variables can be found at [Local configuration file](./run_locally_kind#local-configuration-file).
 
 Now you must configure the Workflows Repository GitSync.
 
@@ -108,7 +108,7 @@ If everything worked as expected, you should see a success message in your termi
 
 ## Running with GPU support
 
-If you have pieces that require GPU, you can run the Domino platform with GPU support. 
+If you have pieces that require GPU, you can run the Domino platform with GPU support.
 First, you must install the **Kind with GPU** version as reference in the [Dependencies](./run_locally_kind#dependencies) section, then you can run the `domino platform create` command with the `--use-gpu` flag:
 
 ```bash
@@ -117,7 +117,7 @@ domino platform create --use-gpu
 
 ## Local configuration file
 
-When running the `domino platform prepare` command, some parameters will be automatically filled in the configuration file and others will be asked to the user.  
+When running the `domino platform prepare` command, some parameters will be automatically filled in the configuration file and others will be asked to the user.
 This is the content of the configuration file and the description of each of its variables:
 
 ```toml
@@ -141,6 +141,7 @@ DOMINO_DB_PORT = "postgres"
 DOMINO_DB_USER = "postgres"
 DOMINO_DB_PASSWORD = "postgres"
 DOMINO_DB_NAME = "postgres"
+DOMINO_CREATE_DEFAULT_USER = true
 ```
 
 * `DOMINO_LOCAL_RUNNING_PATH` **[Automatic]** - The path where the Domino platform is being created.
@@ -156,6 +157,7 @@ DOMINO_DB_NAME = "postgres"
 * `DOMINO_DB_NAME` **[Automatic]** - The database name. You can change it if you want to use an external database.
 * `DOMINO_DB_USER` **[Automatic]** - The database user. You can change it if you want to use an external database.
 * `DOMINO_DB_PASSWORD` **[Automatic]** - The database password. You can change it if you want to use an external database.
+* `DOMINO_CREATE_DEFAULT_USER` **[Automatic]** - If set to true, it will create a default user with email `admin@email.com` and password `admin`.
 
 
 
