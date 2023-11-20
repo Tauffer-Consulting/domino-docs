@@ -53,10 +53,44 @@ This is a convenience command that will:
 This command might take up to a few minutes to execute, since it will download and run all the necessary docker images.
 If everything worked as expected, after all processes started successfully you should be able to navigate to `localhost:3000` to access the Domino frontend service.
 
+:::tip
+If using default configuration, Domino automatically creates an admin user with the following credentials:
 
-To run with compose using the configuration variables from an existing Domino project's  `config-domino-local.toml` file you can use the `--use-config-file` flag.
+- **Email**: admin@email.com
+- **Password**: admin
+:::
+
+If you want to run Domini with a different configuration you can use some CLI arguments to customize the behavior of the `run-compose` command.
+To see all the available options you can run:
+
+```bash
+domino platform run-compose --help
+```
+The output should be similar to this:
+
+```bash
+Options:
+  --d                  Run in detached mode.
+  --use-config-file    Use config file to run platform.
+  --dev                Run platform in dev mode.
+  --debug              Debug mode prints docker compose messages on terminal.
+  --stop               Stop and remove containers.
+  --github-token       Github token for access default pieces repositories.
+  --help               Show this message and exit.
+```
+
+
+Also, if you want to run with compose using the configuration variables from an existing Domino project's `config-domino-local.toml` file you can use the `--use-config-file` flag.
 Please ensure that the config-domino-local.toml file is located in the same directory you are running the command from.
 
 ```bash
 domino platform run-compose --use-config-file
 ```
+
+:::note
+When running with --use-config-file, all defined flags in CLI will be ignored and the values from the config file will be used instead.
+:::
+
+
+See more about the configuration file [here](./run_locally_kind.md#local-configuration-file).
+
