@@ -1,0 +1,38 @@
+---
+sidebar_position: 2
+description: "Shared Storage"
+keywords: ["domino", "workflow", "airflow", "data", "machine learning", "ml", "data science", "data engineering", "dataops", "mlops", "devops", "kubernetes", "k8s", "helm", "python", "react", "typescript", "fastapi", "gitops", "docker", "github", "artifacthub", "pypi", "pip", "kind", "open source", "oss", "low code", "no code", "automation",
+"versio control", "collaboration", "monitoring", "orchestration", "data pipeline"]
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# Shared Storage
+
+Some pieces produce data that can not be transfered between pieces in other way than using disk. A common example is a piece that produces a large file that needs to be used by another piece. In this case, you can use the available `Shared Storage` options.
+Domino's Shared Storage is a mounted volume that can be used by all pieces in a workflow, where each piece can have different access level to this volume. With Shared Storage, you can work with files from different pieces as if they were all on the same file system, even if they are running on different machines.
+
+Currently, Domino support the following Shared Storage options:
+
+### Running in compose:
+- `None`: No shared storage is available. This means that pieces can not "see" each other files.
+- `Local`: Shared storage is available and the volume is mounted on the same machine that is running the platform.
+
+### Running in Kubernetes:
+- `None`: No shared storage is available. This means that pieces can not "see" each other files.
+- `AWS S3`: Shared storage is available and the volume is mounted on an AWS S3 bucket folder. This mean each piece result is synced to the S3 bucket as it was a local folder. This option is only available when running in Kubernetes.
+
+<Tabs>
+  <TabItem value="sharedStorageSettings" label="Workflow Shared Storage" default>
+    To set what type of shared storage the workflow will use go to workflow Settings and choose your desired option in Storage Source dropdown.
+    <img src='/img/advanced_workflows/shared_storage_settings.png' alt='signupgif'/>
+  </TabItem>
+  <TabItem value="pieceSharedStorage" label="Piece Shared Storage">
+    To set the access level to the shared storage a Piece will have simply double click on the desired Piece, go to Advanced Options and 
+    select the access level on the Storage Access Mode dropdown. 
+    <img src='/img/advanced_workflows/shared_storage_piece.png' alt='signupgif'/>
+  </TabItem>
+</Tabs>
+
+To see more about how Shared Storage work check the [Shared Storage](/docs/run_domino/shared_storage) section.
