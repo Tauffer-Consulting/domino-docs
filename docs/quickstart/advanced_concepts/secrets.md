@@ -2,7 +2,7 @@
 sidebar_position: 1
 description: "Pieces Repositories Secrets"
 keywords: ["domino", "workflow", "airflow", "data", "machine learning", "ml", "data science", "data engineering", "dataops", "mlops", "devops", "kubernetes", "k8s", "helm", "python", "react", "typescript", "fastapi", "gitops", "docker", "github", "artifacthub", "pypi", "pip", "kind", "open source", "oss", "low code", "no code", "automation",
-"versio control", "collaboration", "monitoring", "orchestration", "data pipeline"]
+"versio control", "collaboration", "monitoring", "orchestration", "data pipeline", "secrets"]
 ---
 
 # Secrets
