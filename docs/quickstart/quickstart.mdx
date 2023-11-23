@@ -12,7 +12,7 @@ import TabItem from '@theme/TabItem';
 
 # Quickstart
 
-Fast track for first time users.
+This page will give you a fast track tutorial on how to get started with Domino platform.
 
 
 ## Setup
@@ -37,6 +37,17 @@ pip install domino-py[cli]
 ```
 
 ### Run Domino
+
+<details>
+<summary>Github token</summary>
+
+Domino Pieces are distributed in Github repositories. In order to reliably install them, it is recommended to provide a Github token at the start up of the platform.
+
+It is very simple to generate Github access tokens. See [Authorizing Domino to access Github repositories](/docs/quickstart/advanced_concepts/github_token) for a basic step-by-step.
+
+If no token is provided, Domino will still be able to run, but some features will not be available.
+
+</details>
 
 In a new, empty directory, run:
 
@@ -64,12 +75,13 @@ The preferred way to run Domino is passing your token through the `--github-toke
   <TabItem value="signin" label="Sign In" default>
     Sign In to your Domino's account and start using it. If you don't have an account you can create one or use the default account created automatically by Domino:
     <pre>
-      email: admin@email.com 
+      email: admin@email.com
       <br/>
       password: admin
     </pre>
     <img src='/img/quickstart/signin.gif' alt='signupgif'/>
   </TabItem>
+
   <TabItem value="signup" label="Sign Up">
     Sign up with an email and password of your choice. You will be automatically logged to the Domino GUI.
     <img src='/img/domino_components/gui/signup.gif' alt='signupgif'/>
@@ -82,7 +94,7 @@ The preferred way to run Domino is passing your token through the `--github-toke
 
 You are now at the Workspaces page. As a new user you get a default workspace from the start, click on the Default card to select it.
 
-You can create more workspaces, configure them and invite other users to collaborate with you later on. 
+You can create more workspaces, configure them and invite other users to collaborate with you later on.
 To return to this page in the future, click on the **Workspaces** button, the first on the left side navigation bar.
 
 ![Select workspace](/img/quickstart/select-workspace.png)
@@ -93,88 +105,79 @@ To return to this page in the future, click on the **Workspaces** button, the fi
 Time to create your first Domino workflow! Click on the **Workflow Editor** button, the third on the left side navigation bar, to open the Workflow Editor page.
 
 This is the space where you will put your ideas into reality. You can drag and drop Pieces from the right side bar to the canvas, connect them and configure them to create any workflow.
-For a start, click the **Import** button and then **from examples gallery**. 
-Here you will find a few examples of workflows with different levels, that you can use to learn Domino.
+
+For an easy start, click the **Import** button and then **from examples gallery**. Here you will find a few examples of workflows with different levels of complexity that you can use to learn Domino.
 
 ![Gallery](/img/quickstart/examples_gallery.gif)
 
-Let's start with a simple one: click on the **Image Filter** card and then **OK** to import it and the workflow template will be imported to the canvas
+Let's start with a simple one: click on the **Image Filter** card and then **OK** to import it, the workflow template will be imported to the canvas. This workflow is composed by two pieces:
 
-This workflow is composed by two pieces:
 1. **HTTP Request:** Make an HTTP request to an URL and return the result as base64 string. In our case we set a URL to an image.
-2. **Image Filter:** Apply a simple filter over the image.
+2. **Image Filter:** Apply a simple filter over an input image.
 
-Before effectively creating a workflow you should configure its Settings and Pieces arguments.
+When creating a workflow you should configure its Settings and Pieces arguments.
 
 <Tabs>
-  <TabItem value="workflowSettings" label="Workflow Settings" default>
-    Workflow settings are the settings related to the workflow level, it defines things like the workflow name, 
-    how and when the workflow will run, the type of shared storage that should be used to pass data between pieces and others.
+  <TabItem value="piecesSettings" label="Pieces Arguments" default>
+    For each Piece in a workflow, you customize the inputs, computation resources, and file system access. Simply double-click on the desired Piece and edit the form. Within this workflow, you can, for instance, edit the input URL for the HTTP Request Piece and define the desired filter in the Image Filter Piece.
+    <br/><br/>
+    Furthermore, you have the capability to utilize output data from preceding Pieces as inputs in the subsequent Pieces. This is known as upstream data. To enable this functionality, simply check the <span style={{fontWeight: 'bold'}}>from Upstream</span> checkbox within the downstream Piece. By doing so, you will gain access to a list displaying the preceding outputs that match the expected input data type. Learn more about Pieces <a href='docs/pieces/create_pieces'>here</a>
+    <img src='/img/quickstart/edit_pieces.gif' alt='editPieces'/>
+  </TabItem>
+  <TabItem value="workflowSettings" label="Workflow Settings">
+    In the workflow settings you can define things like the workflow name,
+    the workflow running schedule, and the type of shared storage that should be used to pass data between Pieces.
     To edit the workflow settings you can click on the Settings button.
     <br/><br/>
-    Here is an overview of each workflow property:
     <ul>
       <li>
-        <span style={{fontWeight: 'bold'}}>Name:</span> This represents the name of your workflow, used for identification within the user interface (UI).
+        <span style={{fontWeight: 'bold'}}>Name:</span> The name of your workflow, used for identification within the user interface. Should be unique within the workspace.
       </li>
       <li>
-        <span style={{fontWeight: 'bold'}}>Schedule:</span> Set the frequency at which your workflow runs in the schedule.
+        <span style={{fontWeight: 'bold'}}>Schedule:</span> The frequency at which your workflow runs.
       </li>
       <li>
-        <span style={{fontWeight: 'bold'}}>Start Date/Time:</span> Specify the initial date and time when your workflow should begin running.
+        <span style={{fontWeight: 'bold'}}>Start Date/Time:</span> Specify the initial date and time for when your workflow should begin running.
       </li>
       <li>
-        <span style={{fontWeight: 'bold'}}>End Date/Time:</span> Indicate whether and when your workflow should cease running. If "Never" end date is specified, it will continue indefinitely according to your schedule.
+        <span style={{fontWeight: 'bold'}}>End Date/Time:</span> Indicate whether and when your workflow should cease running. If "Never" end date is specified, it will keep running indefinitely, according to your schedule.
       </li>
       <li>
-        <span style={{fontWeight: 'bold'}}>Storage:</span> Select the type of shared storage file system to facilitate data sharing among pieces. 
-        When running in compose, the available options are limited to None (no shared storage) or Local (using the local file system). 
-        For more information on shared storage, refer to the section on <a href='/docs/quickstart/advanced_concepts/shared_storage'> shared storage </a>
+        <span style={{fontWeight: 'bold'}}>Storage:</span> The type of shared storage file system to facilitate data sharing between pieces. When running in compose, the available options are limited to None (no shared storage) or Local (using the local file system).
+        For more information on shared storage, refer to the <a href='/docs/quickstart/advanced_concepts/shared_storage'> Shared storage section.</a>
       </li>
     </ul>
     <img src='/img/quickstart/workflow_settings.gif' alt='workflowSettingsGif'/>
   </TabItem>
-  <TabItem value="piecesSettings" label="Pieces Arguments">
-    To customize the inputs, computation resources, and file system access for each piece, simply double-click on the desired piece. 
-    This enables you to easily configure the settings for each step of your workflow.<br/>
-    Within this workflow, you can, for instance, edit the input URL for the HTTP Request Piece and define the desired filter in the Image Filter Piece.
-    <br/>
-      Furthermore, you have the capability to utilize data from the preceding piece as input in the subsequent piece. 
-      This is known as upstream data. To enable this functionality, simply check the <span style={{fontWeight: 'bold'}}>from Upstream</span> checkbox within the downstream Piece. 
-      By doing so, you will gain access to a list displaying the preceding outputs that match the expected input data type. Check more about Pieces <a href='docs/pieces/create_pieces'>here</a>
-    <img src='/img/quickstart/edit_pieces.gif' alt='editPieces'/>
-  </TabItem>
 </Tabs>
 
+
 ### Creating a Workflow
-Now your workflow is configured you can create it just by clicking on the Create button.
+Now that your workflow is configured, you can create it just by clicking on the Create button.
+
 :::info
-When creating a workflow, it won't be instantly available for execution. 
-The creation process is asynchronous and may take a few seconds to complete."
+When creating a workflow, it won't be instantly available for execution.
+The creation process is asynchronous and may take a few seconds to complete.
 :::
-After creating your workflow you can go to **My Workflows** page to monitor your new workflow.
-To do that, click on **My Workflows** button, the second on the left side navigation bar.
+
+Next, you can go to **My Workflows** page, where you can monitor all your workflows. To do that, click on the second button on the left side navigation bar.
+
 ![Create Workflow](/img/quickstart/create_workflow.gif)
 
 
 ### Running and Monitoring a Workflow
-Perfect, your workflow is now active and ready to run. Even if you've set up a schedule, you can always manually trigger a 
-workflow run. Simply click the 'Run' button in the workflows table or select the desired workflow and click the 'Run' button.
+Now your workflow is active and ready to run. Even if you've set up a schedule, you can always manually trigger a new workflow run, simply click the **Run** button directly in the workflows table, or select the desired workflow and, once in the workflows individual page, click the **Run** button.
 
-Monitoring workflows is made simple and intuitive with Domino. By selecting the desired workflow, you'll be directed to the 
-monitoring page. This page provides a comprehensive view, allowing you to monitor the overall status of your workflow, as well as specific Piece logs and real-time results!
+By selecting the desired workflow, you'll be directed to the workflow's individual monitoring page. This page provides a comprehensive view, allowing you to follow the overall status of your workflow, as well as specific Pieces logs and real-time results!
 
-This page is divided into 3 sections:
-
-- The top table displays all runs of your workflow.
-- The bottom graph visualizes the real-time progress during execution or its final state after the workflow run completion.
+- The top table displays all runs of the workflow.
+- The bottom graph visualizes the real-time progress during execution or its final state after the run completion.
 - For detailed monitoring of each Piece, including access to logs and results, simply double-click on the desired piece and navigate to the section on the right.
 
 ![Monitoring Workflow](/img/quickstart/monitoring_workflow.gif)
 
 
-Congratulations! You just went from starting the Domino's platform to creating your first workflow! 
+Congratulations! You just went from starting the Domino's platform to creating your first workflow!
 
 ### What's Next?
-Your Domino journey doesn't end here! Explore a multitude of other fantastic features awaiting you!  
-Dive into the [Advanced Workflows](/docs/quickstart/advanced_concepts) section to delve deeper into concepts such as Piece Repositories, Secrets, Local and Remote Shared Storage, and more!
+Your Domino journey is just starting! Check the [Advanced Workflows](/docs/quickstart/advanced_concepts) section to delve deeper into concepts such as Piece Repositories, Secrets, Local and Remote Shared Storage, and more!
