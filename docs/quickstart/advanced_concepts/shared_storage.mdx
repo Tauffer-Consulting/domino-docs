@@ -1,8 +1,7 @@
 ---
 sidebar_position: 3
 description: "Shared Storage"
-keywords: ["domino", "workflow", "airflow", "data", "machine learning", "ml", "data science", "data engineering", "dataops", "mlops", "devops", "kubernetes", "k8s", "helm", "python", "react", "typescript", "fastapi", "gitops", "docker", "github", "artifacthub", "pypi", "pip", "kind", "open source", "oss", "low code", "no code", "automation",
-"versio control", "collaboration", "monitoring", "orchestration", "data pipeline", "shared storage"]
+keywords: ["domino", "workflow", "airflow", "data", "machine learning", "ml", "data science", "data engineering", "dataops", "mlops", "devops", "kubernetes", "k8s", "helm", "python", "react", "typescript", "fastapi", "gitops", "docker", "github", "artifacthub", "pypi", "pip", "kind", "open source", "oss", "low code", "no code", "automation", "versio control", "collaboration", "monitoring", "orchestration", "data pipeline", "shared storage"]
 ---
 
 import Tabs from '@theme/Tabs';
@@ -10,7 +9,8 @@ import TabItem from '@theme/TabItem';
 
 # Shared Storage
 
-Some pieces produce data that can not be transfered between pieces in other way than using disk. A common example is a piece that produces a large file that needs to be used by another piece. In this case, you can use the available `Shared Storage` options.
+Some Pieces produce data that can not be direclty transfered to downstream Pieces in other way than using disk. A common example is a piece that produces a large file that needs to be used by another piece. In this case, you can use the available `Shared Storage` options.
+
 Domino's Shared Storage is a mounted volume that can be used by all pieces in a workflow, where each piece can have different access level to this volume. With Shared Storage, you can work with files from different pieces as if they were all on the same file system, even if they are running on different machines.
 
 Currently, Domino support the following Shared Storage options:
