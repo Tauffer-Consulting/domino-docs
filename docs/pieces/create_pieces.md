@@ -6,7 +6,7 @@ sidebar_position: 3
 
 Domino defines standards for writing and distributing modular Pieces, which guarantees their reusability and consistency across Workflows. Those Pieces can be included in any Workflow by drag-and-drop, and Domino will take care of running them according to user choices.
 
-It is very easy to turn your Python code into a Domino Piece, in this session we'll guide you through it, step by step: 
+It is very easy to turn your Python code into a Domino Piece, in this session we'll guide you through it, step by step:
 
 1. write your Python function inside the [piece.py](./create_pieces#piecepy) file
 2. define its data types inside the [models.py](./create_pieces#modelspy) file
@@ -16,7 +16,7 @@ It is very easy to turn your Python code into a Domino Piece, in this session we
 6. publish it in a [git repository](./create_pieces#add-the-piece-to-a-repository) (public or private)
 
 
-Let's create a new Piece, named `MyNewPiece`. The Piece's folder should have the same name as the Piece (in this case `MyNewPiece`) and follow a standard organization: 
+Let's create a new Piece, named `MyNewPiece`. The Piece's folder should have the same name as the Piece (in this case `MyNewPiece`) and follow a standard organization:
 
 ```bash title="Example folder and files structure for MyNewPiece"
 /MyNewPiece
@@ -43,7 +43,7 @@ class MyNewPiece(BasePiece):
 
     # Your custom function code comes in here
     def piece_function(self, input_data: InputModel, secrets_data: SecretsModel):
-        
+
         # The Piece's input arguments are passed in the 'input_data' argument
         print(f"Inpu argument 1: {input_data.in_argument_1}")
         print(f"Inpu argument 2: {input_data.in_argument_2}")
@@ -58,14 +58,14 @@ class MyNewPiece(BasePiece):
         file_path = str(Path(self.results_path)/"msg.txt")
         with open(file_path, "w") as f:
             f.write(msg)
-        
+
         # If you want to display results directly in the Domino GUI,
         # you should set the attribute self.display_result
         self.display_result = {
             "file_type": "txt",
             "file_path": file_path
         }
-        
+
         # You should return the results using the Output model
         return OutputModel(
             out_argument_1="a string result",
@@ -75,10 +75,10 @@ class MyNewPiece(BasePiece):
 
 <details>
 <summary>Save files in a shared storage</summary>
-  
 
-Pieces can save files in a shared storage, to be used as input to downstream Pieces, by saving them under `self.results_path`. The `self.results_path` points to a shared storage path specific for that Piece, and it is automatically created when the Piece is executed.  
-  
+
+Pieces can save files in a shared storage, to be used as input to downstream Pieces, by saving them under `self.results_path`. The `self.results_path` points to a shared storage path specific for that Piece, and it is automatically created when the Piece is executed.
+
 :::note
 Important: To use this feature your workflow should be configured to use a shared storage.
 :::
@@ -100,7 +100,7 @@ return OutputModel(
     out_file_path=file_path
 )
 ```
-  
+
 </details>
 
 
@@ -131,11 +131,11 @@ self.display_result = {
 }
 ```
 
-In either way, the `file_type` should always be provided. Currently, the supported file types are: 
+In either way, the `file_type` should always be provided. Currently, the supported file types are:
 
-- `txt` 
+- `txt`
 - `json`
-- `png` 
+- `png`
 - `jpeg`
 - `bmp`
 - `tiff`
@@ -144,6 +144,7 @@ In either way, the `file_type` should always be provided. Currently, the support
 - `md`
 - `pdf`
 - `html`
+- `plotly_json`
 
 </details>
 
@@ -205,14 +206,14 @@ Based on the `InputModel`, the Domino GUI will appropriately display input field
 <details>
 <summary>Integer</summary>
 
-```python     
+```python
 integer_arg: int = Field(
     default=2,
     description="Example of integer input argument"
 )
 ```
 
-![Form integer field](/img/pieces/create_pieces/input_int.gif) 
+![Form integer field](/img/pieces/create_pieces/input_int.gif)
 
 </details>
 
@@ -220,14 +221,14 @@ integer_arg: int = Field(
 <details>
 <summary>Float</summary>
 
-```python   
+```python
 float_arg: float = Field(
     default=1.3,
     description="Example of float input argument"
 )
 ```
 
-![Form float field](/img/pieces/create_pieces/input_float.gif) 
+![Form float field](/img/pieces/create_pieces/input_float.gif)
 
 </details>
 
@@ -240,7 +241,7 @@ string_arg: str = Field(
     default="text value",
     description="Example of string input argument"
 )
-``` 
+```
 
 ![Form text field](/img/pieces/create_pieces/input_text.gif)
 
@@ -339,7 +340,7 @@ input_args: List[InputModel] = Field(
 </details>
 
 
-The `OutputModel` defines the output data types of the Piece and allows for connected downstream Pieces to use this output data correctly. 
+The `OutputModel` defines the output data types of the Piece and allows for connected downstream Pieces to use this output data correctly.
 
 The `SecretsModel` defines the secret variables that should be available to the Piece function. It is important to note that Secrets arguments names should be unique within the same Pieces repository. If the same name is used for more than one Secret argument in the same repository, Domino presumes that both Pieces are using the same secret value (e.g. the same access token to an external service).
 
@@ -354,12 +355,12 @@ The simplest `metadata.json` file should contain basic metadata related to the P
     "description": "This Piece runs my awesome Python function, in any Workflow!",
     "dependency": {
         "requirements_file": "requirements_0.txt"
-    
+
 }
 ```
 
-The `name` field is the official Piece's name and it should match the name of the folder and of the class. 
-The `description` field should contain a short and useful description of your Piece. 
+The `name` field is the official Piece's name and it should match the name of the folder and of the class.
+The `description` field should contain a short and useful description of your Piece.
 The `dependency` field contains the reference to a dependencies file that is required to run your custom code. It can contain either:
 
 - `requirements_file`, with the name of a Python requirements file.
@@ -367,7 +368,7 @@ The `dependency` field contains the reference to a dependencies file that is req
 
 The dependency files are stored in a separate folder inside the [Pieces repository](./pieces_repository).
 
-Optionally, you can also include in the metadata: 
+Optionally, you can also include in the metadata:
 
 - style configurations for the visual node representing `MyNewPiece` in the Domino GUI, such as label and icon. Currently the available icons are the free options from [Font Awesome v5](https://fontawesome.com/v5/search?m=free).
 - minimal and limit resources required to run the Piece, when running Domino in Kubernetes
@@ -436,4 +437,4 @@ All tests files will be automatically run by the repository's actions before the
 
 ## Add the Piece to a repository
 
-Now that you have your new Piece ready, you need to add it to a [Pieces repository](./pieces_repository) so it could be installed in a Domino workspace. 
+Now that you have your new Piece ready, you need to add it to a [Pieces repository](./pieces_repository) so it could be installed in a Domino workspace.
