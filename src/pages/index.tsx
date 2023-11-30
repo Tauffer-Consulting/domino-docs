@@ -4,6 +4,7 @@ import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 import HomepageFeatures from '@site/src/components/HomepageFeatures';
+import { Icon } from '@iconify/react';
 
 import styles from './index.module.css';
 
@@ -51,84 +52,105 @@ function HomepageHeader() {
         backgroundRepeat: 'no-repeat',
         backgroundAttachment: 'fixed', // Optional - this will make the background image fixed while scrolling.
         backgroundColor: 'rgba(48, 56, 70, 1)', // Set the background color with slight transparency (adjust the alpha value as needed).
-        height: '700px',
+        // height: '700px',
       }}
     >
-      <div className="container" style={{ textAlign: "center" }}>
-        <div
-          className={styles.hero__subtitle}
-        // data-aos="fade-up"
-        // data-aos-offset="0"
-        // data-aos-delay="0"
-        // data-aos-duration="1500"
-        // data-aos-easing="ease-in-out"
-        // data-aos-mirror="true"
-        // data-aos-once="false"
-        // data-aos-anchor-placement="top-center"
-        >
-          Build amazing ideas,
-        </div>
-        <div style={{ display: "flex", flexDirection: "row", justifyContent: "center" }}>
+      <div
+        className="container"
+        style={{
+          textAlign: "center",
+          display: 'flex',
+          flexDirection: 'row',
+          alignItems: 'center',
+          justifyContent: 'space-around',
+          flexWrap: 'wrap',
+          padding: '0',
+        }}>
+        <div style={{ maxWidth: '50%' }}>
           <div
-            className={styles.hero__subtitle}
-          // data-aos="fade-up"
-          // data-aos-offset="0"
-          // data-aos-delay="1500"
-          // data-aos-duration="1500"
-          // data-aos-easing="ease-in-out"
-          // data-aos-mirror="true"
-          // data-aos-once="false"
-          // data-aos-anchor-placement="top-center"
+            className={styles.hero__subtitle__fadein}
+            style={{ animationDuration: '4s', animationDelay: '0s' }}
           >
-            Piece&nbsp;
+            Build amazing ideas,
           </div>
-          <div
-            className={styles.hero__subtitle}
-          // data-aos="fade-up"
-          // data-aos-offset="0"
-          // data-aos-delay="2200"
-          // data-aos-duration="1500"
-          // data-aos-easing="ease-in-out"
-          // data-aos-mirror="true"
-          // data-aos-once="false"
-          // data-aos-anchor-placement="top-center"
-          >
-            by&nbsp;
+          <div style={{ display: "flex", flexDirection: "row", justifyContent: "center" }}>
+            <div
+              className={styles.hero__subtitle__fadein}
+              style={{ animationDuration: '4s', animationDelay: '1.5s' }}
+            >
+              piece&nbsp;
+            </div>
+            <div
+              className={styles.hero__subtitle__fadein}
+              style={{ animationDuration: '4s', animationDelay: '2.5s' }}
+            >
+              by&nbsp;
+            </div>
+            <div
+              className={styles.hero__subtitle__fadein}
+              style={{ animationDuration: '4s', animationDelay: '3.5s' }}
+            >
+              piece
+            </div>
           </div>
-          <div
-            className={styles.hero__subtitle}
-          // data-aos="fade-up"
-          // data-aos-offset="0"
-          // data-aos-delay="2900"
-          // data-aos-duration="1500"
-          // data-aos-easing="ease-in-out"
-          // data-aos-mirror="true"
-          // data-aos-once="false"
-          // data-aos-anchor-placement="top-center"
-          >
-            Piece
+
+          <br />
+          <br />
+          <div className={styles.buttons}>
+            <Link
+              className="button button--secondary button--lg"
+              to="/docs/intro"
+              style={{
+                textDecoration: "none",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                border: "#000000f5",
+                borderWidth: "2px",
+                borderStyle: "solid",
+                width: "20rem"
+              }}
+            >
+              <Icon icon="uil:rocket" style={{ marginRight: "8px" }} />
+              Get Started with Domino
+            </Link>
           </div>
+
+          <br />
+          <div className={styles.buttons}>
+            <Link
+              className="button button--secondary button--lg"
+              to="/docs/intro"
+              style={{
+                textDecoration: "none",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                border: "#000000f5",
+                borderWidth: "2px",
+                borderStyle: "solid",
+                width: "20rem"
+              }}
+            >
+              <Icon icon="fa6-regular:message" style={{ marginRight: "8px" }} />
+              Get in touch with us
+            </Link>
+          </div>
+
+
         </div>
 
-        <br />
-        <br />
-        <div className={styles.buttons}>
-          <Link
-            className="button button--secondary button--lg"
-            to="/docs/intro">
-            Get Started with Domino
-          </Link>
-        </div>
-
-        {/* <br />
-        <br />
-        <div style={{ textAlign: 'center' }}>
+        <div style={{ maxWidth: '50%' }}>
+          {/* <div style={{ textAlign: 'center' }}> */}
           <img
-            src="img/intro/create-workflow.gif"
+            src="img/intro/gif-example.gif"
             alt="Domino - Build amazing ideas, Piece by Piece"
-            style={{ maxWidth: '100%', height: 'auto' }}
+            style={{
+              // maxWidth: '100%',
+              height: 'auto'
+            }}
           />
-        </div> */}
+        </div>
       </div>
     </header>
   );
