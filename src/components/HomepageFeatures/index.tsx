@@ -73,8 +73,8 @@ function Feature({ title, Svg, description, isImageRight, isShiftRight }: { isIm
     justifyContent: 'center', // This centers the content
     alignItems: 'center',
     marginBottom: '2rem',
-    marginLeft: isShiftRight ? '1rem' : '0',
-    marginRight: isShiftRight ? '0' : '1rem'
+    marginLeft: isShiftRight ? '10rem' : '0',
+    marginRight: isShiftRight ? '0' : '10rem'
   };
 
   return (
