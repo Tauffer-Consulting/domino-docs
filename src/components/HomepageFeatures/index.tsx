@@ -37,34 +37,7 @@ const FeatureList: FeatureItem[] = [
         Experience a clean and user-friendly interface for monitoring Workflows results, including logs and richer reports with images and tables.
       </>
     ),
-  },
-  {
-    title: 'Open source',
-    Svg: require('@site/static/img/undraw_open_source.svg').default,
-    description: (
-      <>
-        Domino is an Open Source project, which means that anyone can contribute to its development and use it for free.
-      </>
-    ),
-  },
-  {
-    title: 'Powered by Apache Airflow',
-    Svg: require('@site/static/img/apache-airflow-logo.svg').default,
-    description: (
-      <>
-        Domino is powered by Apache Airflow for top-tier workflows scheduling and monitoring.
-      </>
-    ),
-  },
-  {
-    title: 'Kubernetes native',
-    Svg: require('@site/static/img/undraw_server_cluster.svg').default,
-    description: (
-      <>
-        Domino is designed to be Kubernetes native, with every task running in a separate pod. This guarantees the scalability and resilience of your workflows.
-      </>
-    ),
-  },
+  }
 ];
 
 function Feature({ title, Svg, description, isImageRight, isShiftRight }: { isImageRight: boolean, isShiftRight: boolean } & FeatureItem) {
@@ -72,7 +45,7 @@ function Feature({ title, Svg, description, isImageRight, isShiftRight }: { isIm
     display: 'flex',
     justifyContent: 'center', // This centers the content
     alignItems: 'center',
-    marginBottom: '2rem',
+    marginBottom: '3rem',
     marginLeft: isShiftRight ? '10rem' : '0',
     marginRight: isShiftRight ? '0' : '10rem'
   };
@@ -88,7 +61,7 @@ function Feature({ title, Svg, description, isImageRight, isShiftRight }: { isIm
         </div>
       ) : null}
 
-      <div className="col col--2">
+      <div className="col col--3">
         <div className="text--center">
           <Svg className={styles.featureSvg} role="img" />
         </div>

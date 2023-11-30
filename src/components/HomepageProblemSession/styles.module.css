@@ -1,0 +1,25 @@
+.problemSection {
+    padding: 20px;
+}
+
+.contentContainer {
+    display: flex;
+    align-items: center;
+    /* Keeps the image and text vertically aligned */
+    justify-content: space-between;
+}
+
+.featureImg {
+    max-width: 50%;
+    height: auto;
+}
+
+.textContent {
+    max-width: 45%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}

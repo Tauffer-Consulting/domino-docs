@@ -1,0 +1,29 @@
+.cardContainer {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+}
+
+.card {
+    flex: 0 1 30%;
+    /* Adjust the width as needed */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 1rem;
+    margin: 1rem;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.features {
+    background-color: #303846;
+}
+
+.featureSvg {
+    height: 100px;
+    width: auto;
+    object-fit: contain;
+    margin-bottom: 2rem;
+}

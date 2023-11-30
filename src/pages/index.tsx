@@ -4,6 +4,8 @@ import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 import HomepageFeatures from '@site/src/components/HomepageFeatures';
+import HomepageCardsRowSession from '../components/HomepageCardsRowSession';
+import HomepageProblemSession from '../components/HomepageProblemSession';
 import { Icon } from '@iconify/react';
 
 import styles from './index.module.css';
@@ -133,7 +135,9 @@ export default function Home(): JSX.Element {
       description="Domino - Build amazing ideas, Piece by Piece ">
       <HomepageHeader />
       <main>
+        <HomepageProblemSession />
         <HomepageFeatures />
+        <HomepageCardsRowSession />
       </main>
     </Layout>
   );
