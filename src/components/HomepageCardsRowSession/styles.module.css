@@ -1,7 +1,7 @@
 .cardContainer {
     display: flex;
     justify-content: space-around;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     overflow-x: auto;
 }
 
@@ -35,4 +35,24 @@
     width: auto;
     object-fit: contain;
     margin-bottom: 2rem;
+}
+
+/* Responsive styles */
+@media (max-width: 1200px) {
+    .cardContainer {
+        justify-content: space-evenly;
+        /* Adjust spacing for medium screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .cardContainer {
+        justify-content: center;
+        /* Center cards on smaller screens */
+    }
+
+    .card {
+        margin: 1rem 0.5rem;
+        /* Adjust margins for smaller screens */
+    }
 }
