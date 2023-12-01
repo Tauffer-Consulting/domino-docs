@@ -30,10 +30,11 @@ const FeatureList: FeatureItem[] = [
   },
   {
     title: 'Rich real-time monitoring',
-    imageUrl: require('@site/static/img/landing/undraw_workflow_visualizer.svg').default,
+    imageUrl: require('@site/static/img/landing/workflow-monitoring-transparent.png').default,
     description: (
       <>
-        Experience a clean and user-friendly interface for monitoring Workflows results, including logs and richer reports with images and tables.
+        Experience a clean and user-friendly interface for monitoring Workflows results,
+        including logs and rich reports with images, interactive graphics and tables.
       </>
     ),
   },
