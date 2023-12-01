@@ -9,7 +9,7 @@ export default function HomepageProblemSession(): JSX.Element {
       <div className={styles.contentContainer}>
         <img className={styles.featureImg} src={imageUrl} alt="Gap between worlds" />
         <div className={styles.textContent}>
-          <h2>There's a gap between your ideas and their realization</h2>
+          <h2>Close the gap between your ideas and their realization</h2>
           <p>Most professionals face barriers in accessing and building with advanced data and AI methods,
             which often requires programming skills for an impactful integration.
             Domino is here to empower individuals with access to state-of-the-art tools,
