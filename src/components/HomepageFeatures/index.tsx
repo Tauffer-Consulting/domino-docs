@@ -55,7 +55,7 @@ function Feature({ title, imageUrl, description, isImageRight, url }: { isImageR
   return (
     <div className="row" style={rowStyle}>
       {isImageRight ? (
-        <div className="col col--5" style={{ paddingRight: '1rem' }}>
+        <div className="col col--6" style={{ paddingRight: '1rem' }}>
           <div className="text--center padding-horiz--md">
             <h3><a href={url} className={styles.featureTitle}>{title}</a></h3>
             <p>{description}</p>
@@ -63,14 +63,14 @@ function Feature({ title, imageUrl, description, isImageRight, url }: { isImageR
         </div>
       ) : null}
 
-      <div className="col col--5">
+      <div className="col col--6">
         <div className="text--center">
           <img src={imageUrl} alt={title} className={styles.featureImage} />
         </div>
       </div>
 
       {!isImageRight ? (
-        <div className="col col--5" style={{ paddingLeft: '1rem' }}>
+        <div className="col col--6" style={{ paddingLeft: '1rem' }}>
           <div className="text--center padding-horiz--md">
             <h3><a href={url} className={styles.featureTitle}>{title}</a></h3>
             <p>{description}</p>

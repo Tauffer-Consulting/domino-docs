@@ -44,7 +44,7 @@ function Feature({ title, Svg, description }: FeatureItem) {
     <div className={clsx("card", styles.card)}>
       <Svg className={styles.featureSvg} role="img" />
       <div className={styles.line}></div> {/* Add a black line */}
-      <h3>{title}</h3>
+      <h3 className={styles.cardTitle}>{title}</h3>
       <p>{description}</p>
     </div>
   );
