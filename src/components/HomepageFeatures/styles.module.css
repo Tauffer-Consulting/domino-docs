@@ -10,3 +10,9 @@
   height: 300px;
   width: 300px;
 }
+
+.featureTitle {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}

@@ -5,6 +5,7 @@ type FeatureItem = {
   title: string;
   imageUrl: string; // Use a common imageUrl for both PNG and SVG
   description: JSX.Element;
+  url: string; // Add a URL property for the link
 };
 
 const FeatureList: FeatureItem[] = [
@@ -17,6 +18,7 @@ const FeatureList: FeatureItem[] = [
         editing and monitoring any type of Workflow, from data processing to machine learning.
       </>
     ),
+    url: '/docs/domino_components/domino_components_gui',
   },
   {
     title: 'Focus on Reusability and Reproducibility',
@@ -24,9 +26,10 @@ const FeatureList: FeatureItem[] = [
     description: (
       <>
         Domino brings a standard for writing and publishing functional Pieces
-        which makes them reusable and reproducible, and can be easily shared with the the community.
+        which makes them reusable and reproducible, and can be easily shared with the community.
       </>
     ),
+    url: '/docs/pieces',
   },
   {
     title: 'Rich real-time monitoring',
@@ -34,13 +37,14 @@ const FeatureList: FeatureItem[] = [
     description: (
       <>
         Experience a clean and user-friendly interface for monitoring workflows results,
-        including logs and rich reports with images, interactive graphics and tables.
+        including logs and rich reports with images, interactive graphics, and tables.
       </>
     ),
+    url: '/docs/domino_components/domino_components_gui',
   },
 ];
 
-function Feature({ title, imageUrl, description, isImageRight, isShiftRight }: { isImageRight: boolean, isShiftRight: boolean } & FeatureItem) {
+function Feature({ title, imageUrl, description, isImageRight, isShiftRight, url }: { isImageRight: boolean, isShiftRight: boolean, url: string } & FeatureItem) {
   const rowStyle = {
     display: 'flex',
     justifyContent: 'center',
@@ -55,7 +59,7 @@ function Feature({ title, imageUrl, description, isImageRight, isShiftRight }: {
       {isImageRight ? (
         <div className="col col--5" style={{ paddingRight: '1rem' }}>
           <div className="text--center padding-horiz--md">
-            <h3>{title}</h3>
+            <h3><a href={url} className={styles.featureTitle}>{title}</a></h3>
             <p>{description}</p>
           </div>
         </div>
@@ -70,7 +74,7 @@ function Feature({ title, imageUrl, description, isImageRight, isShiftRight }: {
       {!isImageRight ? (
         <div className="col col--5" style={{ paddingLeft: '1rem' }}>
           <div className="text--center padding-horiz--md">
-            <h3>{title}</h3>
+            <h3><a href={url} className={styles.featureTitle}>{title}</a></h3>
             <p>{description}</p>
           </div>
         </div>
