@@ -18,6 +18,19 @@
   cursor: pointer;
 }
 
+.checkmark {
+  color: green;
+  margin-right: 5px;
+}
+
+.ulFeatureList {
+  list-style-type: none;
+  /* Remove default bullets */
+  padding-left: 0;
+  /* Remove default padding */
+}
+
+
 /* Responsive styles */
 @media (max-width: 700px) {
   .features .row {
