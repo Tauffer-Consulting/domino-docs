@@ -371,7 +371,7 @@ The dependency files are stored in a separate folder inside the [Pieces reposito
 Optionally, you can also include in the metadata:
 
 - style configurations for the visual node representing `MyNewPiece` in the Domino GUI, such as label and icon. Currently the available icons are the free options from [Font Awesome v5](https://fontawesome.com/v5/search?m=free).
-- minimal and limit resources required to run the Piece, when running Domino in Kubernetes. The units are millicores (m) for CPU and milibyte (Mi) for memory.
+- minimal and limit resources required to run the Piece, when running Domino in Kubernetes. The units are millicores (m) for CPU and mebibyte (Mi) for memory.
 - a list of tags
 
 ```json title="Example of extended metadata.json"
