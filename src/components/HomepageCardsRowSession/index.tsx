@@ -14,7 +14,7 @@ const FeatureList: FeatureItem[] = [
     Svg: require('@site/static/img/undraw_open_source.svg').default,
     description: (
       <>
-        Domino is an Open Source project, which means that anyone can contribute to its development and use it for free.
+        Domino is an open source project, which means that anyone can contribute to its development and use it for free.
       </>
     ),
   },
