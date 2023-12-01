@@ -32,7 +32,8 @@ const FeatureList: FeatureItem[] = [
     Svg: require('@site/static/img/undraw_server_cluster.svg').default,
     description: (
       <>
-        Domino is designed to be Kubernetes native, with every task running in a separate pod. This guarantees the scalability and resilience of your workflows.
+        Domino is Kubernetes native, with every task running in a dedicated pod.
+        This guarantees scalability and resilience to your workflows.
       </>
     ),
   },

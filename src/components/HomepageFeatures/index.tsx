@@ -1,17 +1,16 @@
 import React from 'react';
-import clsx from 'clsx';
 import styles from './styles.module.css';
 
 type FeatureItem = {
   title: string;
-  Svg: React.ComponentType<React.ComponentProps<'svg'>>;
+  imageUrl: string; // Use a common imageUrl for both PNG and SVG
   description: JSX.Element;
 };
 
 const FeatureList: FeatureItem[] = [
   {
     title: 'Visual Workflows for Everyone',
-    Svg: require('@site/static/img/undraw_workflow_builder.svg').default,
+    imageUrl: require('@site/static/img/landing/visual-workflows-transparent.png').default,
     description: (
       <>
         Domino brings an intuitive Graphical User Interface that facilitates creating,
@@ -21,29 +20,29 @@ const FeatureList: FeatureItem[] = [
   },
   {
     title: 'Focus on Reusability and Reproducibility',
-    Svg: require('@site/static/img/undraw_pieces_sharing.svg').default,
+    imageUrl: require('@site/static/img/landing/pieces-sharing-transparent.png').default,
     description: (
       <>
         Domino proposes a standard way of writing and publishing functional Pieces,
-        which follows good practices for distribution, documentation and data modeling.
+        which follows good practices for distribution, documentation, and data modeling.
       </>
     ),
   },
   {
     title: 'Rich real-time monitoring',
-    Svg: require('@site/static/img/undraw_workflow_visualizer.svg').default,
+    imageUrl: require('@site/static/img/landing/undraw_workflow_visualizer.svg').default,
     description: (
       <>
         Experience a clean and user-friendly interface for monitoring Workflows results, including logs and richer reports with images and tables.
       </>
     ),
-  }
+  },
 ];
 
-function Feature({ title, Svg, description, isImageRight, isShiftRight }: { isImageRight: boolean, isShiftRight: boolean } & FeatureItem) {
+function Feature({ title, imageUrl, description, isImageRight, isShiftRight }: { isImageRight: boolean, isShiftRight: boolean } & FeatureItem) {
   const rowStyle = {
     display: 'flex',
-    justifyContent: 'center', // This centers the content
+    justifyContent: 'center',
     alignItems: 'center',
     marginBottom: '3rem',
     marginLeft: isShiftRight ? '10rem' : '0',
@@ -61,9 +60,9 @@ function Feature({ title, Svg, description, isImageRight, isShiftRight }: { isIm
         </div>
       ) : null}
 
-      <div className="col col--3">
+      <div className="col col--5">
         <div className="text--center">
-          <Svg className={styles.featureSvg} role="img" />
+          <img src={imageUrl} alt={title} className={styles.featureImage} />
         </div>
       </div>
 
