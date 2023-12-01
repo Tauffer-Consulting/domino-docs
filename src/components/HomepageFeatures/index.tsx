@@ -86,7 +86,7 @@ function Feature({ title, imageUrl, description, isImageRight, url }: { isImageR
         </div>
       ) : null}
 
-      <div className="col col--6">
+      <div className="col col--5">
         <div className="text--center">
           <img src={imageUrl} alt={title} className={styles.featureImage} />
         </div>
