@@ -44,14 +44,12 @@ const FeatureList: FeatureItem[] = [
   },
 ];
 
-function Feature({ title, imageUrl, description, isImageRight, isShiftRight, url }: { isImageRight: boolean, isShiftRight: boolean, url: string } & FeatureItem) {
+function Feature({ title, imageUrl, description, isImageRight, url }: { isImageRight: boolean, isShiftRight: boolean, url: string } & FeatureItem) {
   const rowStyle = {
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
     marginBottom: '3rem',
-    marginLeft: isShiftRight ? '10rem' : '0',
-    marginRight: isShiftRight ? '0' : '10rem'
   };
 
   return (
@@ -88,7 +86,7 @@ export default function HomepageFeatures(): JSX.Element {
     <section className={styles.features}>
       <div className="container">
         {FeatureList.map((props, idx) => (
-          <Feature key={idx} {...props} isImageRight={idx % 2 === 0} isShiftRight={idx % 2 !== 0} />
+          <Feature key={idx} {...props} isImageRight={idx % 2 === 0} />
         ))}
       </div>
     </section>

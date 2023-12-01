@@ -17,3 +17,40 @@
   color: inherit;
   cursor: pointer;
 }
+
+/* Responsive styles */
+@media (max-width: 700px) {
+  .features .row {
+    flex-direction: column;
+    align-items: center;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .features .col {
+    /* Adjust column width and padding for smaller screens */
+    width: 100%;
+    padding: 0 1rem;
+  }
+
+  .features .col--5 {
+    /* Remove specific styling for columns */
+    margin-bottom: 1rem;
+  }
+
+  .featureImage {
+    /* Resize image for smaller screens */
+    height: auto;
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+
+  /* Further adjustments for very small screens, if necessary */
+  .featureImage {
+    max-width: 200px;
+    /* Adjust image size for very small screens */
+  }
+}
