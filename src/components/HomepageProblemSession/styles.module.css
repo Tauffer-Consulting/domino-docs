@@ -25,3 +25,34 @@
     flex-direction: column;
     justify-content: center;
 }
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .contentContainer {
+        flex-direction: column;
+        align-items: center;
+        /* Stack image and text vertically */
+    }
+
+    .featureImg,
+    .textContent {
+        max-width: 100%;
+        margin: 0 0 20px 0;
+        /* Adjust margins for smaller screens */
+    }
+
+    .textContent {
+        text-align: center;
+        /* Adjust text alignment for better readability */
+    }
+}
+
+@media (max-width: 480px) {
+
+    /* Further adjustments for very small screens */
+    .textContent h2,
+    .textContent p {
+        font-size: normal;
+        /* Adjust font sizes if necessary */
+    }
+}
