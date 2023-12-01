@@ -23,8 +23,8 @@ const FeatureList: FeatureItem[] = [
     imageUrl: require('@site/static/img/landing/pieces-sharing-transparent.png').default,
     description: (
       <>
-        Domino proposes a standard way of writing and publishing functional Pieces,
-        which follows good practices for distribution, documentation, and data modeling.
+        Domino brings a standard for writing and publishing functional Pieces
+        which makes them reusable and reproducible, and can be easily shared with the the community.
       </>
     ),
   },
@@ -33,7 +33,7 @@ const FeatureList: FeatureItem[] = [
     imageUrl: require('@site/static/img/landing/workflow-monitoring-transparent.png').default,
     description: (
       <>
-        Experience a clean and user-friendly interface for monitoring Workflows results,
+        Experience a clean and user-friendly interface for monitoring workflows results,
         including logs and rich reports with images, interactive graphics and tables.
       </>
     ),
