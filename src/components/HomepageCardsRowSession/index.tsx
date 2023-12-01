@@ -43,6 +43,7 @@ function Feature({ title, Svg, description }: FeatureItem) {
   return (
     <div className={clsx("card", styles.card)}>
       <Svg className={styles.featureSvg} role="img" />
+      <div className={styles.line}></div> {/* Add a black line */}
       <h3>{title}</h3>
       <p>{description}</p>
     </div>
@@ -62,4 +63,3 @@ export default function HomepageCardsRowSession(): JSX.Element {
     </section>
   );
 }
-
