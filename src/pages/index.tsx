@@ -6,6 +6,7 @@ import Layout from '@theme/Layout';
 import HomepageFeatures from '@site/src/components/HomepageFeatures';
 import HomepageCardsRowSession from '../components/HomepageCardsRowSession';
 import HomepageProblemSession from '../components/HomepageProblemSession';
+import HomepageContactSession from '../components/HomepageContactSession';
 import { Icon } from '@iconify/react';
 
 import styles from './index.module.css';
@@ -91,7 +92,7 @@ function HomepageHeader() {
           <div className={styles.buttons}>
             <Link
               className="button button--secondary button--lg"
-              to="/docs/intro"
+              to="#contact"
               style={{
                 textDecoration: "none",
                 display: "flex",
@@ -138,6 +139,7 @@ export default function Home(): JSX.Element {
         <HomepageProblemSession />
         <HomepageFeatures />
         <HomepageCardsRowSession />
+        <HomepageContactSession />
       </main>
     </Layout>
   );

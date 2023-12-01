@@ -1,0 +1,57 @@
+.contactSession {
+    padding: 20px;
+    background-color: rgb(255, 255, 255);
+    color: black;
+}
+
+.contentContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.featureImg {
+    max-width: 50%;
+}
+
+.textContent {
+    max-width: 45%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.liContact {
+    text-align: left;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.socialLinks {
+    text-align: left;
+    font-size: large;
+}
+
+.socialLinks li {
+    text-align: left;
+    margin-bottom: 10px;
+}
+
+.socialLinks a {
+    text-decoration: none;
+    color: black;
+    display: flex;
+    align-items: center;
+    /* Align text and icon vertically */
+}
+
+.socialLinks i {
+    margin-left: 5px;
+    /* Add spacing between link text and icon */
+}
