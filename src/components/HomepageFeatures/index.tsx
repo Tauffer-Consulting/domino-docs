@@ -65,6 +65,24 @@ const FeatureList: FeatureItem[] = [
     ),
     url: '/docs/domino_components/domino_components_gui',
   },
+  {
+    title: 'Collaborate with teams and community',
+    imageUrl: require('@site/static/img/landing/collaborative-transparent.png').default,
+    description: (
+      <>
+        <p>
+          Collaboration is at the heart of Domino. From your internal team to the whole community, you can easily share your work
+          and get help and inspiration from others.
+        </p>
+        <ul className={styles.ulFeatureList}>
+          <li><span className={styles.checkmark}>✔</span>Collaborative workspaces to create and monitor workflows within your organization</li>
+          <li><span className={styles.checkmark}>✔</span>Export and share your workflows with others</li>
+          <li><span className={styles.checkmark}>✔</span>Import ready-to-use workflows from the community</li>
+        </ul>
+      </>
+    ),
+    url: '/docs/domino_components/domino_components_gui',
+  },
 ];
 
 function Feature({ title, imageUrl, description, isImageRight, url }: { isImageRight: boolean, url: string } & FeatureItem) {
