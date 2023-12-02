@@ -30,7 +30,7 @@ export default function HomepageHeader(): JSX.Element {
                     flexWrap: 'wrap',
                     padding: '0',
                 }}>
-                <div style={{ maxWidth: '50%' }}>
+                <div className={styles.contentBlock} >
                     <div
                         className={styles.hero__subtitle__fadein}
                         style={{ animationDuration: '4s', animationDelay: '0s' }}
@@ -99,18 +99,16 @@ export default function HomepageHeader(): JSX.Element {
                             Get in touch with us
                         </Link>
                     </div>
-
-
                 </div>
 
-                <div style={{ maxWidth: '50%' }}>
+                <div className={styles.imageBlock}>
                     {/* <div style={{ textAlign: 'center' }}> */}
                     <img
                         src="img/intro/gif-example.gif"
                         alt="Domino - Build amazing ideas, Piece by Piece"
                         style={{
                             // maxWidth: '100%',
-                            height: 'auto'
+                            // height: 'auto'
                         }}
                     />
                 </div>

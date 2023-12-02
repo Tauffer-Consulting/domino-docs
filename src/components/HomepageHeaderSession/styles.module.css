@@ -7,7 +7,7 @@
 }
 
 .hero__subtitle {
-    font-size: 3.5rem;
+    font-size: 3rem;
     font-weight: 800;
     margin-bottom: 1rem;
     font-family: Inter, BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
@@ -18,16 +18,17 @@
     margin: 0;
 }
 
-@media screen and (max-width: 996px) {
-    .heroBanner {
-        padding: 2rem;
-    }
-}
-
 .buttons {
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-top: 1rem;
+}
+
+/* Ensure side-by-side layout on larger screens */
+.contentBlock,
+.imageBlock {
+    max-width: 50%;
 }
 
 
@@ -58,9 +59,23 @@
 }
 
 @media screen and (max-width: 768px) {
+    .container {
+        /* Stack elements vertically on small screens */
+        flex-direction: column;
+        align-items: center;
+        /* Center-align items for a cleaner look */
+    }
+
+    /* Ensure both content and image take full width on smaller screens */
+    .contentBlock,
+    .imageBlock {
+        max-width: 100%;
+        width: 100%;
+    }
+
     .hero__subtitle__fadein {
         font-size: 5vw;
-        /* Adjusted for better visibility on small screens */
+        /* Adjust font size for visibility on small screens */
     }
 
     .heroBanner {
@@ -79,22 +94,4 @@
         margin-top: 2rem;
         /* Add space above the image */
     }
-
-    /* Adjust the content block to take full width on small screens */
-    .content-block {
-        max-width: 100%;
-    }
-}
-
-/* Responsive font sizes and spacing */
-.hero__subtitle {
-    font-size: 3rem;
-    /* Adjust font size */
-    margin-bottom: 1rem;
-    /* Manage spacing */
-}
-
-.buttons {
-    margin-top: 1rem;
-    /* Add space above buttons */
 }
