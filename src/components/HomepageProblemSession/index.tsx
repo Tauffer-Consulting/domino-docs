@@ -6,7 +6,7 @@ export default function HomepageProblemSession(): JSX.Element {
 
   return (
     <section className={styles.problemSection}>
-      <h1 className="text--center" style={{ marginBottom: "2rem" }}>
+      <h1 className={styles.textTitle}>
         Close the gap between your ideas and their realization
       </h1>
       <div className={styles.contentContainer}>
