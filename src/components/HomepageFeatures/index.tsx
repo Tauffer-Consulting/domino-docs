@@ -67,7 +67,7 @@ const FeatureList: FeatureItem[] = [
   },
 ];
 
-function Feature({ title, imageUrl, description, isImageRight, url }: { isImageRight: boolean, isShiftRight: boolean, url: string } & FeatureItem) {
+function Feature({ title, imageUrl, description, isImageRight, url }: { isImageRight: boolean, url: string } & FeatureItem) {
   const rowStyle = {
     display: 'flex',
     justifyContent: 'center',
