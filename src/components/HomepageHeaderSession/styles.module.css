@@ -1,0 +1,100 @@
+.heroBanner {
+    padding: 1.5rem 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    color: black;
+}
+
+.hero__subtitle {
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    font-family: Inter, BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+    -webkit-text-fill-color: #eeeeeef5 !important;
+    -webkit-text-stroke: 1px !important;
+    /* backdrop-filter: blur(1px) saturate(90%); */
+    /* padding-top: 0; */
+    margin: 0;
+}
+
+@media screen and (max-width: 996px) {
+    .heroBanner {
+        padding: 2rem;
+    }
+}
+
+.buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* fade in effects */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.hero__subtitle__fadein {
+    font-size: 3vw;
+    font-weight: 800;
+    margin-bottom: 2rem;
+    font-family: Inter, BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+    -webkit-text-fill-color: #eeeeeef5 !important;
+    -webkit-text-stroke: 1px !important;
+    /* backdrop-filter: blur(1px) saturate(90%); */
+    /* padding-top: 0; */
+    margin: 0;
+    animation-name: fadeIn;
+    animation-fill-mode: forwards;
+    opacity: 0;
+}
+
+@media screen and (max-width: 768px) {
+    .hero__subtitle__fadein {
+        font-size: 5vw;
+        /* Adjusted for better visibility on small screens */
+    }
+
+    .heroBanner {
+        padding: 1rem;
+        /* Reduced padding */
+    }
+
+    /* Reorganize layout for smaller screens */
+    .container {
+        flex-direction: column;
+    }
+
+    /* Adjust image styles for small screens */
+    .container img {
+        max-width: 100%;
+        margin-top: 2rem;
+        /* Add space above the image */
+    }
+
+    /* Adjust the content block to take full width on small screens */
+    .content-block {
+        max-width: 100%;
+    }
+}
+
+/* Responsive font sizes and spacing */
+.hero__subtitle {
+    font-size: 3rem;
+    /* Adjust font size */
+    margin-bottom: 1rem;
+    /* Manage spacing */
+}
+
+.buttons {
+    margin-top: 1rem;
+    /* Add space above buttons */
+}

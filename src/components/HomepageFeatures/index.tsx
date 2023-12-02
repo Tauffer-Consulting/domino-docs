@@ -108,9 +108,15 @@ export default function HomepageFeatures(): JSX.Element {
   return (
     <section className={styles.features}>
       <div className="container">
-        {FeatureList.map((props, idx) => (
-          <Feature key={idx} {...props} isImageRight={idx % 2 === 0} />
-        ))}
+        <>
+          <h1 className="text--center" style={{ marginBottom: "4rem" }}>
+            Build with Domino - advanced data and AI tools at your fingertips!
+          </h1>
+
+          {FeatureList.map((props, idx) => (
+            <Feature key={idx} {...props} isImageRight={idx % 2 === 0} />
+          ))}
+        </>
       </div>
     </section>
   );
