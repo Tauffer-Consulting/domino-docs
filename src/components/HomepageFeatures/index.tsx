@@ -10,7 +10,7 @@ type FeatureItem = {
 
 const FeatureList: FeatureItem[] = [
   {
-    title: 'Visual Workflows for Everyone',
+    title: 'Visual data workflows for everyone',
     imageUrl: require('@site/static/img/landing/visual-workflows-transparent.png').default,
     description: (
       <>
@@ -29,7 +29,7 @@ const FeatureList: FeatureItem[] = [
     url: '/docs/domino_components/domino_components_gui',
   },
   {
-    title: 'Focus on Reusability and Reproducibility',
+    title: 'Focus on reusability and reproducibility',
     imageUrl: require('@site/static/img/landing/pieces-sharing-transparent.png').default,
     description: (
       <>
@@ -40,7 +40,7 @@ const FeatureList: FeatureItem[] = [
         <ul className={styles.ulFeatureList}>
           <li><span className={styles.checkmark}>✔</span>Standardized approach to Pieces creation</li>
           <li><span className={styles.checkmark}>✔</span>Bring any functional code to the graphical interface</li>
-          <li><span className={styles.checkmark}>✔</span>Easily share your PIeces with the community</li>
+          <li><span className={styles.checkmark}>✔</span>Easily share your Pieces with the community</li>
           <li><span className={styles.checkmark}>✔</span>Easily install and use the community Pieces</li>
         </ul>
       </>

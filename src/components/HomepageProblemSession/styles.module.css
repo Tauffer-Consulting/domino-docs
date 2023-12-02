@@ -34,6 +34,11 @@
     justify-content: center;
 }
 
+.bullets {
+    list-style-type: none;
+    padding-left: 0;
+}
+
 /* Responsive styles */
 @media (max-width: 768px) {
     .contentContainer {
@@ -49,9 +54,8 @@
         /* Adjust margins for smaller screens */
     }
 
-    .textContent {
-        text-align: center;
-        /* Adjust text alignment for better readability */
+    .bullets {
+        text-align: left;
     }
 }
 
