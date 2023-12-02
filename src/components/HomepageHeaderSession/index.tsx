@@ -37,7 +37,14 @@ export default function HomepageHeader(): JSX.Element {
                     >
                         Build amazing ideas,
                     </div>
-                    <div style={{ display: "flex", flexDirection: "row", justifyContent: "center" }}>
+                    <div
+                        style={{
+                            display: "flex",
+                            flexDirection: "row",
+                            justifyContent: "center",
+                            marginBottom: "2rem"
+                        }}
+                    >
                         <div
                             className={styles.hero__subtitle__fadein}
                             style={{ animationDuration: '4s', animationDelay: '1.5s' }}
@@ -58,8 +65,6 @@ export default function HomepageHeader(): JSX.Element {
                         </div>
                     </div>
 
-                    <br />
-                    <br />
                     <div className={styles.buttons}>
                         <Link
                             className="button button--secondary button--lg"
@@ -102,14 +107,9 @@ export default function HomepageHeader(): JSX.Element {
                 </div>
 
                 <div className={styles.imageBlock}>
-                    {/* <div style={{ textAlign: 'center' }}> */}
                     <img
                         src="img/intro/gif-example.gif"
                         alt="Domino - Build amazing ideas, Piece by Piece"
-                        style={{
-                            // maxWidth: '100%',
-                            // height: 'auto'
-                        }}
                     />
                 </div>
             </div>
