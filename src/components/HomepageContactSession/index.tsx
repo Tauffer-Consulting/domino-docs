@@ -6,10 +6,12 @@ export default function HomepageContactSession(): JSX.Element {
 
   return (
     <section id="contact" className={styles.contactSession}>
+      <h1 className={styles.textTitle}>
+        Get in touch with the maintainers
+      </h1>
       <div className={styles.contentContainer}>
         <img className={styles.featureImg} src={imageUrl} alt="Get in touch" />
         <div className={styles.textContent}>
-          <h2>Get in touch with the maintainers!</h2>
           <p>
             Are you interested in using Domino for your business?
             We would love to hear from you! You can reach us at:

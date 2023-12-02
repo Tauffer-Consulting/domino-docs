@@ -32,10 +32,3 @@ export default function HomepageProblemSession(): JSX.Element {
     </section>
   );
 }
-
-
-{/* <p>Most professionals face barriers in accessing and building with advanced data and AI methods,
-            which often requires programming skills for an impactful integration.
-            Domino is here to empower individuals with access to state-of-the-art tools,
-            bridging the gap between visionaries and data/AI expertise.
-          </p> */}

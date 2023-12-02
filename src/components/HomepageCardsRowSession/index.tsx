@@ -53,6 +53,9 @@ function Feature({ title, Svg, description }: FeatureItem) {
 export default function HomepageCardsRowSession(): JSX.Element {
   return (
     <section className={styles.features}>
+      <h1 className={styles.textTitle}>
+        Made to be open, reliable and scalable
+      </h1>
       <div className="container">
         <div className={clsx("cardContainer", styles.cardContainer)}>
           {FeatureList.map((props, idx) => (
