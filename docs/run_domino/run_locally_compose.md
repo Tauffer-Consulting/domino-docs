@@ -66,7 +66,7 @@ You can do this by passing the `--github-token` flag to the command, like this:
 domino platform run-compose --github-token <your_github_token>
 ```
 :::
-You can generate a github token by following the instructions [here](../quickstart/advanced_concepts/github_token.md).
+You can generate a github token by following the instructions [here](../settings/github_token.md).
 
 
 :::tip
