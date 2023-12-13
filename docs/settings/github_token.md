@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# Authorizing Domino to access Github repositories
+# Authorize access to Github repositories
 
 This session will guide you through the steps necessary to authorize Domino to access Pieces repositories on Github.
 

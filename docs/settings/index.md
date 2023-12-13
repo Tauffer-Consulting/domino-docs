@@ -7,5 +7,4 @@ keywords: ["domino", "workflow", "airflow", "data", "machine learning", "ml", "d
 
 # Domino Settings
 
-When creating advanced workflows you may face some challenges that are not covered in the [Quickstart](/docs/quickstart) section. This section will cover some of those challenges and how to solve them. If you are new to Domino, we recommend you start with [Quickstart](/docs/quickstart).
-This section contains technical details about how Domino works behind the scenes.
+When creating advanced workflows you might face some challenges that are not covered in the [**Quickstart**](/docs/quickstart) session. This section will cover some of those challenges and how to solve them. If you are new to Domino, we recommend you start with the [**Quickstart**](/docs/quickstart) session.
