@@ -1,5 +1,5 @@
 ---
-sidebar_position: 1
+sidebar_position: 2
 description: "Quickstart to Domino platform for first time users"
 keywords: ["domino", "workflow", "airflow", "data", "machine learning", "ml", "data science", "data engineering", "dataops", "mlops", "devops", "kubernetes", "k8s", "helm", "python", "react", "typescript", "fastapi", "gitops", "docker", "github", "artifacthub", "pypi", "pip", "kind", "open source", "oss", "low code", "no code", "automation",
 "versio control", "collaboration", "monitoring", "orchestration", "data pipeline"]
@@ -43,7 +43,7 @@ pip install domino-py[cli]
 
 Domino Pieces are distributed in Github repositories. In order to reliably install them, it is recommended to provide a Github token at the start up of the platform.
 
-It is very simple to generate Github access tokens. See [Authorizing Domino to access Github repositories](/docs/quickstart/advanced_concepts/github_token) for a basic step-by-step.
+It is very simple to generate Github access tokens. See [Authorizing Domino to access Github repositories](/docs/settings/github_token) for a basic step-by-step.
 
 If no token is provided, Domino will still be able to run, but some features will not be available.
 
@@ -144,7 +144,7 @@ When creating a workflow you should configure its Settings and Pieces arguments.
       </li>
       <li>
         <span style={{fontWeight: 'bold'}}>Storage:</span> The type of shared storage file system to facilitate data sharing between pieces. When running in compose, the available options are limited to None (no shared storage) or Local (using the local file system).
-        For more information on shared storage, refer to the <a href='/docs/quickstart/advanced_concepts/shared_storage'> Shared storage section.</a>
+        For more information on shared storage, refer to the <a href='/docs/settings/shared_storage'> Shared storage section.</a>
       </li>
     </ul>
     <img src='/img/quickstart/workflow_settings.gif' alt='workflowSettingsGif'/>
@@ -180,4 +180,4 @@ By selecting the desired workflow, you'll be directed to the workflow's individu
 Congratulations! You just went from starting the Domino's platform to creating your first workflow!
 
 ### What's Next?
-Your Domino journey is just starting! Check the [Advanced Workflows](/docs/quickstart/advanced_concepts) section to delve deeper into concepts such as Piece Repositories, Secrets, Local and Remote Shared Storage, and more!
+Your Domino journey is just starting! Check the [Domino Settings](/docs/settings) section to delve deeper into concepts such as Piece Repositories, Secrets, Local and Remote Shared Storage, and more!
