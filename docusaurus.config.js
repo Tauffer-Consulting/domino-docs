@@ -95,6 +95,10 @@ const config = {
                 label: 'Tutorial',
                 to: '/docs/intro',
               },
+              {
+                label: 'Quickstart',
+                to: '/docs/quickstart',
+              },
             ],
           },
           {
@@ -105,12 +109,12 @@ const config = {
                 href: 'https://github.com/Tauffer-Consulting/domino/discussions',
               },
               {
-                label: 'Stack Overflow',
-                href: 'https://stackoverflow.com/questions/tagged/domino-py',
+                label: 'Twitter / X',
+                href: 'https://x.com/DominoWorkflows',
               },
               {
-                label: 'Twitter',
-                href: 'https://twitter.com/',
+                label: 'Youtube',
+                href: 'https://www.youtube.com/@DominoWorkflows',
               },
             ],
           },
