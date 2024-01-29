@@ -4,8 +4,8 @@ sidebar_position: 2
 
 # Pieces repository
 
-:::tip 
-The easiest way to start your Pieces repository is to use our [Template for Pieces repository](https://github.com/Tauffer-Consulting/domino_pieces_repository_template).  
+:::tip
+The easiest way to start your Pieces repository is to use our [Template for Pieces repository](https://github.com/Tauffer-Consulting/domino_pieces_repository_template).
 You can either clone it using git or use our CLI command `domino pieces create`.
 :::
 
@@ -36,7 +36,7 @@ config.toml
 
 ## Piece Folder
 
-The `pieces/` folder should contain all the Pieces in the repository. Each Piece folder name should have the sufix `Piece` and follow a standard organization and contain certain information to be able to be found and used by your deployed Domino instance. Example: 
+The `pieces/` folder should contain all the Pieces in the repository. Each Piece folder name should have the sufix `Piece` and follow a standard organization and contain certain information to be able to be found and used by your deployed Domino instance. Example:
 
 ```bash title="Piece folder example"
 pieces/
@@ -94,6 +94,10 @@ Besides that, the actions will also create the following artifacts within the re
 
 :::info
 For the actions to run successfully, make sure that under your repository `Settings -> Action -> General -> Workflow permissions` the option `Read and write permissions` is selected.
+:::
+
+:::info
+The actions are triggered only when the `config.toml` file is updated.
 :::
 
 ![Piece repository action](/img/pieces_repository_slide_2.png)
