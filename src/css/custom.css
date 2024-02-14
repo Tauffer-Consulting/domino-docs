@@ -4,17 +4,31 @@
  * work well for content-centric websites.
  */
 
+ @font-face {
+   font-family: 'Rethink-Sans-Regular';
+   src: url('../../static/fonts/rethink-sans/RethinkSans-Regular.ttf');
+ }
+
+ @font-face {
+  font-family: 'Rethink-Sans-Bold';
+  src: url('../../static/fonts/rethink-sans/RethinkSans-Bold.ttf');
+ }
+
+
 /* You can override the default Infima variables here. */
 :root {
-  --ifm-color-primary: #2e8555;
-  --ifm-color-primary-dark: #29784c;
-  --ifm-color-primary-darker: #277148;
-  --ifm-color-primary-darkest: #205d3b;
-  --ifm-color-primary-light: #33925d;
-  --ifm-color-primary-lighter: #359962;
-  --ifm-color-primary-lightest: #3cad6e;
+  --ifm-color-primary: #00B140;
+  --ifm-color-primary-dark: #019c3a;
+  --ifm-color-primary-darker: #006d28;
+  --ifm-color-primary-darkest: #004b1c;
+  --ifm-color-primary-light: #00B140;
+  --ifm-color-primary-lighter: #00B140;
+  --ifm-color-primary-lightest: #00B140;
   --ifm-code-font-size: 95%;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+  --ifm-font-family-base: 'Rethink-Sans-Regular';
+  --ifm-heading-font-family: 'Rethink-Sans-Bold';
+  --ifm-font-family-monospace: 'Rethink-Sans-Regular';
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
@@ -32,6 +46,7 @@
 /* Customized changes */
 .navbar {
   height: auto;
+  font-family: 'Rethink-Sans-Bold';
 }
 
 .navbar__logo {
@@ -39,3 +54,6 @@
   height: 4rem;
   margin-right: 0.5rem;
 }
+
+
+
