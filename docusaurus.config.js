@@ -68,6 +68,7 @@ const config = {
         logo: {
           alt: 'Domino Logo',
           src: 'brand/png/main_logo.png',
+          srcDark: 'brand/png/main_logo_white.png',
         },
         items: [
           {

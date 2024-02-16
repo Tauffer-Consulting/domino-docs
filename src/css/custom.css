@@ -4,43 +4,101 @@
  * work well for content-centric websites.
  */
 
- @font-face {
-   font-family: 'Rethink-Sans-Regular';
-   src: url('../../static/fonts/rethink-sans/RethinkSans-Regular.ttf');
- }
+@font-face {
+  font-family: 'Rethink-Sans';
+  src: url("../../static/fonts/rethink-sans/RethinkSans-Bold.ttf");
+  font-weight: bold;
+}
 
- @font-face {
-  font-family: 'Rethink-Sans-Bold';
-  src: url('../../static/fonts/rethink-sans/RethinkSans-Bold.ttf');
- }
+@font-face {
+  font-family: 'Rethink-Sans';
+  src: url("../../static/fonts/rethink-sans/RethinkSans-BoldItalic.ttf");
+  font-weight: bold;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Rethink-Sans';
+  src: url("../../static/fonts/rethink-sans/RethinkSans-ExtraBold.ttf");
+  font-weight: bolder;
+}
+
+@font-face {
+  font-family: 'Rethink-Sans';
+  src: url("../../static/fonts/rethink-sans/RethinkSans-ExtraBoldItalic.ttf");
+  font-weight: bolder;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Rethink-Sans';
+  src: url("../../static/fonts/rethink-sans/RethinkSans-Italic.ttf");
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Rethink-Sans';
+  src: url("../../static/fonts/rethink-sans/RethinkSans-Medium.ttf");
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: 'Rethink-Sans';
+  src: url("../../static/fonts/rethink-sans/RethinkSans-MediumItalic.ttf");
+  font-weight: 500;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Rethink-Sans';
+  src: url("../../static/fonts/rethink-sans/RethinkSans-Regular.ttf");
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: 'Rethink-Sans';
+  src: url("../../static/fonts/rethink-sans/RethinkSans-SemiBold.ttf");
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: 'Rethink-Sans';
+  src: url("../../static/fonts/rethink-sans/RethinkSans-SemiBoldItalic.ttf");
+  font-weight: 600;
+  font-style: italic;
+}
 
 
 /* You can override the default Infima variables here. */
 :root {
   --ifm-color-primary: #00B140;
-  --ifm-color-primary-dark: #019c3a;
-  --ifm-color-primary-darker: #006d28;
-  --ifm-color-primary-darkest: #004b1c;
-  --ifm-color-primary-light: #00B140;
-  --ifm-color-primary-lighter: #00B140;
-  --ifm-color-primary-lightest: #00B140;
+  --ifm-color-primary-dark: #008F34;
+  --ifm-color-primary-darker: #006625;
+  --ifm-color-primary-darkest: #003D16;
+  --ifm-color-primary-light: #00E052;
+  --ifm-color-primary-lighter: #0AFF64;
+  --ifm-color-primary-lightest: #33FF7E;
   --ifm-code-font-size: 95%;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
-  --ifm-font-family-base: 'Rethink-Sans-Regular';
-  --ifm-heading-font-family: 'Rethink-Sans-Bold';
-  --ifm-font-family-monospace: 'Rethink-Sans-Regular';
+  --ifm-font-family-base: 'Rethink-Sans';
+  --ifm-heading-font-family: 'Rethink-Sans';
+  --ifm-font-family-monospace: 'Rethink-Sans';
+  --ifm-font-weight-semibold: 600;
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
 [data-theme='dark'] {
-  --ifm-color-primary: #25c2a0;
-  --ifm-color-primary-dark: #21af90;
-  --ifm-color-primary-darker: #1fa588;
-  --ifm-color-primary-darkest: #1a8870;
-  --ifm-color-primary-light: #29d5b0;
-  --ifm-color-primary-lighter: #32d8b4;
-  --ifm-color-primary-lightest: #4fddbf;
+  /* Using default light as primary for dark mode */
+  --ifm-color-primary: #00E052;
+  --ifm-color-primary-dark: #00B140;
+  --ifm-color-primary-darker: #008F34;
+  --ifm-color-primary-darkest: #006625;
+  --ifm-color-primary-light: #0AFF64;
+  --ifm-color-primary-lighter: #33FF7E;
+  --ifm-color-primary-lightest: #5CFF98;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+
 }
 
 /* Customized changes */
