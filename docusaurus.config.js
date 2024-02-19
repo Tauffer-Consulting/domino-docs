@@ -8,7 +8,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 const config = {
   title: 'Domino',
   tagline: 'Build amazing ideas, piece by piece.',
-  favicon: 'img/favicon.ico',
+  favicon: 'favicon/favicon.ico',
 
   // Set the production url of your site here
   url: 'https://tauffer-consulting.github.io',
