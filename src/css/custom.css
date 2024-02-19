@@ -104,7 +104,8 @@
 /* Customized changes */
 .navbar {
   height: auto;
-  font-family: 'Rethink-Sans-Bold';
+  font-family: 'Rethink-Sans';
+  font-weight: bold;
 }
 
 .navbar__logo {
