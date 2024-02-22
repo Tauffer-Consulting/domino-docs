@@ -24,7 +24,7 @@ pip install domino-py[cli]
 ### BasePiece (Domino class)
 
 This is the base class from which every custom Domino Piece should inherit from. It defines the common attributes and methods for all the Domino Pieces.  
-This is an abstract class that has `piece_function` as an abstract method. This method is the one that will be executed when the Piece run. The `piece_function` method should be implemented in your pieces as shown in [Create Pieces](/docs/pieces/create_pieces.md#piecepy).
+This is an abstract class that has `piece_function` as an abstract method. This method is the one that will be executed when the Piece run. The `piece_function` method should be implemented in your pieces as shown in [Create Pieces](/docs/pieces/create_pieces.mdx#piecepy).
 
 
 
