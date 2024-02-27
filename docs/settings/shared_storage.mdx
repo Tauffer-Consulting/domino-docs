@@ -9,9 +9,17 @@ import TabItem from '@theme/TabItem';
 
 # Shared Storage
 
-Some Pieces produce data that can not be direclty transfered to downstream Pieces in other way than using disk. A common example is a piece that produces a large file that needs to be used by another piece. In this case, you can use the available `Shared Storage` options.
+When you have a workflow with more than one piece you may want to transfer data between them.
 
-Domino's Shared Storage is a mounted volume that can be used by all pieces in a workflow, where each piece can have different access level to this volume. With Shared Storage, you can work with files from different pieces as if they were all on the same file system, even if they are running on different machines.
+Transfering data between pieces can be done in two ways:
+1. **Using XCOM**: This is recommended only for small data. By default all values returned by a piece, defined in the `OuputModel`, are returned to xcom and can be read by downstream pieces.
+
+2. **Using Shared Storage**: Some Pieces produce data that can not be direclty transfered to downstream Pieces in other way than using disk. A common example is a piece that produces a large file that needs to be used by another piece. In this case, you can use the available `Shared Storage` options.
+
+### What exactly is Shared Storage?
+Domino's Shared Storage is a mounted volume that can be used by all pieces in a workflow, where each piece can have different access level to this volume.
+With Shared Storage, you can work with files from different pieces as if they were all on the same file system,
+even if they are running on different machines.
 
 Currently, Domino support the following Shared Storage options:
 
