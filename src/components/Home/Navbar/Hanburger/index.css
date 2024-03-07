@@ -1,0 +1,42 @@
+div#hamburger {
+  cursor: pointer;
+  position: relative;
+}
+
+.menu {
+  display: block;
+
+  position: absolute;
+  top: 100%; /* Position the menu below the icon */
+  left: 0;
+
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+  border-radius: 4px;
+  padding: 10px;
+  animation: fadeIn 0.3s ease-out;
+}
+
+.menu.close {
+  display: none;
+}
+
+.menuitem {
+  width: 100%;
+  text-wrap: nowrap;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@media only screen and (min-width: 978px) {
+  div#hamburger {
+    display: none;
+  }
+}

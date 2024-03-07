@@ -1,0 +1,72 @@
+div#gif-container {
+  flex: 1;
+  width: 100%;
+  --aspect-ratio: 16/8;
+}
+
+div#gif-container>div#rectangle {
+  position: relative;
+  width: 100%;
+
+  background: #F6F6F6;
+  box-shadow: 124px 27px 51px rgba(0, 0, 0, 0.01), 70px 15px 43px rgba(0, 0, 0, 0.05), 31px 7px 32px rgba(0, 0, 0, 0.09), 8px 2px 17px rgba(0, 0, 0, 0.1);
+  
+  border-radius: 29px 29px 8px 8px;
+}
+
+div#gif-container>div#rectangle::before {
+  content: "";
+  height: 0;
+  float: left;
+  padding-bottom: calc(100% / (var(--aspect-ratio)));
+}
+
+div#gif-container>div#rectangle::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+div#rectangle>div#ellipse {
+  position: absolute;
+  border-radius: 50%;
+  width: 12.6px;
+  height: 12.6px;
+}
+
+div#ellipse.red {
+  top: 14px;
+  left: 24px;
+  background: #FF5E57;
+}
+
+div#ellipse.yellow {
+  top: 14px;
+  left: 44px;
+  background: #FEBB2D;
+}
+
+div#ellipse.green {
+  top: 14px;
+  left: 64px;
+  background: #28C840;
+}
+
+div#rectangle>img#gif {
+  width: 100%;
+  padding: 40px 10px 10px 10px;
+  border-radius: 4px;
+}
+
+[style*="--aspect-ratio"]::before {
+  content: "";
+  height: 0;
+  float: left;
+  padding-bottom: calc(100% / (var(--aspect-ratio)));
+}
+
+[style*="--aspect-ratio"]::after {
+  content: "";
+  display: block;
+  clear: both;
+}

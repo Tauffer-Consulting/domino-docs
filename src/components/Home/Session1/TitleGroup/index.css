@@ -1,0 +1,105 @@
+
+div#text-container {
+  flex: 1;
+  width: 100%;
+}
+
+h1#title {
+  display: flex;
+  flex-direction: column;
+
+  font-style: normal;
+  font-weight: 400;
+  font-size: 6vw;
+  color: #101820;
+}
+
+i#piece {
+  color: #00B140;
+  font-style: italic;
+  font-weight: 500;
+}
+
+div#subtitle-container {
+  margin-top: 20px;
+  max-width: 100%;
+
+  font-family: 'Rethink Sans';
+  font-style: normal;
+
+
+  line-height: 125%;
+
+  color: #101820;
+}
+
+h3#subtitle {
+  font-size: 1.4vw;
+  font-weight: 400;
+}
+
+h3#subtitle > b {
+  font-weight: 500;
+}
+
+div#button-container {
+  margin-top: 6%;
+}
+
+div#button-container > button {
+  width: 32%;
+  height: 16%;
+
+  font-size: 2vw;
+  font-weight: 500;
+  margin-right: 36px;
+}
+
+@media only screen and (min-width: 979px) and (max-width: 1368px) {  
+  #title-container {
+    margin-top: 24px;
+  }
+
+  h1#title {
+    font-size: 7vw;
+  }
+
+  div#subtitle-container {
+    max-width: 70%;
+  }
+
+  h3#subtitle {
+    font-size: 2vw;
+  }
+
+  div#subtitle-container {
+    margin: 0;
+  }
+
+  div#button-container{
+    margin-bottom: 24px;
+    margin-top: 8px;
+  }
+
+}
+
+@media only screen and (max-width: 978px) {
+
+  #title-container {
+    margin-top: 24px;
+    width: 100%;
+  }
+
+  h1#title {
+    font-size: 10vw;
+  }
+
+  h3#subtitle  {
+    font-size: 3vw;
+  }
+
+  div#button-container{
+    margin-bottom: 24px;
+    margin-top: 0;
+  }
+}

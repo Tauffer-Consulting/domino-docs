@@ -1,0 +1,111 @@
+#navbar {
+  position: fixed;
+  top: 0;
+
+  z-index: 999;
+
+  mask: linear-gradient(black, black, transparent);
+  backdrop-filter: blur(16px);
+
+  width: 100%;
+  height: 144px;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#navbar>#logo {
+  margin-left: 4%;
+  width: 430px;
+}
+
+#navbar>#central-links {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  gap: calc(50px);
+
+  text-wrap: nowrap;
+}
+
+#navbar>#right-buttons {
+  justify-self: flex-end;
+  margin-right: 6%;
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  gap: calc(8px);
+}
+
+ul {
+  padding: 0px;
+  margin-bottom: 0;
+}
+
+li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+li>a {
+  font-size: 20px;
+  font-weight: 500;
+  color: #101820;
+}
+
+a#github {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media only screen and (min-width: 979px) and (max-width: 1368px) {  
+  #navbar>#right-buttons {
+    display: none;
+  }
+
+  #navbar>#central-links {
+    gap: calc(16px);
+  }
+
+  #navbar {
+    padding-right: 6%;
+  }
+}
+
+@media only screen and (max-width: 978px) {
+  #navbar {
+    position: fixed;
+    top: 0;
+  
+    width: 100%;
+    height: 64px;
+  
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding-right: 6%;
+  }
+
+  #navbar>#logo {
+    width: auto;
+    height: 100%;
+  }
+
+  #navbar>#central-links {
+    display: none;
+  }
+  
+  #navbar>#right-buttons {
+    display: none;
+  }
+}

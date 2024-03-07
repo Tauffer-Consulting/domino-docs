@@ -25,6 +25,48 @@ h1 {
 }
 
 button {
-  cursor: pointer;
   background-color: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+button#primary {
+  background: var(--ifm-color-primary);
+  color: #fff;
+
+  width: 115px;
+  height: 32px;
+  border-radius: 8px;
+}
+
+button#primary:hover {
+  background: var(--ifm-color-primary-dark);
+}
+
+button#secondary {
+  background: #101820;
+  color: #fff;
+
+  width: 115px;
+  height: 32px;
+  border-radius: 8px;
+}
+
+button#secondary:hover {
+  background: #223344;
+}
+
+button#tertiary {
+  background: transparent;
+  color: #101820;
+  border: 1px solid #101820;
+
+  width: 115px;
+  height: 32px;
+  border-radius: 8px;
+}
+
+button#tertiary:hover {
+  box-shadow: 1px solid gray;
 }
