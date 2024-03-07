@@ -13,6 +13,7 @@ html {
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+  z-index: 999;
 }
 
 #navbar>#logo {
@@ -125,11 +126,14 @@ section {
 
 section#section-1 {
   height: calc(100vh - 144px - 64px);
+  justify-content: center;
+  display: flex;
 }
 
 div#container {
   display: flex;
   flex-direction: row;
+  max-width: fit-content;
 }
 
 div#title-container {
@@ -214,7 +218,7 @@ div#gif-container > div#rectangle {
   /* Ellipse 1 */
 div#rectangle > div#ellipse {
   position: absolute;
-  border-radius: 50%; 
+  border-radius: 50%;
   width: 12.6px;
   height: 12.6px;
 }
