@@ -12,19 +12,19 @@
 .menu-list {
   position: fixed;
   top: 0;
-  right: 0; /* Start off-screen from the left */
+  left: calc(100vw - 250px);
   height: 100vh;
-  width: 250px; /* Adjust the width as needed */
+  width: 250px;
   background-color: #fff;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   padding: 20px;
   display: flex;
   flex-direction: column;
-  transition: left 0.3s ease; /* Add animation transition */
+  transition: right 0.3s ease; 
 }
 
 .hamburger-menu.open .menu-list {
-  right: 250px; /* Slide in from the left when open */
+  left: 250px;
 }
 
 .close-button {
@@ -44,6 +44,12 @@ ul {
 
 li {
   margin: 10px 0;
+}
+
+.divider {
+  margin-top: 5px;
+  border-top: 1px solid #000;
+  margin-bottom: 5px;
 }
 
 a {

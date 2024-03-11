@@ -22,6 +22,17 @@ export const Navbar = () => {
           <img id="logo" src="brand/png/main_logo.png" alt="Logo" />
           <Hamburger
             menuItems={menuItems}
+            buttonsItems={
+              [<button id="primary">
+                Try cloud
+              </button>,
+              <button id="secondary">
+                Contact
+              </button>,
+              <a id="github">
+                Github <Icon icon="fa-brands:github" fontSize={36} />
+              </a>
+              ]}
           />
         </nav>
       ) : (

@@ -7,9 +7,10 @@ interface Props {
     label: string;
     link: string;
   }[]
+  buttonsItems: React.ReactElement[] | string[];
 }
 
-export const Hamburger: React.FC<Props> = ({ menuItems }) => {
+export const Hamburger: React.FC<Props> = ({ menuItems, buttonsItems }) => {
   const [isOpen, setIsOpen] = useState(false);
   const menuRef = useRef(null);
 
@@ -37,15 +38,24 @@ export const Hamburger: React.FC<Props> = ({ menuItems }) => {
         <Icon icon="ic:baseline-menu" fontSize={36} />
       </button>
       {isOpen && (
-        <div className="menu-list" ref={menuRef}>
-          <ul>
-            {menuItems.map((item, index) => (
-              <li key={index}>
-                <a href={item.link}>{item.label}</a>
-              </li>
-            ))}
-          </ul>
-        </div>
+        <>
+          <div className="menu-list" ref={menuRef}>
+            <ul>
+              {menuItems.map((item, index) => (
+                <li key={index}>
+                  <a href={item.link}>{item.label}</a>
+                </li>
+              ))}
+              {buttonsItems.length && (<div className='divider'></div>)}
+              {buttonsItems.length && buttonsItems.map(b => (
+                <li>
+                  {b}
+                </li>
+              ))}
+            </ul>
+          </div>
+
+        </>
       )}
     </div>
   );
