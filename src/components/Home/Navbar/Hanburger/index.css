@@ -1,42 +1,52 @@
-div#hamburger {
-  cursor: pointer;
+.hamburger-menu {
   position: relative;
 }
 
-.menu {
-  display: block;
+.menu-button {
+  font-size: 20px;
+  cursor: pointer;
+  background: none;
+  border: none;
+}
 
-  position: absolute;
-  top: 100%; /* Position the menu below the icon */
-  left: 0;
-
+.menu-list {
+  position: fixed;
+  top: 0;
+  right: 0; /* Start off-screen from the left */
+  height: 100vh;
+  width: 250px; /* Adjust the width as needed */
   background-color: #fff;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
-  border-radius: 4px;
-  padding: 10px;
-  animation: fadeIn 0.3s ease-out;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  transition: left 0.3s ease; /* Add animation transition */
 }
 
-.menu.close {
-  display: none;
+.hamburger-menu.open .menu-list {
+  right: 250px; /* Slide in from the left when open */
 }
 
-.menuitem {
-  width: 100%;
-  text-wrap: nowrap;
+.close-button {
+  font-size: 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  align-self: flex-end;
 }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+ul {
+  list-style-type: none;
+  padding: 0;
+  flex-grow: 1;
+  overflow-y: auto;
 }
 
-@media only screen and (min-width: 978px) {
-  div#hamburger {
-    display: none;
-  }
+li {
+  margin: 10px 0;
+}
+
+a {
+  text-decoration: none;
+  color: #333;
 }

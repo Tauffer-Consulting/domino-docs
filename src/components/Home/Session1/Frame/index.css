@@ -7,7 +7,7 @@ div#gif-container {
 div#gif-container>div#rectangle {
   position: relative;
   width: 100%;
-
+  z-index: -1;
   background: #F6F6F6;
   box-shadow: 124px 27px 51px rgba(0, 0, 0, 0.01), 70px 15px 43px rgba(0, 0, 0, 0.05), 31px 7px 32px rgba(0, 0, 0, 0.09), 8px 2px 17px rgba(0, 0, 0, 0.1);
   
@@ -17,6 +17,8 @@ div#gif-container>div#rectangle {
 div#gif-container>div#rectangle::before {
   content: "";
   height: 0;
+  z-index: -1;
+
   float: left;
   padding-bottom: calc(100% / (var(--aspect-ratio)));
 }
@@ -24,6 +26,8 @@ div#gif-container>div#rectangle::before {
 div#gif-container>div#rectangle::after {
   content: "";
   display: block;
+  z-index: -1;
+
   clear: both;
 }
 
