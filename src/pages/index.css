@@ -1,21 +1,9 @@
 html {
   background-color: #f0f0f0;
 }
+
 section:first-of-type {
   margin-top: 144px;
-}
-
-section {
-  width: 100%;
-  height: 100%;
-  padding: 0 6%;
-}
-
-section#section-2 {
-  padding: 0;
-}
-section#section-3 {
-  background-color: #00B140;
 }
 
 @media only screen and (min-width: 979px) and (max-width: 1368px) {  

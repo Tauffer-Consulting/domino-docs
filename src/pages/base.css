@@ -1,37 +1,9 @@
-*{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  outline: 0;
-}
+button#primary {
 
-#root {
-  min-height: 100vh;
-  max-height: 100vh;
-}
-
-body{
-  -webkit-font-smoothing: antialiased;
-  transition: background 0.2s linear;
-}
-body, input, button {
-  font-family: "Rethink-Sans", sans-serif;
-  font-size: 16px;
-}
-
-h1 {
-  font-family: 'Rethink-Sans', sans-serif;
-  font-size: 2.5rem;
-}
-
-button {
-  background-color: transparent;
   border: none;
   padding: 0;
   cursor: pointer;
-}
 
-button#primary {
   background: var(--ifm-color-primary);
   color: #fff;
 
@@ -41,10 +13,20 @@ button#primary {
 }
 
 button#primary:hover {
+
+  border: none;
+  padding: 0;
+  cursor: pointer;
+
   background: var(--ifm-color-primary-dark);
 }
 
 button#secondary {
+
+  border: none;
+  padding: 0;
+  cursor: pointer;
+
   background: #101820;
   color: #fff;
 
@@ -58,6 +40,10 @@ button#secondary:hover {
 }
 
 button#tertiary {
+
+  padding: 0;
+  cursor: pointer;
+
   background: transparent;
   color: #101820;
   border: 1px solid #101820;

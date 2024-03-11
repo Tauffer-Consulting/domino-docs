@@ -45,18 +45,18 @@
   gap: calc(8px);
 }
 
-ul {
+.ul {
   padding: 0px;
   margin-bottom: 0;
 }
 
-li {
+.li {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-li>a {
+.li>a {
   font-size: 20px;
   font-weight: 500;
   color: #101820;

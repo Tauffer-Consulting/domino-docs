@@ -1,5 +1,6 @@
 
 section#section-1 {
+  padding: 0 6%;
   height: calc(100vh - 144px - 64px);
 }
 

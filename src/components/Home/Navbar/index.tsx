@@ -51,27 +51,27 @@ export const Navbar = () => {
         <nav id="navbar">
           <img id="logo" src="brand/png/main_logo.png" alt="Logo" />
 
-          <ul id="central-links">
+          <ul className='ul' id="central-links">
             {menuItems.map(({ label, link }) =>
-              <li>
+              <li className='li'>
                 <a href={link}>
                   {label}
                 </a>
               </li>
             )}
           </ul>
-          <ul id="right-buttons">
-            <li>
+          <ul id="right-buttons" className='ul'>
+            <li className='li'>
               <button id="primary" onClick={handleClickCloud}>
                 Try cloud
               </button>
             </li>
-            <li>
+            <li className='li'>
               <button id="secondary" onClick={handleClickContact}>
                 Contact
               </button>
             </li>
-            <li>
+            <li className='li'>
               <a id="github" href="https://github.com/Tauffer-Consulting/domino" target='_blank' >
                 <Icon icon="fa-brands:github" fontSize={36} />
               </a>
