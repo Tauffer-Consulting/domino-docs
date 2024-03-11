@@ -1,0 +1,69 @@
+.features {
+  display: flex;
+  align-items: center;
+  padding: 2rem 0;
+  width: 100%;
+  background-color: #f0f0f0;
+  color: black;
+}
+
+.featureImage {
+  height: 300px;
+  width: 300px;
+}
+
+.featureTitle {
+  text-decoration: none;
+  color: black;
+  cursor: pointer;
+}
+
+.checkmark {
+  color: green;
+  margin-right: 5px;
+}
+
+.ulFeatureList {
+  list-style-type: none;
+  /* Remove default bullets */
+  padding-left: 0;
+  /* Remove default padding */
+}
+
+
+/* Responsive styles */
+@media (max-width: 700px) {
+  .features .row {
+    flex-direction: column;
+    align-items: center;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .features .col {
+    /* Adjust column width and padding for smaller screens */
+    width: 100%;
+    padding: 0 1rem;
+  }
+
+  .features .col--5 {
+    /* Remove specific styling for columns */
+    margin-bottom: 1rem;
+  }
+
+  .featureImage {
+    /* Resize image for smaller screens */
+    height: auto;
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+
+  /* Further adjustments for very small screens, if necessary */
+  .featureImage {
+    max-width: 200px;
+    /* Adjust image size for very small screens */
+  }
+}

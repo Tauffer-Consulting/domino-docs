@@ -1,0 +1,78 @@
+.contactSession {
+    padding: 2rem;
+    background-color: rgb(255, 255, 255);
+    color: black;
+}
+
+.textTitle {
+    font-size: 2rem;
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: 2rem;
+    max-width: 100%;
+}
+
+.contentContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.featureImg {
+    max-width: 50%;
+}
+
+.textContent {
+    max-width: 45%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.liContact {
+    text-align: left;
+}
+
+
+.socialLinks {
+    text-align: left;
+    font-size: large;
+}
+
+.socialLinks li {
+    text-align: left;
+    margin-bottom: 10px;
+}
+
+.socialLinks a {
+    text-decoration: none;
+    color: black;
+    display: flex;
+    align-items: center;
+}
+
+.socialLinks i {
+    margin-left: 5px;
+}
+
+@media (max-width: 768px) {
+
+    .contentContainer {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .featureImg,
+    .textContent {
+        max-width: 100%;
+    }
+
+    .textContent {
+        text-align: left;
+        margin: 20px 0;
+    }
+
+}

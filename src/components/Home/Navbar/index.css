@@ -31,11 +31,13 @@
   flex-direction: row;
   gap: calc(50px);
 
+  justify-content: center;
+
   text-wrap: nowrap;
 }
 
 #navbar>#right-buttons {
-  justify-self: flex-end;
+  justify-content: flex-end;
   margin-right: 6%;
   list-style: none;
   display: flex;

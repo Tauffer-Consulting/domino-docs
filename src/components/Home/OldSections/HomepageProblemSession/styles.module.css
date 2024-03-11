@@ -1,0 +1,70 @@
+.problemSection {
+    padding: 20px;
+    background-color: white;
+    color: black;
+}
+
+.contentContainer {
+    display: flex;
+    align-items: center;
+    /* Keeps the image and text vertically aligned */
+    justify-content: space-between;
+}
+
+.featureImg {
+    max-width: 50%;
+    height: auto;
+}
+
+.textTitle {
+    font-size: 2rem;
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: 2rem;
+    max-width: 100%;
+}
+
+.textContent {
+    max-width: 45%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.bullets {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .contentContainer {
+        flex-direction: column;
+        align-items: center;
+        /* Stack image and text vertically */
+    }
+
+    .featureImg,
+    .textContent {
+        max-width: 100%;
+        margin: 0 0 20px 0;
+        /* Adjust margins for smaller screens */
+    }
+
+    .bullets {
+        text-align: left;
+    }
+}
+
+@media (max-width: 480px) {
+
+    /* Further adjustments for very small screens */
+    .textContent h2,
+    .textContent p {
+        font-size: normal;
+        /* Adjust font sizes if necessary */
+    }
+}
