@@ -12,6 +12,7 @@
 .menu-list {
   position: fixed;
   top: 0;
+  z-index: 3;
   left: calc(100vw - 250px);
   height: 100vh;
   width: 250px;
@@ -35,14 +36,14 @@
   align-self: flex-end;
 }
 
-ul {
+.ul {
   list-style-type: none;
   padding: 0;
   flex-grow: 1;
   overflow-y: auto;
 }
 
-li {
+.li {
   margin: 10px 0;
 }
 
@@ -52,7 +53,7 @@ li {
   margin-bottom: 5px;
 }
 
-a {
+.a {
   text-decoration: none;
   color: #333;
 }

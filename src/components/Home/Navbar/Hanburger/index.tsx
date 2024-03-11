@@ -40,21 +40,20 @@ export const Hamburger: React.FC<Props> = ({ menuItems, buttonsItems }) => {
       {isOpen && (
         <>
           <div className="menu-list" ref={menuRef}>
-            <ul>
+            <ul className="ul">
               {menuItems.map((item, index) => (
-                <li key={index}>
-                  <a href={item.link}>{item.label}</a>
+                <li className="li" key={index}>
+                  <a className="a" href={item.link}>{item.label}</a>
                 </li>
               ))}
               {buttonsItems.length && (<div className='divider'></div>)}
               {buttonsItems.length && buttonsItems.map(b => (
-                <li>
+                <li className="li">
                   {b}
                 </li>
               ))}
             </ul>
           </div>
-
         </>
       )}
     </div>

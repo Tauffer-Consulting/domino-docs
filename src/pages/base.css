@@ -4,7 +4,7 @@ button#primary {
   padding: 0;
   cursor: pointer;
 
-  background: var(--ifm-color-primary);
+  background: #00B140;
   color: #fff;
 
   width: 115px;
@@ -18,7 +18,7 @@ button#primary:hover {
   padding: 0;
   cursor: pointer;
 
-  background: var(--ifm-color-primary-dark);
+  background: #008F34;
 }
 
 button#secondary {

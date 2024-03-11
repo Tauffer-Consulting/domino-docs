@@ -11,7 +11,7 @@ import HomepageContactSession from '../components/Home/OldSections/HomepageConta
 
 export default function Home(): JSX.Element {
   return (
-    <div>
+    <div id="landing">
       <Navbar />
       <main>
         <Session1 />
