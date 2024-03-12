@@ -44,8 +44,8 @@ export const Navbar = () => {
         <img id="logo" src="brand/png/main_logo.png" alt="Logo" />
 
         <ul className='ul' id="central-links">
-          {menuItems.map(({ label, link }) =>
-            <li className='li'>
+          {menuItems.map(({ label, link },idx) =>
+            <li key={idx} className='li'>
               <a href={link}>
                 {label}
               </a>
