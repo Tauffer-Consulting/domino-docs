@@ -1,7 +1,16 @@
-import React from 'react'
+import React, { useCallback } from 'react'
 import "./index.css"
 
 export const TitleGroup = () => {
+
+  const handleClickCloud = useCallback(() => {
+    window.open("https://domino-workflows.cloud/sign-in", "_blank")
+  }, [])
+
+  const handleClickDocs = useCallback(() => {
+    window.location.href = "/docs/intro"
+  }, [])
+
   return (
     <div id="text-container">
       <div id="title-container">
@@ -17,8 +26,8 @@ export const TitleGroup = () => {
       </div>
 
       <div id="button-container">
-        <button id="primary">Discover now</button>
-        <button id="tertiary">Learn more</button>
+        <button id="primary" onClick={handleClickCloud}>Try for free</button>
+        <button id="tertiary" onClick={handleClickDocs}>Learn more</button>
       </div>
     </div>
   )
