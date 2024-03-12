@@ -50,7 +50,7 @@ div#button-container > button {
   width: 32%;
   height: 16%;
 
-  font-size: 2vw;
+  font-size: 28px;
   font-weight: 500;
   margin-right: 36px;
 }
@@ -80,7 +80,10 @@ div#button-container > button {
     margin-bottom: 24px;
     margin-top: 8px;
   }
-
+  
+  div#button-container > button {
+    font-size: 26px;
+  }
 }
 
 @media only screen and (max-width: 1144px) {
@@ -101,5 +104,9 @@ div#button-container > button {
   div#button-container{
     margin-bottom: 24px;
     margin-top: 0;
+  }
+
+  div#button-container > button {
+    font-size: 18px;
   }
 }
