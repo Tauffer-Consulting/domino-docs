@@ -1,0 +1,58 @@
+button#primary {
+
+  border: none;
+  padding: 0;
+  cursor: pointer;
+
+  background: #00B140;
+  color: #fff;
+
+  width: 115px;
+  height: 32px;
+  border-radius: 8px;
+}
+
+button#primary:hover {
+
+  border: none;
+  padding: 0;
+  cursor: pointer;
+
+  background: #008F34;
+}
+
+button#secondary {
+
+  border: none;
+  padding: 0;
+  cursor: pointer;
+
+  background: #101820;
+  color: #fff;
+
+  width: 115px;
+  height: 32px;
+  border-radius: 8px;
+}
+
+button#secondary:hover {
+  background: #223344;
+}
+
+button#tertiary {
+
+  padding: 0;
+  cursor: pointer;
+
+  background: transparent;
+  color: #101820;
+  border: 1px solid #101820;
+
+  width: 115px;
+  height: 32px;
+  border-radius: 8px;
+}
+
+button#tertiary:hover {
+  box-shadow: 1px solid gray;
+}

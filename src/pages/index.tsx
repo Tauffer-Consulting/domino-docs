@@ -1,26 +1,25 @@
 import React from 'react';
-import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
-import Layout from '@theme/Layout';
-import HomepageHeader from '@site/src/components/HomepageHeaderSession';
-import HomepageFeatures from '@site/src/components/HomepageFeatures';
-import HomepageCardsRowSession from '../components/HomepageCardsRowSession';
-import HomepageProblemSession from '../components/HomepageProblemSession';
-import HomepageContactSession from '../components/HomepageContactSession';
 
+import { Navbar } from '../components/Home/Navbar';
+import "./base.css"
+import "./index.css"
+import { Session1 } from '../components/Home/Session1';
+import HomepageProblemSession from '../components/Home/OldSections/HomepageProblemSession';
+import HomepageFeatures from '../components/Home/OldSections/HomepageFeatures';
+import HomepageCardsRowSession from '../components/Home/OldSections/HomepageCardsRowSession';
+import HomepageContactSession from '../components/Home/OldSections/HomepageContactSession';
 
 export default function Home(): JSX.Element {
-  const { siteConfig } = useDocusaurusContext();
   return (
-    <Layout
-      title={`${siteConfig.title}`}
-      description="Domino - Build amazing ideas, Piece by Piece ">
-      <HomepageHeader />
+    <div id="landing">
+      <Navbar />
       <main>
+        <Session1 />
         <HomepageProblemSession />
         <HomepageFeatures />
         <HomepageCardsRowSession />
         <HomepageContactSession />
       </main>
-    </Layout>
+    </div>
   );
 }

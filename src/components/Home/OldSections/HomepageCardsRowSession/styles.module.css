@@ -44,7 +44,8 @@
 .features {
     padding-top: 2rem;
     padding-bottom: 2rem;
-    background-color: #5c6472;
+    background-color: #00B140;
+    color: white;
 }
 
 .featureSvg {

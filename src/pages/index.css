@@ -1,0 +1,20 @@
+#landing {
+  z-index: 1;
+  background-color: #f0f0f0;
+}
+
+section:first-of-type {
+  margin-top: 144px;
+}
+
+@media only screen and (min-width: 979px) and (max-width: 1368px) {  
+  section:first-of-type {
+    margin-top: calc(144px + 8px);
+  }
+}
+
+@media only screen and (max-width: 1144px) {
+  section:first-of-type {
+    margin-top: calc(64px + 8px);
+  }
+}

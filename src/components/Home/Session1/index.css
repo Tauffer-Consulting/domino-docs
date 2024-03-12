@@ -1,0 +1,27 @@
+
+section#section-1 {
+  padding: 0 6%;
+  height: calc(100vh - 144px - 64px);
+}
+
+div#container {
+  display: flex;
+  flex-direction: row;
+  padding-top: 80px;
+}
+
+@media only screen and (min-width: 979px) and (max-width: 1368px) {  
+  div#container {
+    flex-direction: column;
+    justify-content: space-between;
+    padding-top: 0px;
+  }
+}
+
+@media only screen and (max-width: 1144px) {
+  div#container {
+    flex-direction: column;
+    justify-content: space-between;
+    padding-top: 0px;
+  }
+}

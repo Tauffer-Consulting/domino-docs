@@ -94,7 +94,7 @@ function Feature({ title, imageUrl, description, isImageRight, url }: { isImageR
   };
 
   return (
-    <div className="row" style={rowStyle}>
+    <div id="features" className="row" style={rowStyle}>
       {isImageRight ? (
         <div className="col col--6" style={{ paddingRight: '1rem' }}>
           <div className="text--left padding-horiz--sm">
