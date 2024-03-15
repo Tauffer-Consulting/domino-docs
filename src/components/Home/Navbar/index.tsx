@@ -28,8 +28,8 @@ export const Navbar = () => {
         <Hamburger
           menuItems={menuItems}
           buttonsItems={
-            [<button id="primary" onClick={handleClickCloud}>
-              Try cloud
+            [<button id="primary-large" onClick={handleClickCloud}>
+              Domino Cloud (beta)
             </button>,
             <button id="secondary" onClick={handleClickContact}>
               Contact
@@ -54,8 +54,8 @@ export const Navbar = () => {
         </ul>
         <ul id="right-buttons" className='ul'>
           <li className='li'>
-            <button id="primary" onClick={handleClickCloud}>
-              Try cloud
+            <button id="primary-large" onClick={handleClickCloud}>
+              Domino Cloud (beta)
             </button>
           </li>
           <li className='li'>

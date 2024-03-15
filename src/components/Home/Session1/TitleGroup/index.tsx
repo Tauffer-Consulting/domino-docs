@@ -22,11 +22,12 @@ export const TitleGroup = () => {
       </div>
 
       <div id="subtitle-container">
-        <h3 id="subtitle">You have the <b>idea</b>, Domino simplifies the process through an <b>intuitive workflow</b>, <i>no coding required</i>, and the result is a <b>seamless journey</b> from concept to reality.</h3>
+        {/* <h3 id="subtitle">You have the <b>idea</b>, Domino simplifies the process through an <b>intuitive workflow</b>, <i>no coding required</i>, and the result is a <b>seamless journey</b> from concept to reality.</h3> */}
+        <h3 id="subtitle">You have the <b>idea</b>, Domino allows you to realize it through an <b>intuitive workflow</b>,  <i>no coding required</i>!</h3>
       </div>
 
       <div id="button-container">
-        <button id="primary" onClick={handleClickCloud}>Try for free</button>
+        <button id="primary" onClick={handleClickCloud}>Try Domino</button>
         <button id="tertiary" onClick={handleClickDocs}>Learn more</button>
       </div>
     </div>

@@ -12,6 +12,23 @@ button#primary {
   border-radius: 8px;
 }
 
+button#primary-large {
+
+    border: none;
+    padding: 0;
+    cursor: pointer;
+
+    background: #00B140;
+    color: #fff;
+
+    padding-left: 10px;
+    padding-right: 10px;
+    width: fit-content;
+    height: 32px;
+    border-radius: 8px;
+
+}
+
 button#primary:hover {
 
   border: none;
