@@ -73,7 +73,7 @@ a#github {
   justify-content: center;
 }
 
-@media only screen and (min-width: 1145px) and (max-width: 1368px) {  
+@media only screen and (min-width: 1145px) and (max-width: 1368px) {
   #navbar>#right-buttons {
     margin: 0;
   }
@@ -95,10 +95,10 @@ a#github {
   #navbar-small {
     position: fixed;
     top: 0;
-  
+
     width: 100%;
     height: 64px;
-  
+
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -114,7 +114,7 @@ a#github {
   #navbar>#central-links {
     display: none;
   }
-  
+
   #navbar>#right-buttons {
     display: none;
   }
