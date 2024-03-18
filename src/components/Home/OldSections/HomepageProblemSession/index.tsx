@@ -14,14 +14,14 @@ export default function HomepageProblemSession(): JSX.Element {
         <div className={styles.textContent}>
           <p>
             Most professionals face barriers when trying to implement their ideas using data and AI.
-            At the same time, data scientists and AI experts continuously produce solutions that are often underutilized. But with Domino:
+            At the same time, data scientists and AI experts continuously produce solutions that are often underutilized. <br/>
+            Domino solves this problem with:
           </p>
           <ul className={styles.bullets}>
-            <li>✅ No require programming skills for start</li>
-            <li>✅ Integration of multiple tools without coding knowledge</li>
-            <li>✅ Find the right tools to implement your ideas</li>
-            <li>✅ Pieces of code useful are available in code repositories.</li>
-            <li>✅ Visual interface</li>
+            <li>✅ No programming skills required.</li>
+            <li>✅ User friendly visual interface.</li>
+            <li>✅ Easily find the right tools to implement your ideas.</li>
+            <li>✅ Turns any piece of code into reusable visual elements.</li>
           </ul>
           <p>
             Domino is here to empower individuals with access to state-of-the-art tools,
