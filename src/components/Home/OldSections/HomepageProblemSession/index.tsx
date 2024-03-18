@@ -18,8 +18,8 @@ export default function HomepageProblemSession(): JSX.Element {
             Domino solves this problem with:
           </p>
           <ul className={styles.bullets}>
-            <li>✅ No programming skills required.</li>
-            <li>✅ User friendly visual interface.</li>
+            <li>✅ Create advanced data workflows, no programming skills required.</li>
+            <li>✅ Monitor your workflows in real time with visually rich reports.</li>
             <li>✅ Easily find the right tools to implement your ideas.</li>
             <li>✅ Turns any piece of code into reusable visual elements.</li>
           </ul>
