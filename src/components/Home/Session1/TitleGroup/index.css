@@ -10,7 +10,7 @@ h1#title {
 
   font-style: normal;
   font-weight: 400;
-  font-size: 6vw;
+  font-size: calc(90px + 1vw);
   color: #101820;
 }
 
@@ -34,7 +34,7 @@ div#subtitle-container {
 }
 
 h3#subtitle {
-  font-size: 1.4vw;
+  font-size: calc(20px + 0.2vw);
   font-weight: 400;
 }
 
@@ -44,6 +44,7 @@ h3#subtitle > b {
 
 div#button-container {
   margin-top: 6%;
+  margin-bottom: 3%;
 }
 
 div#button-container > button {
@@ -55,13 +56,13 @@ div#button-container > button {
   margin-right: 36px;
 }
 
-@media only screen and (min-width: 979px) and (max-width: 1368px) {  
+@media only screen and (min-width: 979px) and (max-width: 1368px) {
   #title-container {
     margin-top: 24px;
   }
 
   h1#title {
-    font-size: 7vw;
+    font-size: calc(90px + 1vw);
   }
 
   div#subtitle-container {
@@ -69,7 +70,8 @@ div#button-container > button {
   }
 
   h3#subtitle {
-    font-size: 2vw;
+    /* font-size: 2vw; */
+    font-size: calc(20px + 0.2vw);
   }
 
   div#subtitle-container {
@@ -80,7 +82,7 @@ div#button-container > button {
     margin-bottom: 24px;
     margin-top: 8px;
   }
-  
+
   div#button-container > button {
     font-size: 26px;
   }
@@ -94,11 +96,13 @@ div#button-container > button {
   }
 
   h1#title {
-    font-size: 10vw;
+    /* font-size: 10vw; */
+    font-size: calc(90px + 1vw);
   }
 
   h3#subtitle  {
-    font-size: 3vw;
+    /* font-size: 3vw; */
+    font-size: calc(20px + 0.2vw);
   }
 
   div#button-container{
@@ -108,5 +112,12 @@ div#button-container > button {
 
   div#button-container > button {
     font-size: 18px;
+  }
+}
+
+
+@media only screen and (max-width: 1144px) {
+  h1#title {
+    font-size: calc(36px + 1vw);
   }
 }

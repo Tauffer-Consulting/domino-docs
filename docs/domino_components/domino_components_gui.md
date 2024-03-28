@@ -11,7 +11,7 @@ The Domino frontend service is a React application that provides the GUI for eas
     <summary>
         <strong>Sign up and login</strong>
     </summary>
-    Sign up and login to use the Domino platform. 
+    Sign up and login to use the Domino platform.
     <br/><br/>
 
 ![Sign-up](/img/domino_components/gui/signup.gif)
@@ -25,6 +25,7 @@ The Domino frontend service is a React application that provides the GUI for eas
         <strong>Create your workspace</strong>
     </summary>
     Create a new workspace and add your github access token.
+    Workspaces are isolated environments where you can create and run workflows.
     <br/><br/>
 
 ![Create-workspace](/img/domino_components/gui/create-workspace.gif)
@@ -38,7 +39,15 @@ The Domino frontend service is a React application that provides the GUI for eas
     </summary>
     In Domino UI you can create different workspaces and invite other users to collaborate with you.
     For each workspace you can select the users that will have access to it and the pieces repositories you want to install on it.
+    <br/>
+    You can provide different access levels to the users of your workspace:
+    <ul>
+        <li> <span style={{fontWeight: 'bold'}}>Admin:</span> can invite other users and remove them from the workspace, create and run workflows, install pieces and edit secrets.</li>
+        <li> <span style={{fontWeight: 'bold'}}>Write:</span> can create and run workflows.</li>
+        <li> <span style={{fontWeight: 'bold'}}>Read:</span> can only see the workflows runs and their logs.</li>
+    </ul>
     <br/><br/>
+
 
 ![Invite User](/img/domino_components/gui/invite-to-workspace.gif)
 
@@ -64,7 +73,7 @@ The Domino frontend service is a React application that provides the GUI for eas
     <summary>
         <strong>Remove an user from workspace</strong>
     </summary>
-    If you are the owner of a workspace, you can remove an user from it.
+    If you are the owner or admin of a workspace, you can remove an user from it.
     <br/><br/>
 
 ![Remove user](/img/domino_components/gui/remove-user-from-workspace.gif)
@@ -83,7 +92,7 @@ If you are not the owner, you can leave the workspace by yourself.
     <summary>
         <strong>Install Pieces repositories</strong>
     </summary>
-    Install bundles of Pieces to your Domino Workspaces direclty from Github repositories, and use them in your Workflows. 
+    Install bundles of Pieces to your Domino Workspaces direclty from Github repositories, and use them in your Workflows.
     <br/><br/>
 
 ![Add Pieces](/img/domino_components/gui/add-pieces-to-workspace.gif)
@@ -95,7 +104,7 @@ If you are not the owner, you can leave the workspace by yourself.
     <summary>
         <strong>Create Workflows</strong>
     </summary>
-    Create Workflows by dragging and dropping Pieces to the canvas, and connecting them. 
+    Create Workflows by dragging and dropping Pieces to the canvas, and connecting them.
     <br/><br/>
 
 ![Domino create workflow](/img/intro/create-workflow.gif)
