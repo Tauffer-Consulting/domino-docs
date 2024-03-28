@@ -10,7 +10,7 @@ h1#title {
 
   font-style: normal;
   font-weight: 400;
-  font-size: calc(90px + 1vw);
+  font-size: calc(60px + 2vw);
   color: #101820;
 }
 
@@ -62,7 +62,7 @@ div#button-container > button {
   }
 
   h1#title {
-    font-size: calc(90px + 1vw);
+    font-size: calc(60px + 2vw);
   }
 
   div#subtitle-container {
@@ -97,7 +97,7 @@ div#button-container > button {
 
   h1#title {
     /* font-size: 10vw; */
-    font-size: calc(90px + 1vw);
+    font-size: calc(60px + 2vw);
   }
 
   h3#subtitle  {
