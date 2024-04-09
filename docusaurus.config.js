@@ -40,6 +40,7 @@ const config = {
       {
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
+          routeBasePath: '/'
         },
         blog: {
           showReadingTime: true,
@@ -93,12 +94,8 @@ const config = {
             title: 'Docs',
             items: [
               {
-                label: 'Tutorial',
-                to: '/docs/intro',
-              },
-              {
                 label: 'Quickstart',
-                to: '/docs/quickstart',
+                to: '/quickstart',
               },
             ],
           },
@@ -132,12 +129,12 @@ const config = {
               },
               {
                 label: 'Linkedin',
-                href: 'https://www.linkedin.com/company/tauffer-consulting',
+                href: 'https://www.linkedin.com/company/domino-workflows',
               },
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} Luiz Tauffer. Built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()} Domino.`,
         // Other footer elements...
       },
       prism: {

@@ -15,7 +15,7 @@ The available options are:
 
 - **CPU**: The number of CPUs, in milicores(m), to allocate to the Piece.
 - **Memory**: The amount of memory, in mebibyte(Mi) to allocate to the Piece.
-- **GPU**: Define if should give access to a GPU to the Piece. To use a GPU, your cluster, if running in Kubernetes mode, or your machine, if running in compose mode, must have a GPU available. Also the piece must be built with a docker image that has the necessary drivers to use the GPU, you can find a base image with the necessary drivers [here](https://github.com/Tauffer-Consulting/domino/pkgs/container/domino-base-piece/147257355?tag=gpu)
+- **GPU**: Define if should give access to a GPU to the Piece. To use a GPU, your cluster, if running in Kubernetes mode, or your machine, if running in compose mode, must have a GPU available. Also the piece must be built with a docker image that has the necessary drivers to use the GPU, you can find a base image with the necessary drivers [here](https://github.com/Tauffer-Consulting/domino/pkgs/container/domino-base-piece)
 
 :::info
 **CPU** and **Memory** are considered by Domino only when running in Kubernetes.

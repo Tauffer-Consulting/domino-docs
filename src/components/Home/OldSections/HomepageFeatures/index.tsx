@@ -26,7 +26,7 @@ const FeatureList: FeatureItem[] = [
         </ul>
       </>
     ),
-    url: '/docs/domino_components/domino_components_gui',
+    url: '/domino_components/domino_components_gui',
   },
   {
     title: 'Focus on reusability and reproducibility',
