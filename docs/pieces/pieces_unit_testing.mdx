@@ -10,7 +10,7 @@ Suppose you created a Pieces repository and want to test the Pieces locally. It'
 
 Pre-requisites:
 
-- `domino-py` installed in your local environment. 
+- `domino-py` installed in your local environment.
 - A local Pieces repository folder, following the standard organization (see [Create Pieces](./create_pieces)).
 
 You simply need to create a script importing the `piece_dry_run` function and fill the arguments with the Piece inputs and secrets:
@@ -22,12 +22,12 @@ import os
 piece_dry_run(
     repository_folder_path="path/to/pieces_repository",
     piece_name="ExamplePiece",
-    input_data={ 
+    input_data={
         "in_argument_1": value,
         "in_argument_2": value,
         "in_argument_3": value
     }
-    secrets_data={ 
+    secrets_data={
         "EXAMPLE_SECRET_1": os.environ.get("EXAMPLE_SECRET_1"),
         "EXAMPLE_SECRET_2": os.environ.get("EXAMPLE_SECRET_2")
     }
@@ -50,7 +50,7 @@ The unit tests should run successfully before the action publish the Pieces imag
 `pytest` will recognize all files named `test_*.py` in the Pieces folders and run them as tests.
 
 For Pieces that require secrets, the best practice is to store the secrets in the repository settings: `Setings > Secrets and variables > Actions > Repository secrets`. Then you should explicitly import the secrets as environment variables inside `/.github/workflows/validate-and-organize.yml`. Example:
-    
+
 ```yaml title="validate-and-organize.yml"
 - name: Run tests over built images
   env:
@@ -58,4 +58,43 @@ For Pieces that require secrets, the best practice is to store the secrets in th
     EXAMPLE_SECRET_2: ${{ secrets.EXAMPLE_SECRET_2 }}
   run: |
     pytest
+```
+
+### How tests work in Github Actions
+In order to keep each piece environment isolated, the tests will run in the Github Actions environment but the piece function will be executed in a separated container.
+The way we do this is basically in 3 steps:
+1. Build all the images and save a map for each piece name and corresponding image.
+2. Based on the piece name defined on the test we run the built docker image starting a really tiny HTTP server in the piece container.
+This HTTP server will listen the request from the piece_dry_run function, pass it to the piece_function and return the results to the test function.
+3. The test function will receive the results from the piece_function and assert the expected results.
+
+The diagram below shows the architecture of the tests in Github Actions:
+<div style={{display: 'flex', justifyContent: 'center', marginBottom: '25px'}}>
+  <img style={{maxWidth: '600px'}} src="/img/pieces/tests/diagram-tests-architecture.jpg" alt="Diagram of tests architecture" width="100%"/>
+</div>
+
+Also, this diagram ilustrates the flow of the tests in Github Actions:
+<div style={{display: 'flex', justifyContent: 'center'}}>
+  <img style={{maxWidth: '600px'}} src="/img/pieces/tests/diagram-test-flow.jpg" alt="Diagram of tests flow" width="100%"/>
+</div>
+<br/>
+
+:::danger
+The limitations of this approach are:
+1. Tests will run slower than running them locally.
+2. We can't mock internal functions
+3. We can't read files from outside of piece build. The only way to test pieces that use file by now is to add the test file to the piece build and on the test we can use the relative path to it or even the absolute path in the container, like `/home/domino/pieces_repository/pieces/MyPieceName/file_to_test.txt`
+:::
+
+### Choosing environment to run tests
+Due to the above limitations, in certain cases, you may wish to exclusively run tests locally and skip them in Github Actions. To achieve this, you can utilize the @skip_envs decorator from the domino.testing module.
+Example:
+```python
+from domino.testing.utils import skip_envs
+
+@skip_envs('github')
+def test_my_piece():
+    # your test code here
+    ...
+
 ```
