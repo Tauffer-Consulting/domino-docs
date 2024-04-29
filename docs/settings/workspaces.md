@@ -37,7 +37,8 @@ All `read` and `write` permissions and:
 * can trigger workflow manually
 * can add/edit/remove secrets
 * can add/edit/remove pieces
-*
+
+
 ## Owner
 
 Unique per workspace.
