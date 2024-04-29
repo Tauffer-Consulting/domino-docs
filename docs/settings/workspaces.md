@@ -1,5 +1,17 @@
-# Permissions
+---
+sidebar_position: 1
+description: "Workspaces"
+keywords: ["domino", "workflow", "airflow", "data", "machine learning", "ml", "data science", "data engineering", "dataops", "mlops", "devops", "kubernetes", "k8s", "helm", "python", "react", "typescript", "fastapi", "gitops", "docker", "github", "artifacthub", "pypi", "pip", "kind", "open source", "oss", "low code", "no code", "automation", "versio control", "collaboration", "monitoring", "orchestration", "data pipeline", "secrets"]
+---
 
+
+
+# Workspaces
+
+Workspaces are the main organizational unit in Domino. They are used to group workflows, users, secrets and pieces repositories. Each workspace has its own permissions and settings.
+
+
+# Permissions
 Within a workspace, users can have the following permissions: `owner`, `admin`, `write` and `read`. Permissions are a means of controlling and regulating access to specific functions at the system level.
 
 ## Read
@@ -15,8 +27,8 @@ All `read` permissions and:
 * can create workflow
 * can remove workflow
 * can trigger workflow manually (if the workflow are active)
-  
-## Admin 
+
+## Admin
 
 All `read` and `write` permissions and:
 
@@ -25,8 +37,8 @@ All `read` and `write` permissions and:
 * can trigger workflow manually
 * can add/edit/remove secrets
 * can add/edit/remove pieces
-* 
-## Owner 
+*
+## Owner
 
 Unique per workspace.
 
