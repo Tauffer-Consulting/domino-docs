@@ -75,13 +75,23 @@ This will activate some development features, such as:
 **Workaround:** As mentioned before, currently we don't have a direct way to allow hot reloading for domino package in pieces containers, however, you can use the following workaround:
 :::
 
-1. Go to `domino/src/domino/custom_operators/docker_operator.py` file.
-2. In the `__init__` method and start the `mounts` variable with the following code:
+1. Go to `src/domino/custom_operators/docker_operator.py` file.
+2. find the following code:
 ```python
-mounts = [
-    Mount(source='/path/to/domino/src/domino', target='/home/domino/domino_py/', type='bind', read_only=True)
-]
+dev_pieces = False
+if dev_pieces:
+    piece_repo_name = repository_url.split("/")[-1]
+    local_repos_path = f"/path/to/your/pieces/location/{piece_repo_name}"
+    mounts = [
+        Mount(source='/path/to/your/domino/location/src/domino', target='/usr/local/lib/python3.10/site-packages/domino/', type='bind', read_only=True),
+        Mount(source=local_repos_path, target='/home/domino/pieces_repository/', type='bind', read_only=True),
+    ]
+
 ```
-The `source` must be the path to your local domino package. The `target` must be the path where the domino package will be mounted in the pieces container, by default the pieces images are built to use `/home/domino/domino_py/`.
-**DEPRECATED WARNING:** The target path will be deprecated in the next update since the pieces will be built using `/home/domino/domino_py/src/domino` as the default path for the domino package.
+3. Change the `dev_pieces` parameter to `True` and populate the `source` in each `mount` path with a folder pointing to: domino source code and a folder containing all source codes for the pieces used by your workflows .
+
+:::note
+The workflow will attempt to use your mounted pieces folder, so all pieces must be present in the mounted folder. If not, the workflow will fail in execution.
+:::
+
 
