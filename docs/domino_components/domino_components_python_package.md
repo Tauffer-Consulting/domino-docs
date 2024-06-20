@@ -45,12 +45,6 @@ The use of this class is automatically determined by the `Task` class based on t
 This class is an extension of the Airflow's `DockerOperator` class. It adds Domino specific functionalities and information. Runtime information is passed as ENV variables to the container running the target Piece.
 The use of this class is automatically determined by the `Task` class based on the environment where Domino is running.
 
-### CLI
-
-The Domino command line interface helps users to set up and run a local Domino platform, as well as organize and validate their Domino Piece repositories.
-The CLI dispone of the following commands:
-You can use `domino --help` to see the available commands and options.
-
 
 ### Diagram
 A simplified view of how Domino classes interact with each other is shown in the following diagram:
